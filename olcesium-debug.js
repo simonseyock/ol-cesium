@@ -1,1225 +1,734 @@
-var olcs_unused_var =
-/******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
-/******/
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId]) {
-/******/ 			return installedModules[moduleId].exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-/******/
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-/******/
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-/******/
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/
-/******/
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-/******/
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-/******/
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
-/******/ 		}
-/******/ 	};
-/******/
-/******/ 	// define __esModule on exports
-/******/ 	__webpack_require__.r = function(exports) {
-/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-/******/ 		}
-/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
-/******/ 	};
-/******/
-/******/ 	// create a fake namespace object
-/******/ 	// mode & 1: value is a module id, require it
-/******/ 	// mode & 2: merge all properties of value into the ns
-/******/ 	// mode & 4: return value when already ns object
-/******/ 	// mode & 8|1: behave like require
-/******/ 	__webpack_require__.t = function(value, mode) {
-/******/ 		if(mode & 1) value = __webpack_require__(value);
-/******/ 		if(mode & 8) return value;
-/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
-/******/ 		var ns = Object.create(null);
-/******/ 		__webpack_require__.r(ns);
-/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
-/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
-/******/ 		return ns;
-/******/ 	};
-/******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-/******/
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-/******/
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-/******/
-/******/
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.library.js");
-/******/ })
-/************************************************************************/
-/******/ ({
+var olcs_unused_var;
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/index.library.js":
-/*!******************************!*\
-  !*** ./src/index.library.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _olcs_OLCesium_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./olcs/OLCesium.js */ "./src/olcs/OLCesium.js");
-/* harmony import */ var _olcs_AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./olcs/AbstractSynchronizer.js */ "./src/olcs/AbstractSynchronizer.js");
-/* harmony import */ var _olcs_RasterSynchronizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./olcs/RasterSynchronizer.js */ "./src/olcs/RasterSynchronizer.js");
-/* harmony import */ var _olcs_VectorSynchronizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./olcs/VectorSynchronizer.js */ "./src/olcs/VectorSynchronizer.js");
-/* harmony import */ var _olcs_core_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./olcs/core.js */ "./src/olcs/core.js");
-/* harmony import */ var _olcs_core_OLImageryProvider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./olcs/core/OLImageryProvider.js */ "./src/olcs/core/OLImageryProvider.js");
-/* harmony import */ var _olcs_core_VectorLayerCounterpart_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./olcs/core/VectorLayerCounterpart.js */ "./src/olcs/core/VectorLayerCounterpart.js");
-/* harmony import */ var _olcs_contrib_LazyLoader_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./olcs/contrib/LazyLoader.js */ "./src/olcs/contrib/LazyLoader.js");
-/* harmony import */ var _olcs_contrib_Manager_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./olcs/contrib/Manager.js */ "./src/olcs/contrib/Manager.js");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = (_olcs_OLCesium_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-// Using var for phantomJS
-// eslint-disable-next-line no-var
-var olcs = window['olcs'] = {};
-olcs.OLCesium = _olcs_OLCesium_js__WEBPACK_IMPORTED_MODULE_0__["default"];
-
-olcs.AbstractSynchronizer = _olcs_AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_1__["default"];
-olcs.RasterSynchronizer = _olcs_RasterSynchronizer_js__WEBPACK_IMPORTED_MODULE_2__["default"];
-olcs.VectorSynchronizer = _olcs_VectorSynchronizer_js__WEBPACK_IMPORTED_MODULE_3__["default"];
-
-olcs.core = _olcs_core_js__WEBPACK_IMPORTED_MODULE_4__["default"];
-olcs.core.OLImageryProvider = _olcs_core_OLImageryProvider_js__WEBPACK_IMPORTED_MODULE_5__["default"];
-olcs.core.VectorLayerCounterpart = _olcs_core_VectorLayerCounterpart_js__WEBPACK_IMPORTED_MODULE_6__["default"];
-
-olcs.contrib = {};
-olcs.contrib.LazyLoader = _olcs_contrib_LazyLoader_js__WEBPACK_IMPORTED_MODULE_7__["default"];
-olcs.contrib.Manager = _olcs_contrib_Manager_js__WEBPACK_IMPORTED_MODULE_8__["default"];
-
-
-/***/ }),
-
-/***/ "./src/olcs/AbstractSynchronizer.js":
+/***/ "./src/olcs/AbstractSynchronizer.ts":
 /*!******************************************!*\
-  !*** ./src/olcs/AbstractSynchronizer.js ***!
+  !*** ./src/olcs/AbstractSynchronizer.ts ***!
   \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AbstractSynchronizer)
+/* harmony export */ });
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/layer/Group.js */ "ol/layer/Group.js");
 /* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/**
- * @module olcs.AbstractSynchronizer
- */
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
 
 
 
-
-var AbstractSynchronizer =
-/*#__PURE__*/
-function () {
-  /**
-   * @param {!ol.Map} map
-   * @param {!Cesium.Scene} scene
-   * @template T
-   * @abstract
-   * @api
-   */
-  function AbstractSynchronizer(map, scene) {
-    /**
-     * @type {!ol.Map}
-     * @protected
-     */
-    this.map = map;
-    /**
-     * @type {ol.View}
-     * @protected
-     */
-
-    this.view = map.getView();
-    /**
-     * @type {!Cesium.Scene}
-     * @protected
-     */
-
-    this.scene = scene;
-    /**
-     * @type {ol.Collection.<ol.layer.Base>}
-     * @protected
-     */
-
-    this.olLayers = map.getLayerGroup().getLayers();
-    /**
-     * @type {ol.layer.Group}
-     */
-
-    this.mapLayerGroup = map.getLayerGroup();
+class AbstractSynchronizer {
+  constructor(map, scene) {
     /**
      * Map of OpenLayers layer ids (from getUid) to the Cesium ImageryLayers.
      * Null value means, that we are unable to create equivalent layers.
-     * @type {Object.<string, ?Array.<T>>}
-     * @protected
      */
-
     this.layerMap = {};
     /**
      * Map of listen keys for OpenLayers layer layers ids (from getUid).
-     * @type {!Object.<string, Array<ol.EventsKey>>}
-     * @protected
      */
-
     this.olLayerListenKeys = {};
     /**
      * Map of listen keys for OpenLayers layer groups ids (from getUid).
-     * @type {!Object.<string, !Array.<ol.EventsKey>>}
-     * @private
      */
-
     this.olGroupListenKeys_ = {};
+    this.map = map;
+    this.view = map.getView();
+    this.scene = scene;
+    this.olLayers = map.getLayerGroup().getLayers();
+    this.mapLayerGroup = map.getLayerGroup();
   }
+
   /**
    * Destroy all and perform complete synchronization of the layers.
-   * @api
    */
-
-
-  var _proto = AbstractSynchronizer.prototype;
-
-  _proto.synchronize = function synchronize() {
+  synchronize() {
     this.destroyAll();
     this.addLayers_(this.mapLayerGroup);
   }
+
   /**
    * Order counterparts using the same algorithm as the Openlayers renderer:
    * z-index then original sequence order.
-   * @protected
    */
-  ;
-
-  _proto.orderLayers = function orderLayers() {} // Ordering logics is handled in subclasses.
+  orderLayers() {
+    // Ordering logics is handled in subclasses.
+  }
 
   /**
    * Add a layer hierarchy.
-   * @param {ol.layer.Base} root
-   * @private
    */
-  ;
-
-  _proto.addLayers_ = function addLayers_(root) {
-    var _this = this;
-
-    /** @type {Array<import('olsc/core.js').LayerWithParents>} */
-    var fifo = [{
+  addLayers_(root) {
+    const fifo = [{
       layer: root,
       parents: []
     }];
-
-    var _loop = function _loop() {
-      var olLayerWithParents = fifo.splice(0, 1)[0];
-      var olLayer = olLayerWithParents.layer;
-      var olLayerId = Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["getUid"])(olLayer).toString();
-      _this.olLayerListenKeys[olLayerId] = [];
-      console.assert(!_this.layerMap[olLayerId]);
-      var cesiumObjects = null;
-
-      if (olLayer instanceof ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1___default.a) {
-        _this.listenForGroupChanges_(olLayer);
-
-        if (olLayer !== _this.mapLayerGroup) {
-          cesiumObjects = _this.createSingleLayerCounterparts(olLayerWithParents);
+    while (fifo.length > 0) {
+      const olLayerWithParents = fifo.splice(0, 1)[0];
+      const olLayer = olLayerWithParents.layer;
+      const olLayerId = (0,_util__WEBPACK_IMPORTED_MODULE_2__.getUid)(olLayer).toString();
+      this.olLayerListenKeys[olLayerId] = [];
+      console.assert(!this.layerMap[olLayerId]);
+      let cesiumObjects = null;
+      if (olLayer instanceof (ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1___default())) {
+        this.listenForGroupChanges_(olLayer);
+        if (olLayer !== this.mapLayerGroup) {
+          cesiumObjects = this.createSingleLayerCounterparts(olLayerWithParents);
         }
-
         if (!cesiumObjects) {
-          olLayer.getLayers().forEach(function (l) {
+          olLayer.getLayers().forEach(l => {
             if (l) {
-              var newOlLayerWithParents = {
+              const newOlLayerWithParents = {
                 layer: l,
-                parents: olLayer === _this.mapLayerGroup ? [] : [olLayerWithParents.layer].concat(olLayerWithParents.parents)
+                parents: olLayer === this.mapLayerGroup ? [] : [olLayerWithParents.layer].concat(olLayerWithParents.parents)
               };
               fifo.push(newOlLayerWithParents);
             }
           });
         }
       } else {
-        cesiumObjects = _this.createSingleLayerCounterparts(olLayerWithParents);
-
+        cesiumObjects = this.createSingleLayerCounterparts(olLayerWithParents);
         if (!cesiumObjects) {
           // keep an eye on the layers that once failed to be added (might work when the layer is updated)
           // for example when a source is set after the layer is added to the map
-          var layerId = olLayerId;
-          var layerWithParents = olLayerWithParents;
-
-          var onLayerChange = function onLayerChange(e) {
-            var cesiumObjs = _this.createSingleLayerCounterparts(layerWithParents);
-
+          const layerId = olLayerId;
+          const layerWithParents = olLayerWithParents;
+          const onLayerChange = () => {
+            const cesiumObjs = this.createSingleLayerCounterparts(layerWithParents);
             if (cesiumObjs) {
               // unsubscribe event listener
               layerWithParents.layer.un('change', onLayerChange);
-
-              _this.addCesiumObjects_(cesiumObjs, layerId, layerWithParents.layer);
-
-              _this.orderLayers();
+              this.addCesiumObjects_(cesiumObjs, layerId, layerWithParents.layer);
+              this.orderLayers();
             }
           };
-
-          _this.olLayerListenKeys[olLayerId].push(Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["olcsListen"])(layerWithParents.layer, 'change', onLayerChange));
+          this.olLayerListenKeys[olLayerId].push(layerWithParents.layer.on('change', onLayerChange));
         }
-      } // add Cesium layers
-
-
-      if (cesiumObjects) {
-        _this.addCesiumObjects_(cesiumObjects, olLayerId, olLayer);
       }
-    };
-
-    while (fifo.length > 0) {
-      _loop();
+      // add Cesium layers
+      if (cesiumObjects) {
+        this.addCesiumObjects_(cesiumObjects, olLayerId, olLayer);
+      }
     }
-
     this.orderLayers();
   }
+
   /**
    * Add Cesium objects.
-   * @param {Array.<T>} cesiumObjects
-   * @param {string} layerId
-   * @param {ol.layer.Base} layer
-   * @private
    */
-  ;
-
-  _proto.addCesiumObjects_ = function addCesiumObjects_(cesiumObjects, layerId, layer) {
-    var _this2 = this;
-
+  addCesiumObjects_(cesiumObjects, layerId, layer) {
     this.layerMap[layerId] = cesiumObjects;
-    this.olLayerListenKeys[layerId].push(Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["olcsListen"])(layer, 'change:zIndex', function () {
-      return _this2.orderLayers();
-    }));
-    cesiumObjects.forEach(function (cesiumObject) {
-      _this2.addCesiumObject(cesiumObject);
+    this.olLayerListenKeys[layerId].push(layer.on('change:zIndex', () => this.orderLayers()));
+    cesiumObjects.forEach(cesiumObject => {
+      this.addCesiumObject(cesiumObject);
     });
   }
+
   /**
    * Remove and destroy a single layer.
    * @param {ol.layer.Layer} layer
    * @return {boolean} counterpart destroyed
-   * @private
    */
-  ;
-
-  _proto.removeAndDestroySingleLayer_ = function removeAndDestroySingleLayer_(layer) {
-    var _this3 = this;
-
-    var uid = Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["getUid"])(layer).toString();
-    var counterparts = this.layerMap[uid];
-
+  removeAndDestroySingleLayer_(layer) {
+    const uid = (0,_util__WEBPACK_IMPORTED_MODULE_2__.getUid)(layer).toString();
+    const counterparts = this.layerMap[uid];
     if (!!counterparts) {
-      counterparts.forEach(function (counterpart) {
-        _this3.removeSingleCesiumObject(counterpart, false);
-
-        _this3.destroyCesiumObject(counterpart);
+      counterparts.forEach(counterpart => {
+        this.removeSingleCesiumObject(counterpart, false);
+        this.destroyCesiumObject(counterpart);
       });
-      this.olLayerListenKeys[uid].forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"]);
+      this.olLayerListenKeys[uid].forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey);
       delete this.olLayerListenKeys[uid];
     }
-
     delete this.layerMap[uid];
     return !!counterparts;
   }
+
   /**
    * Unlisten a single layer group.
-   * @param {ol.layer.Group} group
-   * @private
    */
-  ;
-
-  _proto.unlistenSingleGroup_ = function unlistenSingleGroup_(group) {
+  unlistenSingleGroup_(group) {
     if (group === this.mapLayerGroup) {
       return;
     }
-
-    var uid = Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["getUid"])(group).toString();
-    var keys = this.olGroupListenKeys_[uid];
-    keys.forEach(function (key) {
-      Object(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"])(key);
+    const uid = (0,_util__WEBPACK_IMPORTED_MODULE_2__.getUid)(group).toString();
+    const keys = this.olGroupListenKeys_[uid];
+    keys.forEach(key => {
+      (0,ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey)(key);
     });
     delete this.olGroupListenKeys_[uid];
     delete this.layerMap[uid];
   }
+
   /**
    * Remove layer hierarchy.
-   * @param {ol.layer.Base} root
-   * @private
    */
-  ;
-
-  _proto.removeLayer_ = function removeLayer_(root) {
-    var _this4 = this;
-
+  removeLayer_(root) {
     if (!!root) {
-      (function () {
-        var fifo = [root];
-
-        while (fifo.length > 0) {
-          var olLayer = fifo.splice(0, 1)[0];
-
-          var done = _this4.removeAndDestroySingleLayer_(olLayer);
-
-          if (olLayer instanceof ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1___default.a) {
-            _this4.unlistenSingleGroup_(olLayer);
-
-            if (!done) {
-              // No counterpart for the group itself so removing
-              // each of the child layers.
-              olLayer.getLayers().forEach(function (l) {
-                fifo.push(l);
-              });
-            }
+      const fifo = [root];
+      while (fifo.length > 0) {
+        const olLayer = fifo.splice(0, 1)[0];
+        const done = this.removeAndDestroySingleLayer_(olLayer);
+        if (olLayer instanceof (ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_1___default())) {
+          this.unlistenSingleGroup_(olLayer);
+          if (!done) {
+            // No counterpart for the group itself so removing
+            // each of the child layers.
+            olLayer.getLayers().forEach(l => {
+              fifo.push(l);
+            });
           }
         }
-      })();
+      }
     }
   }
+
   /**
    * Register listeners for single layer group change.
-   * @param {ol.layer.Group} group
-   * @private
    */
-  ;
-
-  _proto.listenForGroupChanges_ = function listenForGroupChanges_(group) {
-    var uuid = Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["getUid"])(group).toString();
+  listenForGroupChanges_(group) {
+    const uuid = (0,_util__WEBPACK_IMPORTED_MODULE_2__.getUid)(group).toString();
     console.assert(this.olGroupListenKeys_[uuid] === undefined);
-    var listenKeyArray = [];
-    this.olGroupListenKeys_[uuid] = listenKeyArray; // only the keys that need to be relistened when collection changes
+    const listenKeyArray = [];
+    this.olGroupListenKeys_[uuid] = listenKeyArray;
 
-    var contentKeys = [];
-
-    var listenAddRemove = function () {
-      var _this5 = this;
-
-      var collection = group.getLayers();
-
+    // only the keys that need to be relistened when collection changes
+    let contentKeys = [];
+    const listenAddRemove = function () {
+      const collection = group.getLayers();
       if (collection) {
-        contentKeys = [collection.on('add', function (event) {
-          _this5.addLayers_(event.element);
-        }), collection.on('remove', function (event) {
-          _this5.removeLayer_(event.element);
+        contentKeys = [collection.on('add', event => {
+          this.addLayers_(event.element);
+        }), collection.on('remove', event => {
+          this.removeLayer_(event.element);
         })];
-        listenKeyArray.push.apply(listenKeyArray, contentKeys);
+        listenKeyArray.push(...contentKeys);
       }
     }.bind(this);
-
     listenAddRemove();
-    listenKeyArray.push(group.on('change:layers', function (e) {
-      contentKeys.forEach(function (el) {
-        var i = listenKeyArray.indexOf(el);
-
+    listenKeyArray.push(group.on('change:layers', e => {
+      contentKeys.forEach(el => {
+        const i = listenKeyArray.indexOf(el);
         if (i >= 0) {
           listenKeyArray.splice(i, 1);
         }
-
-        Object(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"])(el);
+        (0,ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey)(el);
       });
       listenAddRemove();
     }));
   }
+
   /**
    * Destroys all the created Cesium objects.
-   * @protected
    */
-  ;
-
-  _proto.destroyAll = function destroyAll() {
+  destroyAll() {
     this.removeAllCesiumObjects(true); // destroy
-
-    var objKey;
-
+    let objKey;
     for (objKey in this.olGroupListenKeys_) {
-      var keys = this.olGroupListenKeys_[objKey];
-      keys.forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"]);
+      const keys = this.olGroupListenKeys_[objKey];
+      keys.forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey);
     }
-
     for (objKey in this.olLayerListenKeys) {
-      this.olLayerListenKeys[objKey].forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"]);
+      this.olLayerListenKeys[objKey].forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey);
     }
-
     this.olGroupListenKeys_ = {};
     this.olLayerListenKeys = {};
     this.layerMap = {};
   }
+
   /**
    * Adds a single Cesium object to the collection.
-   * @param {!T} object
-   * @abstract
-   * @protected
    */
-  ;
 
-  _proto.addCesiumObject = function addCesiumObject(object) {}
-  /**
-   * @param {!T} object
-   * @abstract
-   * @protected
-   */
-  ;
-
-  _proto.destroyCesiumObject = function destroyCesiumObject(object) {}
   /**
    * Remove single Cesium object from the collection.
-   * @param {!T} object
-   * @param {boolean} destroy
-   * @abstract
-   * @protected
    */
-  ;
-
-  _proto.removeSingleCesiumObject = function removeSingleCesiumObject(object, destroy) {}
-  /**
-   * Remove all Cesium objects from the collection.
-   * @param {boolean} destroy
-   * @abstract
-   * @protected
-   */
-  ;
-
-  _proto.removeAllCesiumObjects = function removeAllCesiumObjects(destroy) {}
-  /**
-   * @param {import('olsc/core.js').LayerWithParents} olLayerWithParents
-   * @return {?Array.<T>}
-   * @abstract
-   * @protected
-   */
-  ;
-
-  _proto.createSingleLayerCounterparts = function createSingleLayerCounterparts(olLayerWithParents) {};
-
-  return AbstractSynchronizer;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (AbstractSynchronizer);
+}
 
 /***/ }),
 
-/***/ "./src/olcs/AutoRenderLoop.js":
+/***/ "./src/olcs/AutoRenderLoop.ts":
 /*!************************************!*\
-  !*** ./src/olcs/AutoRenderLoop.js ***!
+  !*** ./src/olcs/AutoRenderLoop.ts ***!
   \************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ AutoRenderLoop)
+/* harmony export */ });
 /**
- * @module olcs.AutoRenderLoop
+ * By default Cesium (used to?) renders as often as possible.
+ * This is a waste of resources (CPU/GPU/battery).
+ * An alternative mechanism in Cesium is on-demand rendering.
+ * This class makes use of this alternative method and add some additionnal render points.
  */
-var AutoRenderLoop =
-/*#__PURE__*/
-function () {
+class AutoRenderLoop {
   /**
-   * @constructor
-   * @param {olcs.OLCesium} ol3d
+   * @param ol3d
    */
-  function AutoRenderLoop(ol3d) {
+  constructor(ol3d) {
+    this.repaintEventNames_ = ['mousemove', 'mousedown', 'mouseup', 'touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'wheel'];
     this.ol3d = ol3d;
     this.scene_ = ol3d.getCesiumScene();
     this.canvas_ = this.scene_.canvas;
     this._boundNotifyRepaintRequired = this.notifyRepaintRequired.bind(this);
-    this.repaintEventNames_ = ['mousemove', 'mousedown', 'mouseup', 'touchstart', 'touchend', 'touchmove', 'pointerdown', 'pointerup', 'pointermove', 'wheel'];
     this.enable();
   }
+
   /**
    * Enable.
    */
-
-
-  var _proto = AutoRenderLoop.prototype;
-
-  _proto.enable = function enable() {
+  enable() {
     this.scene_.requestRenderMode = true;
     this.scene_.maximumRenderTimeChange = 1000;
-
-    for (var _iterator = this.repaintEventNames_, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref;
-
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref = _i.value;
-      }
-
-      var repaintKey = _ref;
+    for (const repaintKey of this.repaintEventNames_) {
       this.canvas_.addEventListener(repaintKey, this._boundNotifyRepaintRequired, false);
     }
+    window.addEventListener('resize', this._boundNotifyRepaintRequired, false);
 
-    window.addEventListener('resize', this._boundNotifyRepaintRequired, false); // Listen for changes on the layer group
-
+    // Listen for changes on the layer group
     this.ol3d.getOlMap().getLayerGroup().on('change', this._boundNotifyRepaintRequired);
   }
+
   /**
    * Disable.
    */
-  ;
-
-  _proto.disable = function disable() {
-    for (var _iterator2 = this.repaintEventNames_, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
-      var _ref2;
-
-      if (_isArray2) {
-        if (_i2 >= _iterator2.length) break;
-        _ref2 = _iterator2[_i2++];
-      } else {
-        _i2 = _iterator2.next();
-        if (_i2.done) break;
-        _ref2 = _i2.value;
-      }
-
-      var repaintKey = _ref2;
+  disable() {
+    for (const repaintKey of this.repaintEventNames_) {
       this.canvas_.removeEventListener(repaintKey, this._boundNotifyRepaintRequired, false);
     }
-
     window.removeEventListener('resize', this._boundNotifyRepaintRequired, false);
     this.ol3d.getOlMap().getLayerGroup().un('change', this._boundNotifyRepaintRequired);
     this.scene_.requestRenderMode = false;
   }
+
   /**
    * Restart render loop.
    * Force a restart of the render loop.
-   * @api
    */
-  ;
-
-  _proto.restartRenderLoop = function restartRenderLoop() {
+  restartRenderLoop() {
     this.notifyRepaintRequired();
-  };
-
-  _proto.notifyRepaintRequired = function notifyRepaintRequired() {
+  }
+  notifyRepaintRequired() {
     this.scene_.requestRender();
-  };
-
-  return AutoRenderLoop;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (AutoRenderLoop);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/Camera.js":
+/***/ "./src/olcs/Camera.ts":
 /*!****************************!*\
-  !*** ./src/olcs/Camera.js ***!
+  !*** ./src/olcs/Camera.ts ***!
   \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Camera),
+/* harmony export */   identityProjection: () => (/* binding */ identityProjection)
+/* harmony export */ });
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./math.js */ "./src/olcs/math.js");
+/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./math */ "./src/olcs/math.ts");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core.js */ "./src/olcs/core.js");
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core */ "./src/olcs/core.ts");
+
+
+
+
 /**
- * @module olcs.Camera
+ * @param input Input coordinate array.
+ * @param opt_output Output array of coordinate values.
+ * @param opt_dimension Dimension.
+ * @return Input coordinate array (same array as input).
  */
-
-
-
-
-
-var Camera =
-/*#__PURE__*/
-function () {
+function identityProjection(input, opt_output, opt_dimension) {
+  const dim = opt_dimension || input.length;
+  if (opt_output) {
+    for (let i = 0; i < dim; ++i) {
+      opt_output[i] = input[i];
+    }
+  }
+  return input;
+}
+class Camera {
   /**
    * This object takes care of additional 3d-specific properties of the view and
    * ensures proper synchronization with the underlying raw Cesium.Camera object.
-   * @param {!Cesium.Scene} scene
-   * @param {!ol.Map} map
-   * @api
    */
-  function Camera(scene, map) {
-    var _this = this;
-
-    /**
-     * @type {!Cesium.Scene}
-     * @private
-     */
-    this.scene_ = scene;
-    /**
-     * @type {!Cesium.Camera}
-     * @private
-     */
-
-    this.cam_ = scene.camera;
-    /**
-     * @type {!ol.Map}
-     * @private
-     */
-
-    this.map_ = map;
-    /**
-     * @type {?ol.View}
-     * @private
-     */
-
-    this.view_ = null;
-    /**
-     * @type {?ol.EventsKey}
-     * @private
-     */
-
+  constructor(scene, map) {
     this.viewListenKey_ = null;
-    /**
-     * @type {!ol.TransformFunction}
-     * @private
-     */
-
-    this.toLonLat_ = Camera.identityProjection;
-    /**
-     * @type {!ol.TransformFunction}
-     * @private
-     */
-
-    this.fromLonLat_ = Camera.identityProjection;
+    this.toLonLat_ = identityProjection;
+    this.fromLonLat_ = identityProjection;
     /**
      * 0 -- topdown, PI/2 -- the horizon
-     * @type {number}
-     * @private
      */
-
     this.tilt_ = 0;
-    /**
-     * @type {number}
-     * @private
-     */
-
     this.distance_ = 0;
-    /**
-     * @type {?Cesium.Matrix4}
-     * @private
-     */
-
     this.lastCameraViewMatrix_ = null;
     /**
      * This is used to discard change events on view caused by updateView method.
-     * @type {boolean}
-     * @private
      */
-
     this.viewUpdateInProgress_ = false;
-    this.map_.on('change:view', function (e) {
-      _this.setView_(_this.map_.getView());
+    this.scene_ = scene;
+    this.cam_ = scene.camera;
+    this.map_ = map;
+    this.map_.on('change:view', e => {
+      this.setView_(this.map_.getView());
     });
     this.setView_(this.map_.getView());
   }
-  /**
-   * @param {Array.<number>} input Input coordinate array.
-   * @param {Array.<number>=} opt_output Output array of coordinate values.
-   * @param {number=} opt_dimension Dimension.
-   * @return {Array.<number>} Input coordinate array (same array as input).
-   */
-
-
-  Camera.identityProjection = function identityProjection(input, opt_output, opt_dimension) {
-    var dim = opt_dimension || input.length;
-
-    if (opt_output) {
-      for (var i = 0; i < dim; ++i) {
-        opt_output[i] = input[i];
-      }
-    }
-
-    return input;
+  destroy() {
+    (0,ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey)(this.viewListenKey_);
+    this.viewListenKey_ = null;
   }
+
   /**
    * @param {?ol.View} view New view to use.
    * @private
    */
-  ;
-
-  var _proto = Camera.prototype;
-
-  _proto.setView_ = function setView_(view) {
-    var _this2 = this;
-
+  setView_(view) {
     if (this.view_) {
-      Object(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"])(this.viewListenKey_);
+      (0,ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey)(this.viewListenKey_);
       this.viewListenKey_ = null;
     }
-
     this.view_ = view;
-
     if (view) {
-      var toLonLat = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_2__["getTransform"])(view.getProjection(), 'EPSG:4326');
-      var fromLonLat = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_2__["getTransform"])('EPSG:4326', view.getProjection());
+      const toLonLat = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_2__.getTransform)(view.getProjection(), 'EPSG:4326');
+      const fromLonLat = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_2__.getTransform)('EPSG:4326', view.getProjection());
       console.assert(toLonLat && fromLonLat);
       this.toLonLat_ = toLonLat;
       this.fromLonLat_ = fromLonLat;
-      this.viewListenKey_ = view.on('propertychange', function (e) {
-        return _this2.handleViewEvent_(e);
-      });
+      this.viewListenKey_ = view.on('propertychange', e => this.handleViewChangedEvent_());
       this.readFromView();
     } else {
-      this.toLonLat_ = Camera.identityProjection;
-      this.fromLonLat_ = Camera.identityProjection;
+      this.toLonLat_ = identityProjection;
+      this.fromLonLat_ = identityProjection;
     }
   }
-  /**
-   * @param {?} e
-   * @private
-   */
-  ;
-
-  _proto.handleViewEvent_ = function handleViewEvent_(e) {
+  handleViewChangedEvent_() {
     if (!this.viewUpdateInProgress_) {
       this.readFromView();
     }
   }
-  /**
-   * @param {number} heading In radians.
-   * @api
-   */
-  ;
 
-  _proto.setHeading = function setHeading(heading) {
+  /**
+   * @deprecated
+   * @param heading In radians.
+   */
+  setHeading(heading) {
     if (!this.view_) {
       return;
     }
-
     this.view_.setRotation(heading);
   }
-  /**
-   * @return {number|undefined} Heading in radians.
-   * @api
-   */
-  ;
 
-  _proto.getHeading = function getHeading() {
+  /**
+   * @deprecated
+   * @return Heading in radians.
+   */
+  getHeading() {
     if (!this.view_) {
       return undefined;
     }
-
-    var rotation = this.view_.getRotation();
+    const rotation = this.view_.getRotation();
     return rotation || 0;
   }
-  /**
-   * @param {number} tilt In radians.
-   * @api
-   */
-  ;
 
-  _proto.setTilt = function setTilt(tilt) {
+  /**
+   * @param tilt In radians.
+   */
+  setTilt(tilt) {
     this.tilt_ = tilt;
     this.updateCamera_();
   }
-  /**
-   * @return {number} Tilt in radians.
-   * @api
-   */
-  ;
 
-  _proto.getTilt = function getTilt() {
+  /**
+   * @return Tilt in radians.
+   */
+  getTilt() {
     return this.tilt_;
   }
-  /**
-   * @param {number} distance In meters.
-   * @api
-   */
-  ;
 
-  _proto.setDistance = function setDistance(distance) {
+  /**
+   * @param distance In meters.
+   */
+  setDistance(distance) {
     this.distance_ = distance;
     this.updateCamera_();
     this.updateView();
   }
-  /**
-   * @return {number} Distance in meters.
-   * @api
-   */
-  ;
 
-  _proto.getDistance = function getDistance() {
+  /**
+   * @return Distance in meters.
+   */
+  getDistance() {
     return this.distance_;
   }
-  /**
-   * Shortcut for ol.View.setCenter().
-   * @param {!ol.Coordinate} center Same projection as the ol.View.
-   * @api
-   */
-  ;
 
-  _proto.setCenter = function setCenter(center) {
+  /**
+   * @deprecated
+   * Shortcut for ol.View.setCenter().
+   * @param center Same projection as the ol.View.
+   */
+  setCenter(center) {
     if (!this.view_) {
       return;
     }
-
     this.view_.setCenter(center);
   }
+
   /**
+   * @deprecated
    * Shortcut for ol.View.getCenter().
    * @return {ol.Coordinate|undefined} Same projection as the ol.View.
    * @api
    */
-  ;
-
-  _proto.getCenter = function getCenter() {
+  getCenter() {
     if (!this.view_) {
       return undefined;
     }
-
     return this.view_.getCenter();
   }
+
   /**
    * Sets the position of the camera.
-   * @param {!ol.Coordinate} position Same projection as the ol.View.
-   * @api
+   * @param position Same projection as the ol.View.
    */
-  ;
-
-  _proto.setPosition = function setPosition(position) {
+  setPosition(position) {
     if (!this.toLonLat_) {
       return;
     }
-
-    var ll = this.toLonLat_(position);
+    const ll = this.toLonLat_(position);
     console.assert(ll);
-    var carto = new Cesium.Cartographic(Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toRadians"])(ll[0]), Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toRadians"])(ll[1]), this.getAltitude());
+    const carto = new Cesium.Cartographic((0,_math__WEBPACK_IMPORTED_MODULE_1__.toRadians)(ll[0]), (0,_math__WEBPACK_IMPORTED_MODULE_1__.toRadians)(ll[1]), this.getAltitude());
     this.cam_.setView({
       destination: Cesium.Ellipsoid.WGS84.cartographicToCartesian(carto)
     });
     this.updateView();
   }
+
   /**
    * Calculates position under the camera.
-   * @return {!ol.Coordinate|undefined} Same projection as the ol.View.
+   * @return Coordinates in same projection as the ol.View.
    * @api
    */
-  ;
-
-  _proto.getPosition = function getPosition() {
+  getPosition() {
     if (!this.fromLonLat_) {
       return undefined;
     }
-
-    var carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
-    var pos = this.fromLonLat_([Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toDegrees"])(carto.longitude), Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toDegrees"])(carto.latitude)]);
+    const carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
+    const pos = this.fromLonLat_([(0,_math__WEBPACK_IMPORTED_MODULE_1__.toDegrees)(carto.longitude), (0,_math__WEBPACK_IMPORTED_MODULE_1__.toDegrees)(carto.latitude)]);
     console.assert(pos);
     return pos;
   }
-  /**
-   * @param {number} altitude In meters.
-   * @api
-   */
-  ;
 
-  _proto.setAltitude = function setAltitude(altitude) {
-    var carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
+  /**
+   * @param altitude In meters.
+   */
+  setAltitude(altitude) {
+    const carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
     carto.height = altitude;
     this.cam_.position = Cesium.Ellipsoid.WGS84.cartographicToCartesian(carto);
     this.updateView();
   }
-  /**
-   * @return {number} Altitude in meters.
-   * @api
-   */
-  ;
 
-  _proto.getAltitude = function getAltitude() {
-    var carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
+  /**
+   * @return Altitude in meters.
+   */
+  getAltitude() {
+    const carto = Cesium.Ellipsoid.WGS84.cartesianToCartographic(this.cam_.position);
     return carto.height;
   }
+
   /**
    * Updates the state of the underlying Cesium.Camera
    * according to the current values of the properties.
-   * @private
    */
-  ;
-
-  _proto.updateCamera_ = function updateCamera_() {
+  updateCamera_() {
     if (!this.view_ || !this.toLonLat_) {
       return;
     }
-
-    var center = this.view_.getCenter();
-
+    const center = this.view_.getCenter();
     if (!center) {
       return;
     }
-
-    var ll = this.toLonLat_(center);
+    const ll = this.toLonLat_(center);
     console.assert(ll);
-    var carto = new Cesium.Cartographic(Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toRadians"])(ll[0]), Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toRadians"])(ll[1]));
-
+    const carto = new Cesium.Cartographic((0,_math__WEBPACK_IMPORTED_MODULE_1__.toRadians)(ll[0]), (0,_math__WEBPACK_IMPORTED_MODULE_1__.toRadians)(ll[1]));
     if (this.scene_.globe) {
-      var height = this.scene_.globe.getHeight(carto);
+      const height = this.scene_.globe.getHeight(carto);
       carto.height = height || 0;
     }
-
-    var destination = Cesium.Ellipsoid.WGS84.cartographicToCartesian(carto);
-    /** @type {Cesium.optionsOrientation} */
-
-    var orientation = {
+    const destination = Cesium.Ellipsoid.WGS84.cartographicToCartesian(carto);
+    const orientation = {
       pitch: this.tilt_ - Cesium.Math.PI_OVER_TWO,
       heading: -this.view_.getRotation(),
       roll: undefined
     };
     this.cam_.setView({
-      destination: destination,
-      orientation: orientation
+      destination,
+      orientation
     });
     this.cam_.moveBackward(this.distance_);
     this.checkCameraChange(true);
   }
+
   /**
    * Calculates the values of the properties from the current ol.View state.
-   * @api
    */
-  ;
-
-  _proto.readFromView = function readFromView() {
+  readFromView() {
     if (!this.view_ || !this.toLonLat_) {
       return;
     }
-
-    var center = this.view_.getCenter();
-
+    const center = this.view_.getCenter();
     if (center === undefined || center === null) {
       return;
     }
-
-    var ll = this.toLonLat_(center);
+    const ll = this.toLonLat_(center);
     console.assert(ll);
-    var resolution = this.view_.getResolution();
-    this.distance_ = this.calcDistanceForResolution(resolution || 0, Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toRadians"])(ll[1]));
+    const resolution = this.view_.getResolution();
+    this.distance_ = this.calcDistanceForResolution(resolution || 0, (0,_math__WEBPACK_IMPORTED_MODULE_1__.toRadians)(ll[1]));
     this.updateCamera_();
   }
+
   /**
    * Calculates the values of the properties from the current Cesium.Camera state.
    * Modifies the center, resolution and rotation properties of the view.
-   * @api
    */
-  ;
-
-  _proto.updateView = function updateView() {
+  updateView() {
     if (!this.view_ || !this.fromLonLat_) {
       return;
     }
+    this.viewUpdateInProgress_ = true;
 
-    this.viewUpdateInProgress_ = true; // target & distance
-
-    var ellipsoid = Cesium.Ellipsoid.WGS84;
-    var scene = this.scene_;
-    var target = _core_js__WEBPACK_IMPORTED_MODULE_3__["default"].pickCenterPoint(scene);
-    var bestTarget = target;
-
+    // target & distance
+    const ellipsoid = Cesium.Ellipsoid.WGS84;
+    const scene = this.scene_;
+    const target = (0,_core__WEBPACK_IMPORTED_MODULE_3__.pickCenterPoint)(scene);
+    let bestTarget = target;
     if (!bestTarget) {
       //TODO: how to handle this properly ?
-      var globe = scene.globe;
-      var carto = this.cam_.positionCartographic.clone();
-      var height = globe.getHeight(carto);
+      const globe = scene.globe;
+      const carto = this.cam_.positionCartographic.clone();
+      const height = globe.getHeight(carto);
       carto.height = height || 0;
       bestTarget = Cesium.Ellipsoid.WGS84.cartographicToCartesian(carto);
     }
-
     this.distance_ = Cesium.Cartesian3.distance(bestTarget, this.cam_.position);
-    var bestTargetCartographic = ellipsoid.cartesianToCartographic(bestTarget);
-    this.view_.setCenter(this.fromLonLat_([Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toDegrees"])(bestTargetCartographic.longitude), Object(_math_js__WEBPACK_IMPORTED_MODULE_1__["toDegrees"])(bestTargetCartographic.latitude)])); // resolution
+    const bestTargetCartographic = ellipsoid.cartesianToCartographic(bestTarget);
+    this.view_.setCenter(this.fromLonLat_([(0,_math__WEBPACK_IMPORTED_MODULE_1__.toDegrees)(bestTargetCartographic.longitude), (0,_math__WEBPACK_IMPORTED_MODULE_1__.toDegrees)(bestTargetCartographic.latitude)]));
 
+    // resolution
     this.view_.setResolution(this.calcResolutionForDistance(this.distance_, bestTargetCartographic ? bestTargetCartographic.latitude : 0));
+
     /*
      * Since we are positioning the target, the values of heading and tilt
      * need to be calculated _at the target_.
      */
-
     if (target) {
-      var pos = this.cam_.position; // normal to the ellipsoid at the target
+      const pos = this.cam_.position;
 
-      var targetNormal = new Cesium.Cartesian3();
-      ellipsoid.geocentricSurfaceNormal(target, targetNormal); // vector from the target to the camera
+      // normal to the ellipsoid at the target
+      const targetNormal = new Cesium.Cartesian3();
+      ellipsoid.geocentricSurfaceNormal(target, targetNormal);
 
-      var targetToCamera = new Cesium.Cartesian3();
+      // vector from the target to the camera
+      const targetToCamera = new Cesium.Cartesian3();
       Cesium.Cartesian3.subtract(pos, target, targetToCamera);
-      Cesium.Cartesian3.normalize(targetToCamera, targetToCamera); // HEADING
+      Cesium.Cartesian3.normalize(targetToCamera, targetToCamera);
 
-      var up = this.cam_.up;
-      var right = this.cam_.right;
-      var normal = new Cesium.Cartesian3(-target.y, target.x, 0); // what is it?
+      // HEADING
+      const up = this.cam_.up;
+      const right = this.cam_.right;
+      const normal = new Cesium.Cartesian3(-target.y, target.x, 0); // what is it?
+      const heading = Cesium.Cartesian3.angleBetween(right, normal);
+      const cross = Cesium.Cartesian3.cross(target, up, new Cesium.Cartesian3());
+      const orientation = cross.z;
+      this.view_.setRotation(orientation < 0 ? heading : -heading);
 
-      var heading = Cesium.Cartesian3.angleBetween(right, normal);
-      var cross = Cesium.Cartesian3.cross(target, up, new Cesium.Cartesian3());
-      var orientation = cross.z;
-      this.view_.setRotation(orientation < 0 ? heading : -heading); // TILT
-
-      var tiltAngle = Math.acos(Cesium.Cartesian3.dot(targetNormal, targetToCamera));
+      // TILT
+      const tiltAngle = Math.acos(Cesium.Cartesian3.dot(targetNormal, targetToCamera));
       this.tilt_ = isNaN(tiltAngle) ? 0 : tiltAngle;
     } else {
       // fallback when there is no target
       this.view_.setRotation(this.cam_.heading);
       this.tilt_ = -this.cam_.pitch + Math.PI / 2;
     }
-
     this.viewUpdateInProgress_ = false;
   }
+
   /**
    * Check if the underlying camera state has changed and ensure synchronization.
-   * @param {boolean=} opt_dontSync Do not synchronize the view.
+   * @param opt_dontSync Do not synchronize the view.
    */
-  ;
-
-  _proto.checkCameraChange = function checkCameraChange(opt_dontSync) {
-    var old = this.lastCameraViewMatrix_;
-    var current = this.cam_.viewMatrix;
-
-    if (!old || !Cesium.Matrix4.equalsEpsilon(old, current, 1e-5)) {
+  checkCameraChange(opt_dontSync) {
+    const old = this.lastCameraViewMatrix_;
+    const current = this.cam_.viewMatrix;
+    if (!old || !Cesium.Matrix4.equalsEpsilon(old, current, 1e-7)) {
       this.lastCameraViewMatrix_ = current.clone();
-
       if (opt_dontSync !== true) {
         this.updateView();
       }
     }
   }
+
   /**
    * calculate the distance between camera and centerpoint based on the resolution and latitude value
-   * @param {number} resolution Number of map units per pixel.
-   * @param {number} latitude Latitude in radians.
-   * @return {number} The calculated distance.
-   * @api
+   * @param resolution Number of map units per pixel.
+   * @param latitude Latitude in radians.
+   * @return The calculated distance.
    */
-  ;
-
-  _proto.calcDistanceForResolution = function calcDistanceForResolution(resolution, latitude) {
-    var canvas = this.scene_.canvas;
-    var fovy = this.cam_.frustum.fovy; // vertical field of view
-
-    console.assert(!isNaN(fovy));
-    var metersPerUnit = this.view_.getProjection().getMetersPerUnit(); // number of "map units" visible in 2D (vertically)
-
-    var visibleMapUnits = resolution * canvas.clientHeight; // The metersPerUnit does not take latitude into account, but it should
-    // be lower with increasing latitude -- we have to compensate.
-    // In 3D it is not possible to maintain the resolution at more than one point,
-    // so it only makes sense to use the latitude of the "target" point.
-
-    var relativeCircumference = Math.cos(Math.abs(latitude)); // how many meters should be visible in 3D
-
-    var visibleMeters = visibleMapUnits * metersPerUnit * relativeCircumference; // distance required to view the calculated length in meters
-    //
-    //  fovy/2
-    //    |\
-    //  x | \
-    //    |--\
-    // visibleMeters/2
-
-    var requiredDistance = visibleMeters / 2 / Math.tan(fovy / 2); // NOTE: This calculation is not absolutely precise, because metersPerUnit
-    // is a great simplification. It does not take ellipsoid/terrain into account.
-
-    return requiredDistance;
+  calcDistanceForResolution(resolution, latitude) {
+    return (0,_core__WEBPACK_IMPORTED_MODULE_3__.calcDistanceForResolution)(resolution, latitude, this.scene_, this.view_.getProjection());
   }
+
   /**
    * calculate the resolution based on a distance(camera to position) and latitude value
-   * @param {number} distance
-   * @param {number} latitude
-   * @return {number} The calculated resolution.
-   * @api
+   * @param distance
+   * @param latitude
+   * @return} The calculated resolution.
    */
-  ;
-
-  _proto.calcResolutionForDistance = function calcResolutionForDistance(distance, latitude) {
-    // See the reverse calculation (calcDistanceForResolution) for details
-    var canvas = this.scene_.canvas;
-    var fovy = this.cam_.frustum.fovy;
-    var metersPerUnit = this.view_.getProjection().getMetersPerUnit();
-    var visibleMeters = 2 * distance * Math.tan(fovy / 2);
-    var relativeCircumference = Math.cos(Math.abs(latitude));
-    var visibleMapUnits = visibleMeters / metersPerUnit / relativeCircumference;
-    var resolution = visibleMapUnits / canvas.clientHeight;
-    return resolution;
-  };
-
-  return Camera;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (Camera);
+  calcResolutionForDistance(distance, latitude) {
+    return (0,_core__WEBPACK_IMPORTED_MODULE_3__.calcResolutionForDistance)(distance, latitude, this.scene_, this.view_.getProjection());
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/FeatureConverter.js":
+/***/ "./src/olcs/FeatureConverter.ts":
 /*!**************************************!*\
-  !*** ./src/olcs/FeatureConverter.js ***!
+  !*** ./src/olcs/FeatureConverter.ts ***!
   \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var ol_geom_Geometry_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/geom/Geometry.js */ "ol/geom/Geometry.js");
-/* harmony import */ var ol_geom_Geometry_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_geom_Geometry_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/style/Icon.js */ "ol/style/Icon.js");
-/* harmony import */ var ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/source/Vector.js */ "ol/source/Vector.js");
-/* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/source/Cluster.js */ "ol/source/Cluster.js");
-/* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/geom/Polygon.js */ "ol/geom/Polygon.js");
-/* harmony import */ var ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/extent.js */ "ol/extent.js");
-/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_extent_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/geom/SimpleGeometry.js */ "ol/geom/SimpleGeometry.js");
-/* harmony import */ var ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core.js */ "./src/olcs/core.js");
-/* harmony import */ var _core_VectorLayerCounterpart_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./core/VectorLayerCounterpart.js */ "./src/olcs/core/VectorLayerCounterpart.js");
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/**
- * @module olcs.FeatureConverter
- */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FeatureConverter)
+/* harmony export */ });
+/* harmony import */ var ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/style/Icon.js */ "ol/style/Icon.js");
+/* harmony import */ var ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/source/Vector.js */ "ol/source/Vector.js");
+/* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/source/Cluster.js */ "ol/source/Cluster.js");
+/* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/geom/Polygon.js */ "ol/geom/Polygon.js");
+/* harmony import */ var ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/extent.js */ "ol/extent.js");
+/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_extent_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/geom/SimpleGeometry.js */ "ol/geom/SimpleGeometry.js");
+/* harmony import */ var ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./core */ "./src/olcs/core.ts");
+/* harmony import */ var _core_VectorLayerCounterpart__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./core/VectorLayerCounterpart */ "./src/olcs/core/VectorLayerCounterpart.ts");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
+/* harmony import */ var ol_geom_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/geom.js */ "ol/geom.js");
+/* harmony import */ var ol_geom_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(ol_geom_js__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
@@ -1230,124 +739,88 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * @typedef {Object} ModelStyle
- * @property {Cesium.Matrix4} [debugModelMatrix]
- * @property {Cesium.ModelFromGltfOptions} cesiumOptions
- */
-
-var FeatureConverter =
-/*#__PURE__*/
-function () {
+class FeatureConverter {
   /**
    * Concrete base class for converting from OpenLayers3 vectors to Cesium
    * primitives.
    * Extending this class is possible provided that the extending class and
    * the library are compiled together by the closure compiler.
-   * @param {!Cesium.Scene} scene Cesium scene.
-   * @constructor
+   * @param scene Cesium scene.
    * @api
    */
-  function FeatureConverter(scene) {
-    /**
-     * @protected
-     */
-    this.scene = scene;
+  constructor(scene) {
     /**
      * Bind once to have a unique function for using as a listener
-     * @type {function(ol.source.Vector.Event)}
-     * @private
      */
-
     this.boundOnRemoveOrClearFeatureListener_ = this.onRemoveOrClearFeature_.bind(this);
-    /**
-     * @type {Cesium.Cartesian3}
-     * @private
-     */
-
     this.defaultBillboardEyeOffset_ = new Cesium.Cartesian3(0, 0, 10);
+    this.scene = scene;
+    this.scene = scene;
   }
+
   /**
-   * @param {ol.source.Vector.Event} evt
-   * @private
+   * @param evt
    */
-
-
-  var _proto = FeatureConverter.prototype;
-
-  _proto.onRemoveOrClearFeature_ = function onRemoveOrClearFeature_(evt) {
-    var source = evt.target;
-    console.assert(source instanceof ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_2___default.a);
-    var cancellers = _util_js__WEBPACK_IMPORTED_MODULE_9__["default"].obj(source)['olcs_cancellers'];
-
+  onRemoveOrClearFeature_(evt) {
+    const source = evt.target;
+    console.assert(source instanceof (ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_1___default()));
+    const cancellers = source['olcs_cancellers'];
     if (cancellers) {
-      var feature = evt.feature;
-
+      const feature = evt.feature;
       if (feature) {
         // remove
-        var id = Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["getUid"])(feature);
-        var canceller = cancellers[id];
-
+        const id = (0,_util__WEBPACK_IMPORTED_MODULE_8__.getUid)(feature);
+        const canceller = cancellers[id];
         if (canceller) {
           canceller();
           delete cancellers[id];
         }
       } else {
         // clear
-        for (var key in cancellers) {
+        for (const key in cancellers) {
           if (cancellers.hasOwnProperty(key)) {
             cancellers[key]();
           }
         }
-
-        _util_js__WEBPACK_IMPORTED_MODULE_9__["default"].obj(source)['olcs_cancellers'] = {};
+        source['olcs_cancellers'] = {};
       }
     }
   }
-  /**
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature.
-   * @param {!Cesium.Primitive|Cesium.Label|Cesium.Billboard} primitive
-   * @protected
-   */
-  ;
 
-  _proto.setReferenceForPicking = function setReferenceForPicking(layer, feature, primitive) {
+  /**
+   * @param layer
+   * @param feature OpenLayers feature.
+   * @param primitive
+   */
+  setReferenceForPicking(layer, feature, primitive) {
     primitive.olLayer = layer;
     primitive.olFeature = feature;
   }
+
   /**
    * Basics primitive creation using a color attribute.
    * Note that Cesium has 'interior' and outline geometries.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature.
-   * @param {!ol.geom.Geometry} olGeometry OpenLayers geometry.
-   * @param {!Cesium.Geometry} geometry
-   * @param {!Cesium.Color} color
-   * @param {number=} opt_lineWidth
-   * @return {Cesium.Primitive}
-   * @protected
+   * @param layer
+   * @param feature OpenLayers feature.
+   * @param olGeometry OpenLayers geometry.
+   * @param geometry
+   * @param color
+   * @param opt_lineWidth
+   * @return primitive
    */
-  ;
-
-  _proto.createColoredPrimitive = function createColoredPrimitive(layer, feature, olGeometry, geometry, color, opt_lineWidth) {
-    var createInstance = function createInstance(geometry, color) {
-      var instance = new Cesium.GeometryInstance({
-        // always update Cesium externs before adding a property
-        geometry: geometry
+  createColoredPrimitive(layer, feature, olGeometry, geometry, color, opt_lineWidth) {
+    const createInstance = function (geometry, color) {
+      const instance = new Cesium.GeometryInstance({
+        geometry
       });
-
       if (color && !(color instanceof Cesium.ImageMaterialProperty)) {
         instance.attributes = {
           color: Cesium.ColorGeometryInstanceAttribute.fromColor(color)
         };
       }
-
       return instance;
     };
-
-    var options = {
-      // always update Cesium externs before adding a property
+    const options = {
       flat: true,
       // work with all geometries
       renderState: {
@@ -1356,26 +829,17 @@ function () {
         }
       }
     };
-
     if (opt_lineWidth !== undefined) {
-      if (!options.renderState) {
-        options.renderState = {};
-      }
-
       options.renderState.lineWidth = opt_lineWidth;
     }
-
-    var instances = createInstance(geometry, color);
-    var heightReference = this.getHeightReference(layer, feature, olGeometry);
-    var primitive;
-
+    const instances = createInstance(geometry, color);
+    const heightReference = this.getHeightReference(layer, feature, olGeometry);
+    let primitive;
     if (heightReference === Cesium.HeightReference.CLAMP_TO_GROUND) {
-      var ctor = instances.geometry.constructor;
-
-      if (ctor && !ctor['createShadowVolume']) {
+      if (!('createShadowVolume' in instances.geometry.constructor)) {
+        // This is not a ground geometry
         return null;
       }
-
       primitive = new Cesium.GroundPrimitive({
         geometryInstances: instances
       });
@@ -1384,9 +848,11 @@ function () {
         geometryInstances: instances
       });
     }
-
     if (color instanceof Cesium.ImageMaterialProperty) {
-      var dataUri = color.image.getValue().toDataURL();
+      // FIXME: we created stylings which are not time related
+      // What should we pass here?
+      // @ts-ignore
+      const dataUri = color.image.getValue().toDataURL();
       primitive.appearance = new Cesium.MaterialAppearance({
         flat: true,
         renderState: {
@@ -1404,529 +870,378 @@ function () {
         })
       });
     } else {
-      primitive.appearance = new Cesium.PerInstanceColorAppearance(options);
+      primitive.appearance = new Cesium.MaterialAppearance({
+        ...options,
+        material: new Cesium.Material({
+          translucent: color.alpha !== 1,
+          fabric: {
+            type: 'Color',
+            uniforms: {
+              color
+            }
+          }
+        })
+      });
+      if (primitive instanceof Cesium.Primitive && (feature.get('olcs_shadows') || layer.get('olcs_shadows'))) {
+        primitive.shadows = 1;
+      }
     }
-
     this.setReferenceForPicking(layer, feature, primitive);
     return primitive;
   }
+
   /**
    * Return the fill or stroke color from a plain ol style.
-   * @param {!ol.style.Style|ol.style.Text} style
-   * @param {boolean} outline
-   * @return {!Cesium.Color}
-   * @protected
+   * @param style
+   * @param outline
+   * @return {!CSColor}
    */
-  ;
-
-  _proto.extractColorFromOlStyle = function extractColorFromOlStyle(style, outline) {
-    var fillColor = style.getFill() ? style.getFill().getColor() : null;
-    var strokeColor = style.getStroke() ? style.getStroke().getColor() : null;
-    var olColor = 'black';
-
+  extractColorFromOlStyle(style, outline) {
+    const fillColor = style.getFill() ? style.getFill().getColor() : null;
+    const strokeColor = style.getStroke() ? style.getStroke().getColor() : null;
+    let olColor = 'black';
     if (strokeColor && outline) {
       olColor = strokeColor;
     } else if (fillColor) {
       olColor = fillColor;
     }
-
-    return _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].convertColorToCesium(olColor);
+    return (0,_core__WEBPACK_IMPORTED_MODULE_6__.convertColorToCesium)(olColor);
   }
+
   /**
    * Return the width of stroke from a plain ol style.
-   * @param {!ol.style.Style|ol.style.Text} style
+   * @param style
    * @return {number}
-   * @protected
    */
-  ;
-
-  _proto.extractLineWidthFromOlStyle = function extractLineWidthFromOlStyle(style) {
+  extractLineWidthFromOlStyle(style) {
     // Handling of line width WebGL limitations is handled by Cesium.
-    var width = style.getStroke() ? style.getStroke().getWidth() : undefined;
+    const width = style.getStroke() ? style.getStroke().getWidth() : undefined;
     return width !== undefined ? width : 1;
   }
+
   /**
    * Create a primitive collection out of two Cesium geometries.
    * Only the OpenLayers style colors will be used.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature.
-   * @param {!ol.geom.Geometry} olGeometry OpenLayers geometry.
-   * @param {!Cesium.Geometry} fillGeometry
-   * @param {!Cesium.Geometry} outlineGeometry
-   * @param {!ol.style.Style} olStyle
-   * @return {!Cesium.PrimitiveCollection}
-   * @protected
    */
-  ;
-
-  _proto.wrapFillAndOutlineGeometries = function wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle) {
-    var fillColor = this.extractColorFromOlStyle(olStyle, false);
-    var outlineColor = this.extractColorFromOlStyle(olStyle, true);
-    var primitives = new Cesium.PrimitiveCollection();
-
+  wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle) {
+    const fillColor = this.extractColorFromOlStyle(olStyle, false);
+    const outlineColor = this.extractColorFromOlStyle(olStyle, true);
+    const primitives = new Cesium.PrimitiveCollection();
     if (olStyle.getFill()) {
-      var p1 = this.createColoredPrimitive(layer, feature, olGeometry, fillGeometry, fillColor);
+      const p1 = this.createColoredPrimitive(layer, feature, olGeometry, fillGeometry, fillColor);
       console.assert(!!p1);
       primitives.add(p1);
     }
-
     if (olStyle.getStroke() && outlineGeometry) {
-      var width = this.extractLineWidthFromOlStyle(olStyle);
-      var p2 = this.createColoredPrimitive(layer, feature, olGeometry, outlineGeometry, outlineColor, width);
-
+      const width = this.extractLineWidthFromOlStyle(olStyle);
+      const p2 = this.createColoredPrimitive(layer, feature, olGeometry, outlineGeometry, outlineColor, width);
       if (p2) {
         // Some outline geometries are not supported by Cesium in clamp to ground
         // mode. These primitives are skipped.
         primitives.add(p2);
       }
     }
-
     return primitives;
-  } // Geometry converters
+  }
 
+  // Geometry converters
+
+  // FIXME: would make more sense to only accept primitive collection.
   /**
    * Create a Cesium primitive if style has a text component.
    * Eventually return a PrimitiveCollection including current primitive.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Geometry} geometry
-   * @param {!ol.style.Style} style
-   * @param {!Cesium.Primitive} primitive current primitive
-   * @return {!Cesium.PrimitiveCollection}
-   * @protected
    */
-  ;
-
-  _proto.addTextStyle = function addTextStyle(layer, feature, geometry, style, primitive) {
-    var primitives;
-
+  addTextStyle(layer, feature, geometry, style, primitive) {
+    let primitives;
     if (!(primitive instanceof Cesium.PrimitiveCollection)) {
       primitives = new Cesium.PrimitiveCollection();
       primitives.add(primitive);
     } else {
       primitives = primitive;
     }
-
     if (!style.getText()) {
       return primitives;
     }
-
-    var text =
-    /** @type {!ol.style.Text} */
-    style.getText();
-    var label = this.olGeometry4326TextPartToCesium(layer, feature, geometry, text);
-
+    const text = /** @type {!ol.style.Text} */style.getText();
+    const label = this.olGeometry4326TextPartToCesium(layer, feature, geometry, text);
     if (label) {
       primitives.add(label);
     }
-
     return primitives;
   }
+
   /**
    * Add a billboard to a Cesium.BillboardCollection.
    * Overriding this wrapper allows manipulating the billboard options.
-   * @param {!Cesium.BillboardCollection} billboards
-   * @param {!Cesium.optionsBillboardCollectionAdd} bbOptions
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature.
-   * @param {!ol.geom.Geometry} geometry
-   * @param {!ol.style.Style} style
-   * @return {!Cesium.Billboard} newly created billboard
+   * @param billboards
+   * @param bbOptions
+   * @param layer
+   * @param feature OpenLayers feature.
+   * @param geometry
+   * @param style
+   * @return newly created billboard
    * @api
    */
-  ;
-
-  _proto.csAddBillboard = function csAddBillboard(billboards, bbOptions, layer, feature, geometry, style) {
+  csAddBillboard(billboards, bbOptions, layer, feature, geometry, style) {
     if (!bbOptions.eyeOffset) {
       bbOptions.eyeOffset = this.defaultBillboardEyeOffset_;
     }
-
-    var bb = billboards.add(bbOptions);
+    const bb = billboards.add(bbOptions);
     this.setReferenceForPicking(layer, feature, bb);
     return bb;
   }
+
   /**
    * Convert an OpenLayers circle geometry to Cesium.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Circle} olGeometry OpenLayers circle geometry.
-   * @param {!ol.ProjectionLike} projection
-   * @param {!ol.style.Style} olStyle
-   * @return {!Cesium.PrimitiveCollection} primitives
    * @api
    */
-  ;
+  olCircleGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
+    olGeometry = (0,_core__WEBPACK_IMPORTED_MODULE_6__.olGeometryCloneTo4326)(olGeometry, projection);
+    console.assert(olGeometry.getType() == 'Circle');
 
-  _proto.olCircleGeometryToCesium = function olCircleGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
-    var _this = this;
+    // ol.Coordinate
+    const olCenter = olGeometry.getCenter();
+    const height = olCenter.length == 3 ? olCenter[2] : 0.0;
+    const olPoint = olCenter.slice();
+    olPoint[0] += olGeometry.getRadius();
 
-    olGeometry = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].olGeometryCloneTo4326(olGeometry, projection);
-    console.assert(olGeometry.getType() == 'Circle'); // ol.Coordinate
+    // Cesium
+    const center = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateToCesiumCartesian)(olCenter);
+    const point = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateToCesiumCartesian)(olPoint);
 
-    var center = olGeometry.getCenter();
-    var height = center.length == 3 ? center[2] : 0.0;
-    var point = center.slice();
-    point[0] += olGeometry.getRadius(); // Cesium
-
-    center = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateToCesiumCartesian(center);
-    point = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateToCesiumCartesian(point); // Accurate computation of straight distance
-
-    var radius = Cesium.Cartesian3.distance(center, point);
-    var fillGeometry = new Cesium.CircleGeometry({
-      // always update Cesium externs before adding a property
-      center: center,
-      radius: radius,
-      height: height
+    // Accurate computation of straight distance
+    const radius = Cesium.Cartesian3.distance(center, point);
+    const fillGeometry = new Cesium.CircleGeometry({
+      center,
+      radius,
+      height
     });
-    var outlinePrimitive, outlineGeometry;
-
+    let outlinePrimitive;
+    let outlineGeometry;
     if (this.getHeightReference(layer, feature, olGeometry) === Cesium.HeightReference.CLAMP_TO_GROUND) {
-      var width = this.extractLineWidthFromOlStyle(olStyle);
-
+      const width = this.extractLineWidthFromOlStyle(olStyle);
       if (width) {
-        var circlePolygon = Object(ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_4__["circular"])(olGeometry.getCenter(), radius);
-        var positions = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateArrayToCsCartesians(circlePolygon.getLinearRing(0).getCoordinates());
-
-        if (!Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["isGroundPolylinePrimitiveSupported"])(this.scene)) {
-          var color = this.extractColorFromOlStyle(olStyle, true);
-          outlinePrimitive = this.createStackedGroundCorridors(layer, feature, width, color, positions);
-        } else {
-          outlinePrimitive = new Cesium.GroundPolylinePrimitive({
-            geometryInstances: new Cesium.GeometryInstance({
-              geometry: new Cesium.GroundPolylineGeometry({
-                positions: positions,
-                width: width
-              })
-            }),
-            appearance: new Cesium.PolylineMaterialAppearance({
-              material: this.olStyleToCesium(feature, olStyle, true)
-            }),
-            classificationType: Cesium.ClassificationType.TERRAIN
-          });
-          outlinePrimitive.readyPromise.then(function () {
-            _this.setReferenceForPicking(layer, feature, outlinePrimitive._primitive);
-          });
-        }
+        const circlePolygon = (0,ol_geom_Polygon_js__WEBPACK_IMPORTED_MODULE_3__.circular)(olGeometry.getCenter(), radius);
+        const positions = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateArrayToCsCartesians)(circlePolygon.getLinearRing(0).getCoordinates());
+        const op = outlinePrimitive = new Cesium.GroundPolylinePrimitive({
+          geometryInstances: new Cesium.GeometryInstance({
+            geometry: new Cesium.GroundPolylineGeometry({
+              positions,
+              width
+            })
+          }),
+          appearance: new Cesium.PolylineMaterialAppearance({
+            material: this.olStyleToCesium(feature, olStyle, true)
+          }),
+          classificationType: Cesium.ClassificationType.TERRAIN
+        });
+        (0,_util__WEBPACK_IMPORTED_MODULE_8__.waitReady)(outlinePrimitive).then(() => {
+          this.setReferenceForPicking(layer, feature, op._primitive);
+        });
       }
     } else {
       outlineGeometry = new Cesium.CircleOutlineGeometry({
-        // always update Cesium externs before adding a property
-        center: center,
-        radius: radius,
+        center,
+        radius,
         extrudedHeight: height,
-        height: height
+        height
       });
     }
-
-    var primitives = this.wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle);
-
+    const primitives = this.wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle);
     if (outlinePrimitive) {
       primitives.add(outlinePrimitive);
     }
-
     return this.addTextStyle(layer, feature, olGeometry, olStyle, primitives);
   }
-  /**
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!number} width The width of the line.
-   * @param {!Cesium.Color} color The color of the line.
-   * @param {!Array<Cesium.Cartesian3>|Array<Array<Cesium.Cartesian3>>} positions The vertices of the line(s).
-   * @return {!Cesium.GroundPrimitive} primitive
-   */
-  ;
 
-  _proto.createStackedGroundCorridors = function createStackedGroundCorridors(layer, feature, width, color, positions) {
-    // Convert positions to an Array if it isn't
-    if (!Array.isArray(positions[0])) {
-      positions = [positions];
-    }
-
-    width = Math.max(3, width); // A <3px width is too small for ground primitives
-
-    var geometryInstances = [];
-    var previousDistance = 0; // A stack of ground lines with increasing width (in meters) are created.
-    // Only one of these lines is displayed at any time giving a feeling of continuity.
-    // The values for the distance and width factor are more or less arbitrary.
-    // Applications can override this logics by subclassing the FeatureConverter class.
-
-    for (var _i = 0, _arr = [1000, 4000, 16000, 64000, 254000, 1000000, 10000000]; _i < _arr.length; _i++) {
-      var distance = _arr[_i];
-      width *= 2.14;
-      var geometryOptions = {
-        // always update Cesium externs before adding a property
-        width: width,
-        vertexFormat: Cesium.VertexFormat.POSITION_ONLY
-      };
-
-      for (var _iterator = positions, _isArray = Array.isArray(_iterator), _i2 = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-        var _ref;
-
-        if (_isArray) {
-          if (_i2 >= _iterator.length) break;
-          _ref = _iterator[_i2++];
-        } else {
-          _i2 = _iterator.next();
-          if (_i2.done) break;
-          _ref = _i2.value;
-        }
-
-        var linePositions = _ref;
-        geometryOptions.positions = linePositions;
-        geometryInstances.push(new Cesium.GeometryInstance({
-          geometry: new Cesium.CorridorGeometry(geometryOptions),
-          attributes: {
-            color: Cesium.ColorGeometryInstanceAttribute.fromColor(color),
-            distanceDisplayCondition: new Cesium.DistanceDisplayConditionGeometryInstanceAttribute(previousDistance, distance - 1)
-          }
-        }));
-      }
-
-      previousDistance = distance;
-    }
-
-    return new Cesium.GroundPrimitive({
-      // always update Cesium externs before adding a property
-      geometryInstances: geometryInstances
-    });
-  }
   /**
    * Convert an OpenLayers line string geometry to Cesium.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.LineString} olGeometry OpenLayers line string geometry.
-   * @param {!ol.ProjectionLike} projection
-   * @param {!ol.style.Style} olStyle
-   * @return {!Cesium.PrimitiveCollection} primitives
    * @api
    */
-  ;
-
-  _proto.olLineStringGeometryToCesium = function olLineStringGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
-    var _this2 = this;
-
-    olGeometry = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].olGeometryCloneTo4326(olGeometry, projection);
+  olLineStringGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
+    olGeometry = (0,_core__WEBPACK_IMPORTED_MODULE_6__.olGeometryCloneTo4326)(olGeometry, projection);
     console.assert(olGeometry.getType() == 'LineString');
-    var positions = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateArrayToCsCartesians(olGeometry.getCoordinates());
-    var width = this.extractLineWidthFromOlStyle(olStyle);
-    var outlinePrimitive;
-    var heightReference = this.getHeightReference(layer, feature, olGeometry);
-
-    if (heightReference === Cesium.HeightReference.CLAMP_TO_GROUND && !Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["isGroundPolylinePrimitiveSupported"])(this.scene)) {
-      var color = this.extractColorFromOlStyle(olStyle, true);
-      outlinePrimitive = this.createStackedGroundCorridors(layer, feature, width, color, positions);
-    } else {
-      var appearance = new Cesium.PolylineMaterialAppearance({
-        // always update Cesium externs before adding a property
-        material: this.olStyleToCesium(feature, olStyle, true)
+    const positions = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateArrayToCsCartesians)(olGeometry.getCoordinates());
+    const width = this.extractLineWidthFromOlStyle(olStyle);
+    let outlinePrimitive;
+    const heightReference = this.getHeightReference(layer, feature, olGeometry);
+    const appearance = new Cesium.PolylineMaterialAppearance({
+      material: this.olStyleToCesium(feature, olStyle, true)
+    });
+    if (heightReference === Cesium.HeightReference.CLAMP_TO_GROUND) {
+      const geometry = new Cesium.GroundPolylineGeometry({
+        positions,
+        width
       });
-      var geometryOptions = {
-        // always update Cesium externs before adding a property
-        positions: positions,
-        width: width
-      };
-      var primitiveOptions = {
-        // always update Cesium externs before adding a property
-        appearance: appearance
-      };
-
-      if (heightReference === Cesium.HeightReference.CLAMP_TO_GROUND) {
-        var geometry = new Cesium.GroundPolylineGeometry(geometryOptions);
-        primitiveOptions.geometryInstances = new Cesium.GeometryInstance({
-          geometry: geometry
-        }), outlinePrimitive = new Cesium.GroundPolylinePrimitive(primitiveOptions);
-        outlinePrimitive.readyPromise.then(function () {
-          _this2.setReferenceForPicking(layer, feature, outlinePrimitive._primitive);
-        });
-      } else {
-        geometryOptions.vertexFormat = appearance.vertexFormat;
-
-        var _geometry = new Cesium.PolylineGeometry(geometryOptions);
-
-        primitiveOptions.geometryInstances = new Cesium.GeometryInstance({
-          geometry: _geometry
-        }), outlinePrimitive = new Cesium.Primitive(primitiveOptions);
-      }
+      const op = outlinePrimitive = new Cesium.GroundPolylinePrimitive({
+        appearance,
+        geometryInstances: new Cesium.GeometryInstance({
+          geometry
+        })
+      });
+      (0,_util__WEBPACK_IMPORTED_MODULE_8__.waitReady)(outlinePrimitive).then(() => {
+        this.setReferenceForPicking(layer, feature, op._primitive);
+      });
+    } else {
+      const geometry = new Cesium.PolylineGeometry({
+        positions,
+        width,
+        vertexFormat: appearance.vertexFormat
+      });
+      outlinePrimitive = new Cesium.Primitive({
+        appearance,
+        geometryInstances: new Cesium.GeometryInstance({
+          geometry
+        })
+      });
     }
-
     this.setReferenceForPicking(layer, feature, outlinePrimitive);
     return this.addTextStyle(layer, feature, olGeometry, olStyle, outlinePrimitive);
   }
+
   /**
    * Convert an OpenLayers polygon geometry to Cesium.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Polygon} olGeometry OpenLayers polygon geometry.
-   * @param {!ol.ProjectionLike} projection
-   * @param {!ol.style.Style} olStyle
-   * @return {!Cesium.PrimitiveCollection} primitives
    * @api
    */
-  ;
-
-  _proto.olPolygonGeometryToCesium = function olPolygonGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
-    var _this3 = this;
-
-    olGeometry = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].olGeometryCloneTo4326(olGeometry, projection);
+  olPolygonGeometryToCesium(layer, feature, olGeometry, projection, olStyle) {
+    olGeometry = (0,_core__WEBPACK_IMPORTED_MODULE_6__.olGeometryCloneTo4326)(olGeometry, projection);
     console.assert(olGeometry.getType() == 'Polygon');
-    var heightReference = this.getHeightReference(layer, feature, olGeometry);
-    var fillGeometry, outlineGeometry, outlinePrimitive;
-
-    if (olGeometry.getCoordinates()[0].length == 5 && feature.getGeometry().get('olcs.polygon_kind') === 'rectangle') {
+    const heightReference = this.getHeightReference(layer, feature, olGeometry);
+    let fillGeometry, outlineGeometry;
+    let outlinePrimitive;
+    if (olGeometry.getCoordinates()[0].length == 5 && feature.get('olcs.polygon_kind') === 'rectangle') {
       // Create a rectangle according to the longitude and latitude curves
-      var coordinates = olGeometry.getCoordinates()[0]; // Extract the West, South, East, North coordinates
+      const coordinates = olGeometry.getCoordinates()[0];
+      // Extract the West, South, East, North coordinates
+      const extent = (0,ol_extent_js__WEBPACK_IMPORTED_MODULE_4__.boundingExtent)(coordinates);
+      const rectangle = Cesium.Rectangle.fromDegrees(extent[0], extent[1], extent[2], extent[3]);
 
-      var extent = Object(ol_extent_js__WEBPACK_IMPORTED_MODULE_5__["boundingExtent"])(coordinates);
-      var rectangle = Cesium.Rectangle.fromDegrees(extent[0], extent[1], extent[2], extent[3]); // Extract the average height of the vertices
-
-      var maxHeight = 0.0;
-
+      // Extract the average height of the vertices
+      let maxHeight = 0.0;
       if (coordinates[0].length == 3) {
-        for (var c = 0; c < coordinates.length; c++) {
+        for (let c = 0; c < coordinates.length; c++) {
           maxHeight = Math.max(maxHeight, coordinates[c][2]);
         }
-      } // Render the cartographic rectangle
+      }
+      const featureExtrudedHeight = feature.get('olcs_extruded_height');
 
-
+      // Render the cartographic rectangle
       fillGeometry = new Cesium.RectangleGeometry({
         ellipsoid: Cesium.Ellipsoid.WGS84,
-        rectangle: rectangle,
-        height: maxHeight
+        rectangle,
+        height: maxHeight,
+        extrudedHeight: featureExtrudedHeight
       });
       outlineGeometry = new Cesium.RectangleOutlineGeometry({
         ellipsoid: Cesium.Ellipsoid.WGS84,
-        rectangle: rectangle,
-        height: maxHeight
+        rectangle,
+        height: maxHeight,
+        extrudedHeight: featureExtrudedHeight
       });
     } else {
-      var rings = olGeometry.getLinearRings(); // always update Cesium externs before adding a property
-
-      var hierarchy = {};
-      var polygonHierarchy = hierarchy;
+      const rings = olGeometry.getLinearRings();
+      const hierarchy = {
+        positions: [],
+        holes: []
+      };
+      const polygonHierarchy = hierarchy;
       console.assert(rings.length > 0);
-
-      for (var i = 0; i < rings.length; ++i) {
-        var olPos = rings[i].getCoordinates();
-        var positions = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateArrayToCsCartesians(olPos);
+      for (let i = 0; i < rings.length; ++i) {
+        const olPos = rings[i].getCoordinates();
+        const positions = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateArrayToCsCartesians)(olPos);
         console.assert(positions && positions.length > 0);
-
-        if (i == 0) {
+        if (i === 0) {
           hierarchy.positions = positions;
         } else {
-          if (!hierarchy.holes) {
-            hierarchy.holes = [];
-          }
-
           hierarchy.holes.push({
-            positions: positions
+            positions,
+            holes: []
           });
         }
       }
-
+      const featureExtrudedHeight = feature.get('olcs_extruded_height');
       fillGeometry = new Cesium.PolygonGeometry({
-        // always update Cesium externs before adding a property
-        polygonHierarchy: polygonHierarchy,
-        perPositionHeight: true
-      }); // Since Cesium doesn't yet support Polygon outlines on terrain yet (coming soon...?)
+        polygonHierarchy,
+        perPositionHeight: true,
+        extrudedHeight: featureExtrudedHeight
+      });
+
+      // Since Cesium doesn't yet support Polygon outlines on terrain yet (coming soon...?)
       // we don't create an outline geometry if clamped, but instead do the polyline method
       // for each ring. Most of this code should be removeable when Cesium adds
       // support for Polygon outlines on terrain.
-
       if (heightReference === Cesium.HeightReference.CLAMP_TO_GROUND) {
-        var width = this.extractLineWidthFromOlStyle(olStyle);
-
+        const width = this.extractLineWidthFromOlStyle(olStyle);
         if (width > 0) {
-          var _positions = [hierarchy.positions];
-
+          const positions = [hierarchy.positions];
           if (hierarchy.holes) {
-            for (var _i3 = 0; _i3 < hierarchy.holes.length; ++_i3) {
-              _positions.push(hierarchy.holes[_i3].positions);
+            for (let i = 0; i < hierarchy.holes.length; ++i) {
+              positions.push(hierarchy.holes[i].positions);
             }
           }
-
-          if (!Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["isGroundPolylinePrimitiveSupported"])(this.scene)) {
-            var color = this.extractColorFromOlStyle(olStyle, true);
-            outlinePrimitive = this.createStackedGroundCorridors(layer, feature, width, color, _positions);
-          } else {
-            var appearance = new Cesium.PolylineMaterialAppearance({
-              // always update Cesium externs before adding a property
-              material: this.olStyleToCesium(feature, olStyle, true)
+          const appearance = new Cesium.PolylineMaterialAppearance({
+            material: this.olStyleToCesium(feature, olStyle, true)
+          });
+          const geometryInstances = [];
+          for (const linePositions of positions) {
+            const polylineGeometry = new Cesium.GroundPolylineGeometry({
+              positions: linePositions,
+              width
             });
-            var geometryInstances = [];
-
-            for (var _i4 = 0, _positions2 = _positions; _i4 < _positions2.length; _i4++) {
-              var linePositions = _positions2[_i4];
-              var polylineGeometry = new Cesium.GroundPolylineGeometry({
-                positions: linePositions,
-                width: width
-              });
-              geometryInstances.push(new Cesium.GeometryInstance({
-                geometry: polylineGeometry
-              }));
-            }
-
-            var primitiveOptions = {
-              // always update Cesium externs before adding a property
-              appearance: appearance,
-              geometryInstances: geometryInstances
-            };
-            outlinePrimitive = new Cesium.GroundPolylinePrimitive(primitiveOptions);
-            outlinePrimitive.readyPromise.then(function () {
-              _this3.setReferenceForPicking(layer, feature, outlinePrimitive._primitive);
-            });
+            geometryInstances.push(new Cesium.GeometryInstance({
+              geometry: polylineGeometry
+            }));
           }
+          outlinePrimitive = new Cesium.GroundPolylinePrimitive({
+            appearance,
+            geometryInstances
+          });
+          (0,_util__WEBPACK_IMPORTED_MODULE_8__.waitReady)(outlinePrimitive).then(() => {
+            this.setReferenceForPicking(layer, feature, outlinePrimitive._primitive);
+          });
         }
       } else {
         // Actually do the normal polygon thing. This should end the removable
         // section of code described above.
         outlineGeometry = new Cesium.PolygonOutlineGeometry({
-          // always update Cesium externs before adding a property
           polygonHierarchy: hierarchy,
-          perPositionHeight: true
+          perPositionHeight: true,
+          extrudedHeight: featureExtrudedHeight
         });
       }
     }
-
-    var primitives = this.wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle);
-
+    const primitives = this.wrapFillAndOutlineGeometries(layer, feature, olGeometry, fillGeometry, outlineGeometry, olStyle);
     if (outlinePrimitive) {
       primitives.add(outlinePrimitive);
     }
-
     return this.addTextStyle(layer, feature, olGeometry, olStyle, primitives);
   }
+
   /**
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Geometry} geometry
-   * @return {!Cesium.HeightReference}
    * @api
    */
-  ;
-
-  _proto.getHeightReference = function getHeightReference(layer, feature, geometry) {
+  getHeightReference(layer, feature, geometry) {
     // Read from the geometry
-    var altitudeMode = geometry.get('altitudeMode'); // Or from the feature
+    let altitudeMode = geometry.get('altitudeMode');
 
+    // Or from the feature
     if (altitudeMode === undefined) {
       altitudeMode = feature.get('altitudeMode');
-    } // Or from the layer
+    }
 
-
+    // Or from the layer
     if (altitudeMode === undefined) {
       altitudeMode = layer.get('altitudeMode');
     }
-
-    var heightReference = Cesium.HeightReference.NONE;
-
+    let heightReference = Cesium.HeightReference.NONE;
     if (altitudeMode === 'clampToGround') {
       heightReference = Cesium.HeightReference.CLAMP_TO_GROUND;
     } else if (altitudeMode === 'relativeToGround') {
       heightReference = Cesium.HeightReference.RELATIVE_TO_GROUND;
     }
-
     return heightReference;
   }
+
   /**
    * Convert a point geometry to a Cesium BillboardCollection.
    * @param {ol.layer.Vector|ol.layer.Image} layer
@@ -1939,142 +1254,121 @@ function () {
    * @param {function(!Cesium.Billboard)=} opt_newBillboardCallback Called when the new billboard is added.
    * @api
    */
-  ;
-
-  _proto.createBillboardFromImage = function createBillboardFromImage(layer, feature, olGeometry, projection, style, imageStyle, billboards, opt_newBillboardCallback) {
-    if (imageStyle instanceof ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1___default.a) {
+  createBillboardFromImage(layer, feature, olGeometry, projection, style, imageStyle, billboards, opt_newBillboardCallback) {
+    if (imageStyle instanceof (ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_0___default())) {
       // make sure the image is scheduled for load
       imageStyle.load();
     }
-
-    var image = imageStyle.getImage(1); // get normal density
-
-    var isImageLoaded = function isImageLoaded(image) {
+    const image = imageStyle.getImage(1); // get normal density
+    const isImageLoaded = function (image) {
       return image.src != '' && image.naturalHeight != 0 && image.naturalWidth != 0 && image.complete;
     };
-
-    var reallyCreateBillboard = function () {
+    const reallyCreateBillboard = function () {
       if (!image) {
         return;
       }
-
       if (!(image instanceof HTMLCanvasElement || image instanceof Image || image instanceof HTMLImageElement)) {
         return;
       }
-
-      var center = olGeometry.getCoordinates();
-      var position = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateToCesiumCartesian(center);
-      var color;
-      var opacity = imageStyle.getOpacity();
-
+      const center = olGeometry.getCoordinates();
+      const position = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateToCesiumCartesian)(center);
+      let color;
+      const opacity = imageStyle.getOpacity();
       if (opacity !== undefined) {
         color = new Cesium.Color(1.0, 1.0, 1.0, opacity);
       }
-
-      var heightReference = this.getHeightReference(layer, feature, olGeometry);
-      var bbOptions =
-      /** @type {Cesium.optionsBillboardCollectionAdd} */
-      {
-        // always update Cesium externs before adding a property
-        image: image,
-        color: color,
-        scale: imageStyle.getScale(),
-        heightReference: heightReference,
-        position: position
+      const scale = imageStyle.getScale();
+      const heightReference = this.getHeightReference(layer, feature, olGeometry);
+      const bbOptions = {
+        image,
+        color,
+        scale,
+        heightReference,
+        position
       };
 
-      if (imageStyle instanceof ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_1___default.a) {
-        var anchor = imageStyle.getAnchor();
-
+      // merge in cesium options from openlayers feature
+      Object.assign(bbOptions, feature.get('cesiumOptions'));
+      if (imageStyle instanceof (ol_style_Icon_js__WEBPACK_IMPORTED_MODULE_0___default())) {
+        const anchor = imageStyle.getAnchor();
         if (anchor) {
-          bbOptions.pixelOffset = new Cesium.Cartesian2(image.width / 2 - anchor[0], image.height / 2 - anchor[1]);
+          const xScale = Array.isArray(scale) ? scale[0] : scale;
+          const yScale = Array.isArray(scale) ? scale[1] : scale;
+          bbOptions.pixelOffset = new Cesium.Cartesian2((image.width / 2 - anchor[0]) * xScale, (image.height / 2 - anchor[1]) * yScale);
         }
       }
-
-      var bb = this.csAddBillboard(billboards, bbOptions, layer, feature, olGeometry, style);
-
+      const bb = this.csAddBillboard(billboards, bbOptions, layer, feature, olGeometry, style);
       if (opt_newBillboardCallback) {
         opt_newBillboardCallback(bb);
       }
     }.bind(this);
-
     if (image instanceof Image && !isImageLoaded(image)) {
       // Cesium requires the image to be loaded
-      var cancelled = false;
-      var source = layer.getSource();
-
-      var canceller = function canceller() {
+      let cancelled = false;
+      const source = layer.getSource();
+      const canceller = function () {
         cancelled = true;
       };
-
       source.on(['removefeature', 'clear'], this.boundOnRemoveOrClearFeatureListener_);
-      var cancellers = _util_js__WEBPACK_IMPORTED_MODULE_9__["default"].obj(source)['olcs_cancellers'];
-
+      let cancellers = source['olcs_cancellers'];
       if (!cancellers) {
-        cancellers = _util_js__WEBPACK_IMPORTED_MODULE_9__["default"].obj(source)['olcs_cancellers'] = {};
+        cancellers = source['olcs_cancellers'] = {};
       }
-
-      var fuid = Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["getUid"])(feature);
-
+      const fuid = (0,_util__WEBPACK_IMPORTED_MODULE_8__.getUid)(feature);
       if (cancellers[fuid]) {
         // When the feature change quickly, a canceller may still be present so
         // we cancel it here to prevent creation of a billboard.
         cancellers[fuid]();
       }
-
       cancellers[fuid] = canceller;
-
-      var listener = function listener() {
+      const listener = function () {
         image.removeEventListener('load', listener);
-
         if (!billboards.isDestroyed() && !cancelled) {
           // Create billboard if the feature is still displayed on the map.
           reallyCreateBillboard();
         }
       };
-
       image.addEventListener('load', listener);
     } else {
       reallyCreateBillboard();
     }
   }
+
   /**
    * Convert a point geometry to a Cesium BillboardCollection.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Point} olGeometry OpenLayers point geometry.
-   * @param {!ol.ProjectionLike} projection
-   * @param {!ol.style.Style} style
-   * @param {!Cesium.BillboardCollection} billboards
-   * @param {function(!Cesium.Billboard)=} opt_newBillboardCallback Called when
-   * the new billboard is added.
-   * @return {Cesium.Primitive} primitives
+   * @param layer
+   * @param feature OpenLayers feature..
+   * @param olGeometry OpenLayers point geometry.
+   * @param projection
+   * @param style
+   * @param billboards
+   * @param opt_newBillboardCallback Called when the new billboard is added.
+   * @return primitives
    * @api
    */
-  ;
-
-  _proto.olPointGeometryToCesium = function olPointGeometryToCesium(layer, feature, olGeometry, projection, style, billboards, opt_newBillboardCallback) {
+  olPointGeometryToCesium(layer, feature, olGeometry, projection, style, billboards, opt_newBillboardCallback) {
     console.assert(olGeometry.getType() == 'Point');
-    olGeometry = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].olGeometryCloneTo4326(olGeometry, projection);
-    var modelPrimitive = null;
-    var imageStyle = style.getImage();
-
+    olGeometry = (0,_core__WEBPACK_IMPORTED_MODULE_6__.olGeometryCloneTo4326)(olGeometry, projection);
+    let modelPrimitive = null;
+    const imageStyle = style.getImage();
     if (imageStyle) {
-      var olcsModelFunction =
-      /** @type {function():olcsx.ModelStyle} */
-      olGeometry.get('olcs_model') || feature.get('olcs_model');
-
+      const olcsModelFunction = olGeometry.get('olcs_model') || feature.get('olcs_model');
       if (olcsModelFunction) {
-        var olcsModel = olcsModelFunction();
-        var options =
-        /** @type {Cesium.ModelFromGltfOptions} */
-        Object.assign({}, {
+        modelPrimitive = new Cesium.PrimitiveCollection();
+        const olcsModel = olcsModelFunction();
+        const options = Object.assign({}, {
           scene: this.scene
         }, olcsModel.cesiumOptions);
-        var model = Cesium.Model.fromGltf(options);
-        modelPrimitive = new Cesium.PrimitiveCollection();
-        modelPrimitive.add(model);
-
+        if ('fromGltf' in Cesium.Model) {
+          // pre Cesium v107
+          // @ts-ignore
+          const model = Cesium.Model.fromGltf(options);
+          modelPrimitive.add(model);
+        } else {
+          Cesium.Model.fromGltfAsync(options).then(model => {
+            modelPrimitive.add(model);
+          });
+        }
         if (olcsModel.debugModelMatrix) {
           modelPrimitive.add(new Cesium.DebugModelMatrixPrimitive({
             modelMatrix: olcsModel.debugModelMatrix
@@ -2084,13 +1378,13 @@ function () {
         this.createBillboardFromImage(layer, feature, olGeometry, projection, style, imageStyle, billboards, opt_newBillboardCallback);
       }
     }
-
     if (style.getText()) {
       return this.addTextStyle(layer, feature, olGeometry, style, modelPrimitive || new Cesium.Primitive());
     } else {
       return modelPrimitive;
     }
   }
+
   /**
    * Convert an OpenLayers multi-something geometry to Cesium.
    * @param {ol.layer.Vector|ol.layer.Image} layer
@@ -2104,585 +1398,714 @@ function () {
    * @return {Cesium.Primitive} primitives
    * @api
    */
-  ;
-
-  _proto.olMultiGeometryToCesium = function olMultiGeometryToCesium(layer, feature, geometry, projection, olStyle, billboards, opt_newBillboardCallback) {
-    var _this4 = this;
-
+  olMultiGeometryToCesium(layer, feature, geometry, projection, olStyle, billboards, opt_newBillboardCallback) {
     // Do not reproject to 4326 now because it will be done later.
-    // FIXME: would be better to combine all child geometries in one primitive
-    // instead we create n primitives for simplicity.
-    var accumulate = function accumulate(geometries, functor) {
-      var primitives = new Cesium.PrimitiveCollection();
-      geometries.forEach(function (geometry) {
-        primitives.add(functor(layer, feature, geometry, projection, olStyle));
-      });
-      return primitives;
-    };
-
-    var subgeos;
 
     switch (geometry.getType()) {
       case 'MultiPoint':
-        geometry =
-        /** @type {!ol.geom.MultiPoint} */
-        geometry;
-        subgeos = geometry.getPoints();
-
-        if (olStyle.getText()) {
-          var primitives = new Cesium.PrimitiveCollection();
-          subgeos.forEach(function (geometry) {
-            console.assert(geometry);
-
-            var result = _this4.olPointGeometryToCesium(layer, feature, geometry, projection, olStyle, billboards, opt_newBillboardCallback);
-
-            if (result) {
-              primitives.add(result);
-            }
+        {
+          const points = geometry.getPoints();
+          if (olStyle.getText()) {
+            const primitives = new Cesium.PrimitiveCollection();
+            points.forEach(geom => {
+              console.assert(geom);
+              const result = this.olPointGeometryToCesium(layer, feature, geom, projection, olStyle, billboards, opt_newBillboardCallback);
+              if (result) {
+                primitives.add(result);
+              }
+            });
+            return primitives;
+          } else {
+            points.forEach(geom => {
+              console.assert(geom);
+              this.olPointGeometryToCesium(layer, feature, geom, projection, olStyle, billboards, opt_newBillboardCallback);
+            });
+            return null;
+          }
+        }
+      case 'MultiLineString':
+        {
+          const lineStrings = geometry.getLineStrings();
+          // FIXME: would be better to combine all child geometries in one primitive
+          // instead we create n primitives for simplicity.
+          const primitives = new Cesium.PrimitiveCollection();
+          lineStrings.forEach(geom => {
+            const p = this.olLineStringGeometryToCesium(layer, feature, geom, projection, olStyle);
+            primitives.add(p);
           });
           return primitives;
-        } else {
-          subgeos.forEach(function (geometry) {
-            console.assert(geometry);
-
-            _this4.olPointGeometryToCesium(layer, feature, geometry, projection, olStyle, billboards, opt_newBillboardCallback);
-          });
-          return null;
         }
-
-      case 'MultiLineString':
-        geometry =
-        /** @type {!ol.geom.MultiLineString} */
-        geometry;
-        subgeos = geometry.getLineStrings();
-        return accumulate(subgeos, this.olLineStringGeometryToCesium.bind(this));
-
       case 'MultiPolygon':
-        geometry =
-        /** @type {!ol.geom.MultiPolygon} */
-        geometry;
-        subgeos = geometry.getPolygons();
-        return accumulate(subgeos, this.olPolygonGeometryToCesium.bind(this));
-
+        {
+          const polygons = geometry.getPolygons();
+          // FIXME: would be better to combine all child geometries in one primitive
+          // instead we create n primitives for simplicity.
+          const primitives = new Cesium.PrimitiveCollection();
+          polygons.forEach(geom => {
+            const p = this.olPolygonGeometryToCesium(layer, feature, geom, projection, olStyle);
+            primitives.add(p);
+          });
+          return primitives;
+        }
       default:
-        console.assert(false, "Unhandled multi geometry type" + geometry.getType());
+        console.assert(false, `Unhandled multi geometry type${geometry.getType()}`);
     }
   }
+
   /**
    * Convert an OpenLayers text style to Cesium.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature..
-   * @param {!ol.geom.Geometry} geometry
-   * @param {!ol.style.Text} style
-   * @return {Cesium.LabelCollection} Cesium primitive
    * @api
    */
-  ;
-
-  _proto.olGeometry4326TextPartToCesium = function olGeometry4326TextPartToCesium(layer, feature, geometry, style) {
-    var text = style.getText();
-
+  olGeometry4326TextPartToCesium(layer, feature, geometry, style) {
+    const text = style.getText();
     if (!text) {
       return null;
     }
-
-    var labels = new Cesium.LabelCollection({
+    const labels = new Cesium.LabelCollection({
       scene: this.scene
-    }); // TODO: export and use the text draw position from OpenLayers .
+    });
+    // TODO: export and use the text draw position from OpenLayers .
     // See src/ol/render/vector.js
-
-    var extentCenter = Object(ol_extent_js__WEBPACK_IMPORTED_MODULE_5__["getCenter"])(geometry.getExtent());
-
-    if (geometry instanceof ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_6___default.a) {
-      var first = geometry.getFirstCoordinate();
+    const extentCenter = (0,ol_extent_js__WEBPACK_IMPORTED_MODULE_4__.getCenter)(geometry.getExtent());
+    if (geometry instanceof (ol_geom_SimpleGeometry_js__WEBPACK_IMPORTED_MODULE_5___default())) {
+      const first = geometry.getFirstCoordinate();
       extentCenter[2] = first.length == 3 ? first[2] : 0.0;
     }
-
-    var options =
-    /** @type {Cesium.optionsLabelCollection} */
-    {};
-    options.position = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].ol4326CoordinateToCesiumCartesian(extentCenter);
+    const options = {};
+    options.position = (0,_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateToCesiumCartesian)(extentCenter);
     options.text = text;
     options.heightReference = this.getHeightReference(layer, feature, geometry);
-    var offsetX = style.getOffsetX();
-    var offsetY = style.getOffsetY();
-
-    if (offsetX != 0 && offsetY != 0) {
-      var offset = new Cesium.Cartesian2(offsetX, offsetY);
+    const offsetX = style.getOffsetX();
+    const offsetY = style.getOffsetY();
+    if (offsetX != 0 || offsetY != 0) {
+      const offset = new Cesium.Cartesian2(offsetX, offsetY);
       options.pixelOffset = offset;
     }
-
     options.font = style.getFont() || '10px sans-serif'; // OpenLayers default
 
-    var labelStyle = undefined;
-
+    let labelStyle = undefined;
     if (style.getFill()) {
       options.fillColor = this.extractColorFromOlStyle(style, false);
       labelStyle = Cesium.LabelStyle.FILL;
     }
-
     if (style.getStroke()) {
       options.outlineWidth = this.extractLineWidthFromOlStyle(style);
       options.outlineColor = this.extractColorFromOlStyle(style, true);
       labelStyle = Cesium.LabelStyle.OUTLINE;
     }
-
     if (style.getFill() && style.getStroke()) {
       labelStyle = Cesium.LabelStyle.FILL_AND_OUTLINE;
     }
-
     options.style = labelStyle;
-    var horizontalOrigin;
-
+    let horizontalOrigin;
     switch (style.getTextAlign()) {
       case 'left':
         horizontalOrigin = Cesium.HorizontalOrigin.LEFT;
         break;
-
       case 'right':
         horizontalOrigin = Cesium.HorizontalOrigin.RIGHT;
         break;
-
       case 'center':
       default:
         horizontalOrigin = Cesium.HorizontalOrigin.CENTER;
     }
-
     options.horizontalOrigin = horizontalOrigin;
-
     if (style.getTextBaseline()) {
-      var verticalOrigin;
-
+      let verticalOrigin;
       switch (style.getTextBaseline()) {
         case 'top':
           verticalOrigin = Cesium.VerticalOrigin.TOP;
           break;
-
         case 'middle':
           verticalOrigin = Cesium.VerticalOrigin.CENTER;
           break;
-
         case 'bottom':
           verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
           break;
-
         case 'alphabetic':
           verticalOrigin = Cesium.VerticalOrigin.TOP;
           break;
-
         case 'hanging':
           verticalOrigin = Cesium.VerticalOrigin.BOTTOM;
           break;
-
         default:
-          console.assert(false, "unhandled baseline " + style.getTextBaseline());
+          console.assert(false, `unhandled baseline ${style.getTextBaseline()}`);
       }
-
       options.verticalOrigin = verticalOrigin;
     }
-
-    var l = labels.add(options);
+    const l = labels.add(options);
     this.setReferenceForPicking(layer, feature, l);
     return labels;
   }
+
   /**
    * Convert an OpenLayers style to a Cesium Material.
-   * @param {ol.Feature} feature OpenLayers feature..
-   * @param {!ol.style.Style} style
-   * @param {boolean} outline
-   * @return {Cesium.Material}
    * @api
    */
-  ;
-
-  _proto.olStyleToCesium = function olStyleToCesium(feature, style, outline) {
-    var fill = style.getFill();
-    var stroke = style.getStroke();
-
+  olStyleToCesium(feature, style, outline) {
+    const fill = style.getFill();
+    const stroke = style.getStroke();
     if (outline && !stroke || !outline && !fill) {
       return null; // FIXME use a default style? Developer error?
     }
-
-    var color = outline ? stroke.getColor() : fill.getColor();
-    color = _core_js__WEBPACK_IMPORTED_MODULE_7__["default"].convertColorToCesium(color);
-
+    const olColor = outline ? stroke.getColor() : fill.getColor();
+    const color = (0,_core__WEBPACK_IMPORTED_MODULE_6__.convertColorToCesium)(olColor);
     if (outline && stroke.getLineDash()) {
       return Cesium.Material.fromType('Stripe', {
-        // always update Cesium externs before adding a property
         horizontal: false,
         repeat: 500,
         // TODO how to calculate this?
         evenColor: color,
         oddColor: new Cesium.Color(0, 0, 0, 0) // transparent
-
       });
     } else {
       return Cesium.Material.fromType('Color', {
-        // always update Cesium externs before adding a property
-        color: color
+        color
       });
     }
   }
+
   /**
    * Compute OpenLayers plain style.
    * Evaluates style function, blend arrays, get default style.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature
-   * @param {ol.StyleFunction|undefined} fallbackStyleFunction
-   * @param {number} resolution
-   * @return {Array.<!ol.style.Style>} null if no style is available
    * @api
    */
-  ;
-
-  _proto.computePlainStyle = function computePlainStyle(layer, feature, fallbackStyleFunction, resolution) {
+  computePlainStyle(layer, feature, fallbackStyleFunction, resolution) {
     /**
      * @type {ol.FeatureStyleFunction|undefined}
      */
-    var featureStyleFunction = feature.getStyleFunction();
+    const featureStyleFunction = feature.getStyleFunction();
+
     /**
      * @type {ol.style.Style|Array.<ol.style.Style>}
      */
-
-    var style = null;
-
+    let style = null;
     if (featureStyleFunction) {
       style = featureStyleFunction(feature, resolution);
     }
-
     if (!style && fallbackStyleFunction) {
       style = fallbackStyleFunction(feature, resolution);
     }
-
     if (!style) {
       // The feature must not be displayed
       return null;
-    } // FIXME combine materials as in cesium-materials-pack?
+    }
+
+    // FIXME combine materials as in cesium-materials-pack?
     // then this function must return a custom material
     // More simply, could blend the colors like described in
     // http://en.wikipedia.org/wiki/Alpha_compositing
-
-
     return Array.isArray(style) ? style : [style];
   }
-  /**
-   * @protected
-   * @param {!ol.Feature} feature
-   * @param {!ol.style.Style} style
-   * @param {!ol.geom.Geometry=} opt_geom Geometry to be converted.
-   * @return {ol.geom.Geometry|undefined}
-   */
-  ;
 
-  _proto.getGeometryFromFeature = function getGeometryFromFeature(feature, style, opt_geom) {
+  /**
+   */
+  getGeometryFromFeature(feature, style, opt_geom) {
     if (opt_geom) {
       return opt_geom;
     }
-
-    var geom3d =
-    /** @type {!ol.geom.Geometry} */
-    feature.get('olcs.3d_geometry');
-
-    if (geom3d && geom3d instanceof ol_geom_Geometry_js__WEBPACK_IMPORTED_MODULE_0___default.a) {
+    const geom3d = feature.get('olcs.3d_geometry');
+    if (geom3d && geom3d instanceof ol_geom_js__WEBPACK_IMPORTED_MODULE_9__.Geometry) {
       return geom3d;
     }
-
     if (style) {
-      var geomFuncRes = style.getGeometryFunction()(feature);
-
-      if (geomFuncRes instanceof ol_geom_Geometry_js__WEBPACK_IMPORTED_MODULE_0___default.a) {
+      const geomFuncRes = style.getGeometryFunction()(feature);
+      if (geomFuncRes instanceof ol_geom_js__WEBPACK_IMPORTED_MODULE_9__.Geometry) {
         return geomFuncRes;
       }
     }
-
     return feature.getGeometry();
   }
+
   /**
    * Convert one OpenLayers feature up to a collection of Cesium primitives.
-   * @param {ol.layer.Vector|ol.layer.Image} layer
-   * @param {!ol.Feature} feature OpenLayers feature.
-   * @param {!ol.style.Style} style
-   * @param {!import('olcs/core/VectorLayerConterpart.js').OlFeatureToCesiumContext} context
-   * @param {!ol.geom.Geometry=} opt_geom Geometry to be converted.
-   * @return {Cesium.Primitive} primitives
    * @api
    */
-  ;
-
-  _proto.olFeatureToCesium = function olFeatureToCesium(layer, feature, style, context, opt_geom) {
-    var _this5 = this;
-
-    var geom = this.getGeometryFromFeature(feature, style, opt_geom);
-
+  olFeatureToCesium(layer, feature, style, context, opt_geom) {
+    const geom = this.getGeometryFromFeature(feature, style, opt_geom);
     if (!geom) {
       // OpenLayers features may not have a geometry
       // See http://geojson.org/geojson-spec.html#feature-objects
       return null;
     }
-
-    var proj = context.projection;
-
-    var newBillboardAddedCallback = function newBillboardAddedCallback(bb) {
-      var featureBb = context.featureToCesiumMap[Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["getUid"])(feature)];
-
+    const proj = context.projection;
+    const newBillboardAddedCallback = function (bb) {
+      const featureBb = context.featureToCesiumMap[(0,_util__WEBPACK_IMPORTED_MODULE_8__.getUid)(feature)];
       if (featureBb instanceof Array) {
         featureBb.push(bb);
       } else {
-        context.featureToCesiumMap[Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["getUid"])(feature)] = [bb];
+        context.featureToCesiumMap[(0,_util__WEBPACK_IMPORTED_MODULE_8__.getUid)(feature)] = [bb];
       }
     };
-
     switch (geom.getType()) {
       case 'GeometryCollection':
-        var primitives = new Cesium.PrimitiveCollection();
-        var collection =
-        /** @type {!ol.geom.GeometryCollection} */
-        geom; // TODO: use getGeometriesArray() instead
-
-        collection.getGeometries().forEach(function (geom) {
+        const primitives = new Cesium.PrimitiveCollection();
+        geom.getGeometriesArray().forEach(geom => {
           if (geom) {
-            var prims = _this5.olFeatureToCesium(layer, feature, style, context, geom);
-
+            const prims = this.olFeatureToCesium(layer, feature, style, context, geom);
             if (prims) {
               primitives.add(prims);
             }
           }
         });
         return primitives;
-
       case 'Point':
-        geom =
-        /** @type {!ol.geom.Point} */
-        geom;
-        var bbs = context.billboards;
-        var result = this.olPointGeometryToCesium(layer, feature, geom, proj, style, bbs, newBillboardAddedCallback);
-
+        const bbs = context.billboards;
+        const result = this.olPointGeometryToCesium(layer, feature, geom, proj, style, bbs, newBillboardAddedCallback);
         if (!result) {
           // no wrapping primitive
           return null;
         } else {
           return result;
         }
-
       case 'Circle':
-        geom =
-        /** @type {!ol.geom.Circle} */
-        geom;
         return this.olCircleGeometryToCesium(layer, feature, geom, proj, style);
-
       case 'LineString':
-        geom =
-        /** @type {!ol.geom.LineString} */
-        geom;
         return this.olLineStringGeometryToCesium(layer, feature, geom, proj, style);
-
       case 'Polygon':
-        geom =
-        /** @type {!ol.geom.Polygon} */
-        geom;
         return this.olPolygonGeometryToCesium(layer, feature, geom, proj, style);
-
       case 'MultiPoint':
+        return this.olMultiGeometryToCesium(layer, feature, geom, proj, style, context.billboards, newBillboardAddedCallback) || null;
       case 'MultiLineString':
+        return this.olMultiGeometryToCesium(layer, feature, geom, proj, style, context.billboards, newBillboardAddedCallback) || null;
       case 'MultiPolygon':
-        var result2 = this.olMultiGeometryToCesium(layer, feature, geom, proj, style, context.billboards, newBillboardAddedCallback);
-
-        if (!result2) {
-          // no wrapping primitive
-          return null;
-        } else {
-          return result2;
-        }
-
+        return this.olMultiGeometryToCesium(layer, feature, geom, proj, style, context.billboards, newBillboardAddedCallback) || null;
       case 'LinearRing':
         throw new Error('LinearRing should only be part of polygon.');
-
       default:
-        throw new Error("Ol geom type not handled : " + geom.getType());
+        throw new Error(`Ol geom type not handled : ${geom.getType()}`);
     }
   }
+
   /**
    * Convert an OpenLayers vector layer to Cesium primitive collection.
    * For each feature, the associated primitive will be stored in
    * `featurePrimitiveMap`.
-   * @param {!(ol.layer.Vector|ol.layer.Image)} olLayer
-   * @param {!ol.View} olView
-   * @param {!Object.<number, !Cesium.Primitive>} featurePrimitiveMap
-   * @return {!olcs.core.VectorLayerCounterpart}
    * @api
    */
-  ;
-
-  _proto.olVectorLayerToCesium = function olVectorLayerToCesium(olLayer, olView, featurePrimitiveMap) {
-    var proj = olView.getProjection();
-    var resolution = olView.getResolution();
-
+  olVectorLayerToCesium(olLayer, olView, featurePrimitiveMap) {
+    const proj = olView.getProjection();
+    const resolution = olView.getResolution();
     if (resolution === undefined || !proj) {
-      console.assert(false, 'View not ready'); // an assertion is not enough for closure to assume resolution and proj
+      console.assert(false, 'View not ready');
+      // an assertion is not enough for closure to assume resolution and proj
       // are defined
-
       throw new Error('View not ready');
     }
-
-    var source = olLayer.getSource();
-
-    if (source instanceof ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_3___default.a) {
+    let source = olLayer.getSource();
+    if (source instanceof (ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2___default())) {
       source = source.getSource();
     }
-
-    console.assert(source instanceof ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_2___default.a);
-    var features = source.getFeatures();
-    var counterpart = new _core_VectorLayerCounterpart_js__WEBPACK_IMPORTED_MODULE_8__["default"](proj, this.scene);
-    var context = counterpart.context;
-
-    for (var i = 0; i < features.length; ++i) {
-      var feature = features[i];
-
+    console.assert(source instanceof (ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_1___default()));
+    const features = source.getFeatures();
+    const counterpart = new _core_VectorLayerCounterpart__WEBPACK_IMPORTED_MODULE_7__["default"](proj, this.scene);
+    const context = counterpart.context;
+    for (let i = 0; i < features.length; ++i) {
+      const feature = features[i];
       if (!feature) {
         continue;
       }
-      /**
-       * @type {ol.StyleFunction|undefined}
-       */
-
-
-      var layerStyle = olLayer.getStyleFunction();
-      var styles = this.computePlainStyle(olLayer, feature, layerStyle, resolution);
-
+      const layerStyle = olLayer.getStyleFunction();
+      const styles = this.computePlainStyle(olLayer, feature, layerStyle, resolution);
       if (!styles || !styles.length) {
         // only 'render' features with a style
         continue;
       }
-      /**
-       * @type {Cesium.Primitive|null}
-       */
-
-
-      var primitives = null;
-
-      for (var _i5 = 0; _i5 < styles.length; _i5++) {
-        var prims = this.olFeatureToCesium(olLayer, feature, styles[_i5], context);
-
+      let primitives = null;
+      for (let i = 0; i < styles.length; i++) {
+        const prims = this.olFeatureToCesium(olLayer, feature, styles[i], context);
         if (prims) {
           if (!primitives) {
             primitives = prims;
           } else if (prims) {
-            var _i6 = 0,
-                prim = void 0;
-
-            while (prim = prims.get(_i6)) {
+            let i = 0,
+              prim;
+            while (prim = prims.get(i)) {
               primitives.add(prim);
-              _i6++;
+              i++;
             }
           }
         }
       }
-
       if (!primitives) {
         continue;
       }
-
-      featurePrimitiveMap[Object(_util_js__WEBPACK_IMPORTED_MODULE_9__["getUid"])(feature)] = primitives;
+      featurePrimitiveMap[(0,_util__WEBPACK_IMPORTED_MODULE_8__.getUid)(feature)] = primitives;
       counterpart.getRootPrimitive().add(primitives);
     }
-
     return counterpart;
   }
+
   /**
    * Convert an OpenLayers feature to Cesium primitive collection.
-   * @param {!(ol.layer.Vector|ol.layer.Image)} layer
-   * @param {!ol.View} view
-   * @param {!ol.Feature} feature
-   * @param {!import('olcs/core/VectorLayerConterpart.js').OlFeatureToCesiumContext} context
-   * @return {Cesium.Primitive}
    * @api
    */
-  ;
-
-  _proto.convert = function convert(layer, view, feature, context) {
-    var proj = view.getProjection();
-    var resolution = view.getResolution();
-
+  convert(layer, view, feature, context) {
+    const proj = view.getProjection();
+    const resolution = view.getResolution();
     if (resolution == undefined || !proj) {
       return null;
     }
+
     /**
      * @type {ol.StyleFunction|undefined}
      */
-
-
-    var layerStyle = layer.getStyleFunction();
-    var styles = this.computePlainStyle(layer, feature, layerStyle, resolution);
-
-    if (!styles.length) {
+    const layerStyle = layer.getStyleFunction();
+    const styles = this.computePlainStyle(layer, feature, layerStyle, resolution);
+    if (!styles || !styles.length) {
       // only 'render' features with a style
       return null;
     }
-
     context.projection = proj;
+
     /**
      * @type {Cesium.Primitive|null}
      */
-
-    var primitives = null;
-
-    for (var i = 0; i < styles.length; i++) {
-      var prims = this.olFeatureToCesium(layer, feature, styles[i], context);
-
+    let primitives = null;
+    for (let i = 0; i < styles.length; i++) {
+      const prims = this.olFeatureToCesium(layer, feature, styles[i], context);
       if (!primitives) {
         primitives = prims;
       } else if (prims) {
-        var _i7 = 0,
-            prim = void 0;
-
-        while (prim = prims.get(_i7)) {
+        let i = 0,
+          prim;
+        while (prim = prims.get(i)) {
           primitives.add(prim);
-          _i7++;
+          i++;
         }
       }
     }
-
     return primitives;
-  };
-
-  return FeatureConverter;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (FeatureConverter);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/OLCesium.js":
-/*!******************************!*\
-  !*** ./src/olcs/OLCesium.js ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/olcs/MVTImageryProvider.ts":
+/*!****************************************!*\
+  !*** ./src/olcs/MVTImageryProvider.ts ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MVTImageryProvider)
+/* harmony export */ });
+/* harmony import */ var ol_format_MVT_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/format/MVT.js */ "ol/format/MVT.js");
+/* harmony import */ var ol_format_MVT_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_format_MVT_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var ol_style_Style_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/style/Style.js */ "ol/style/Style.js");
+/* harmony import */ var ol_style_Style_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_style_Style_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var ol_style_Stroke_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/style/Stroke.js */ "ol/style/Stroke.js");
+/* harmony import */ var ol_style_Stroke_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_style_Stroke_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var ol_render_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/render.js */ "ol/render.js");
+/* harmony import */ var ol_render_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_render_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
+/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ol_util_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/util.js */ "ol/util.js");
+/* harmony import */ var ol_util_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_util_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var ol_structs_LRUCache_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/structs/LRUCache.js */ "ol/structs/LRUCache.js");
+/* harmony import */ var ol_structs_LRUCache_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ol_structs_LRUCache_js__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var ol_tilegrid_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/tilegrid.js */ "ol/tilegrid.js");
+/* harmony import */ var ol_tilegrid_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(ol_tilegrid_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var ol_tileurlfunction_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/tileurlfunction.js */ "ol/tileurlfunction.js");
+/* harmony import */ var ol_tileurlfunction_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(ol_tileurlfunction_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var ol_render_Feature_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/render/Feature.js */ "ol/render/Feature.js");
+/* harmony import */ var ol_render_Feature_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(ol_render_Feature_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/OLImageryProvider */ "./src/olcs/core/OLImageryProvider.ts");
+
+
+
+
+
+
+
+
+
+
+
+const format = new (ol_format_MVT_js__WEBPACK_IMPORTED_MODULE_0___default())({
+  featureClass: (ol_render_Feature_js__WEBPACK_IMPORTED_MODULE_9___default())
+});
+const styles = [new (ol_style_Style_js__WEBPACK_IMPORTED_MODULE_1___default())({
+  stroke: new (ol_style_Stroke_js__WEBPACK_IMPORTED_MODULE_2___default())({
+    color: 'blue',
+    width: 2
+  })
+})];
+class MVTImageryProvider {
+  get minimumLevel() {
+    return this.minimumLevel_;
+  }
+  /**
+  * When <code>true</code>, this model is ready to render, i.e., the external binary, image,
+  * and shader files were downloaded and the WebGL resources were created.
+  */
+  get ready() {
+    return this.ready_;
+  }
+
+  /**
+  * Gets the rectangle, in radians, of the imagery provided by the instance.
+  */
+  get rectangle() {
+    return this.rectangle_;
+  }
+
+  /**
+   * Gets the tiling scheme used by the provider.
+   */
+  get tilingScheme() {
+    return this.tilingScheme_;
+  }
+
+  /**
+   * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+   * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+   * are passed an instance of {@link Cesium.TileProviderError}.
+   */
+
+  /**
+   * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+   * the source of the imagery.
+   */
+
+  getTileCredits(x, y, level) {
+    return [];
+  }
+
+  /**
+   * Gets the proxy used by this provider.
+   */
+
+  get _ready() {
+    return this.ready_;
+  }
+
+  /**
+   * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+   * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+   * returns undefined, no tiles are filtered.
+   */
+  get tileDiscardPolicy() {
+    return undefined;
+  }
+
+  // FIXME: this might be exposed
+  /**
+   * Gets a value indicating whether or not the images provided by this imagery provider
+   * include an alpha channel.  If this property is false, an alpha channel, if present, will
+   * be ignored.  If this property is true, any images without an alpha channel will be treated
+   * as if their alpha is 1.0 everywhere.  When this property is false, memory usage
+   * and texture upload time are reduced.
+   */
+  get hasAlphaChannel() {
+    return true;
+  }
+
+  // FIXME: this could be implemented by proxying to OL
+  /**
+   * Asynchronously determines what features, if any, are located at a given longitude and latitude within
+   * a tile.
+   * This function is optional, so it may not exist on all ImageryProviders.
+   * @param x - The tile X coordinate.
+   * @param y - The tile Y coordinate.
+   * @param level - The tile level.
+   * @param longitude - The longitude at which to pick features.
+   * @param latitude - The latitude at which to pick features.
+   * @return A promise for the picked features that will resolve when the asynchronous
+   *                   picking completes.  The resolved value is an array of {@link ImageryLayerFeatureInfo}
+   *                   instances.  The array may be empty if no features are found at the given location.
+   *                   It may also be undefined if picking is not supported.
+   */
+  pickFeatures(x, y, level, longitude, latitude) {
+    return undefined;
+  }
+  constructor(options) {
+    this.emptyCanvas_ = (0,_core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_10__.createEmptyCanvas)();
+    this.emptyCanvasPromise_ = Promise.resolve(this.emptyCanvas_);
+    this.tilingScheme_ = new Cesium.WebMercatorTilingScheme();
+    this.ready_ = true;
+    this.tileWidth = 256;
+    this.tileHeight = 256;
+    this.maximumLevel = 20;
+    this.minimumLevel_ = 0;
+    this.projection_ = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_4__.get)('EPSG:3857');
+    this.errorEvent = new Cesium.Event();
+    this.urls = options.urls;
+    this.rectangle_ = options.rectangle || this.tilingScheme.rectangle;
+    this.credit = options.credit;
+    this.styleFunction_ = options.styleFunction || (() => styles);
+    this.tileRectangle_ = new Cesium.Rectangle();
+    // to avoid too frequent cache grooming we allow x2 capacity
+    const cacheSize = options.cacheSize !== undefined ? options.cacheSize : 50;
+    this.tileCache = new (ol_structs_LRUCache_js__WEBPACK_IMPORTED_MODULE_6___default())(cacheSize);
+    this.featureCache = options.featureCache || new (ol_structs_LRUCache_js__WEBPACK_IMPORTED_MODULE_6___default())(cacheSize);
+    this.minimumLevel_ = options.minimumLevel || 0;
+    const tileGrid = (0,ol_tilegrid_js__WEBPACK_IMPORTED_MODULE_7__.getForProjection)(this.projection_);
+    this.tileFunction_ = (0,ol_tileurlfunction_js__WEBPACK_IMPORTED_MODULE_8__.createFromTemplates)(this.urls, tileGrid);
+  }
+  getTileFeatures(z, x, y) {
+    const cacheKey = this.getCacheKey_(z, x, y);
+    let promise;
+    if (this.featureCache.containsKey(cacheKey)) {
+      promise = this.featureCache.get(cacheKey);
+    }
+    if (!promise) {
+      const url = this.getUrl_(z, x, y);
+      promise = fetch(url).then(r => r.ok ? r : Promise.reject(r)).then(r => r.arrayBuffer()).then(buffer => this.readFeaturesFromBuffer(buffer));
+      this.featureCache.set(cacheKey, promise);
+      if (this.featureCache.getCount() > 2 * this.featureCache.highWaterMark) {
+        while (this.featureCache.canExpireCache()) {
+          this.featureCache.pop();
+        }
+      }
+    }
+    return promise;
+  }
+  readFeaturesFromBuffer(buffer) {
+    let options;
+    if (ol_util_js__WEBPACK_IMPORTED_MODULE_5__.VERSION <= '6.4.4') {
+      // See https://github.com/openlayers/openlayers/pull/11540
+      options = {
+        extent: [0, 0, 4096, 4096],
+        dataProjection: this.projection_,
+        featureProjection: this.projection_
+      };
+    }
+    const features = format.readFeatures(buffer, options);
+    const scaleFactor = this.tileWidth / 4096;
+    features.forEach(f => {
+      const flatCoordinates = f.getFlatCoordinates();
+      let flip = false;
+      for (let i = 0; i < flatCoordinates.length; ++i) {
+        flatCoordinates[i] *= scaleFactor;
+        if (flip) {
+          // FIXME: why do we need this now?
+          flatCoordinates[i] = this.tileWidth - flatCoordinates[i];
+        }
+        if (ol_util_js__WEBPACK_IMPORTED_MODULE_5__.VERSION <= '6.4.4') {
+          // LEGACY
+          flip = !flip;
+        }
+      }
+    });
+    return features;
+  }
+  getUrl_(z, x, y) {
+    // FIXME: probably we should not pass 1 as pixelRatio
+    const url = this.tileFunction_([z, x, y], 1, this.projection_);
+    return url;
+  }
+  getCacheKey_(z, x, y) {
+    return `${z}_${x}_${y}`;
+  }
+  requestImage(x, y, z, request) {
+    if (z < this.minimumLevel_) {
+      return this.emptyCanvasPromise_;
+    }
+    try {
+      const cacheKey = this.getCacheKey_(z, x, y);
+      let promise;
+      if (this.tileCache.containsKey(cacheKey)) {
+        promise = this.tileCache.get(cacheKey);
+      }
+      if (!promise) {
+        promise = this.getTileFeatures(z, x, y).then(features => {
+          // FIXME: here we suppose the 2D projection is in meters
+          this.tilingScheme.tileXYToNativeRectangle(x, y, z, this.tileRectangle_);
+          const resolution = (this.tileRectangle_.east - this.tileRectangle_.west) / this.tileWidth;
+          return this.rasterizeFeatures(features, this.styleFunction_, resolution);
+        });
+        this.tileCache.set(cacheKey, promise);
+        if (this.tileCache.getCount() > 2 * this.tileCache.highWaterMark) {
+          while (this.tileCache.canExpireCache()) {
+            this.tileCache.pop();
+          }
+        }
+      }
+      return promise;
+    } catch (e) {
+      console.trace(e);
+      // FIXME: open PR on Cesium to fix incorrect typing
+      // @ts-ignore
+      this.errorEvent.raiseEvent('could not render pbf to tile', e);
+    }
+  }
+  rasterizeFeatures(features, styleFunction, resolution) {
+    const canvas = document.createElement('canvas');
+    const vectorContext = (0,ol_render_js__WEBPACK_IMPORTED_MODULE_3__.toContext)(canvas.getContext('2d'), {
+      size: [this.tileWidth, this.tileHeight]
+    });
+    features.forEach(f => {
+      const styles = styleFunction(f, resolution);
+      if (styles) {
+        if (Array.isArray(styles)) {
+          styles.forEach(style => {
+            vectorContext.setStyle(style);
+            vectorContext.drawGeometry(f);
+          });
+        } else {
+          vectorContext.setStyle(styles);
+          vectorContext.drawGeometry(f);
+        }
+      }
+    });
+    return canvas;
+  }
+}
+
+/***/ }),
+
+/***/ "./src/olcs/OLCesium.ts":
+/*!******************************!*\
+  !*** ./src/olcs/OLCesium.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OLCesium)
+/* harmony export */ });
 /* harmony import */ var ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/geom/Point.js */ "ol/geom/Point.js");
 /* harmony import */ var ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
-/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core.js */ "./src/olcs/core.js");
-/* harmony import */ var _AutoRenderLoop_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AutoRenderLoop.js */ "./src/olcs/AutoRenderLoop.js");
-/* harmony import */ var _Camera_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Camera.js */ "./src/olcs/Camera.js");
-/* harmony import */ var _RasterSynchronizer_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RasterSynchronizer.js */ "./src/olcs/RasterSynchronizer.js");
-/* harmony import */ var _VectorSynchronizer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./VectorSynchronizer.js */ "./src/olcs/VectorSynchronizer.js");
-/* harmony import */ var _OverlaySynchronizer_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./OverlaySynchronizer.js */ "./src/olcs/OverlaySynchronizer.js");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core */ "./src/olcs/core.ts");
+/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
+/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _AutoRenderLoop__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AutoRenderLoop */ "./src/olcs/AutoRenderLoop.ts");
+/* harmony import */ var _Camera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Camera */ "./src/olcs/Camera.ts");
+/* harmony import */ var _RasterSynchronizer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./RasterSynchronizer */ "./src/olcs/RasterSynchronizer.ts");
+/* harmony import */ var _VectorSynchronizer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./VectorSynchronizer */ "./src/olcs/VectorSynchronizer.ts");
+/* harmony import */ var _OverlaySynchronizer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./OverlaySynchronizer */ "./src/olcs/OverlaySynchronizer.ts");
+
+
+
+
+
+
+
+
+
 /**
- * @module olcs.OLCesium
+ * Moved from Cesium
+ * The state of a BoundingSphere computation being performed by a {@link Visualizer}.
  */
+const BoundingSphereState = {
+  /**
+   * The BoundingSphere has been computed.
+   */
+  DONE: 0,
+  /**
+   * The BoundingSphere is still being computed.
+   */
+  PENDING: 1,
+  /**
+   * The BoundingSphere does not exist.
+   */
+  FAILED: 2
+};
 
-
-
-
-
-
-
-
+// FIXME: remove this when all the synchronizers are migrated to typescript.
 
 /**
  * @typedef {Object} OLCesiumOptions
@@ -2698,198 +2121,113 @@ __webpack_require__.r(__webpack_exports__);
  * @property {Cesium.SceneOptions} [sceneOptions] Allows the passing of property value to the
  *      `Cesium.Scene`.
  */
-
-var OLCesium =
-/*#__PURE__*/
-function () {
-  /**
-   * @param {!OLCesiumOptions} options Options.
-   * @constructor
-   * @api
-   */
-  function OLCesium(options) {
-    /**
-     * @type {olcs.AutoRenderLoop}
-     * @private
-     */
+class OLCesium {
+  constructor(options) {
     this.autoRenderLoop_ = null;
-    /**
-     * @type {!ol.Map}
-     * @private
-     */
-
+    this.resolutionScale_ = 1.0;
+    this.canvasClientWidth_ = 0.0;
+    this.canvasClientHeight_ = 0.0;
+    this.resolutionScaleChanged_ = true;
+    this.enabled_ = false;
+    this.pausedInteractions_ = [];
+    this.hiddenRootGroup_ = null;
+    /** Time of the last rendered frame, as returned by `performance.now()`. */
+    this.lastFrameTime_ = 0;
+    /** Target frame rate for the render loop.  */
+    this.targetFrameRate_ = Number.POSITIVE_INFINITY;
+    /** If the Cesium render loop is being blocked. */
+    this.blockCesiumRendering_ = false;
+    /** If the warmup routine is active. */
+    this.warmingUp_ = false;
+    this.trackedFeature_ = null;
+    this.trackedEntity_ = null;
+    this.entityView_ = null;
+    this.needTrackedEntityUpdate_ = false;
+    this.boundingSphereScratch_ = new Cesium.BoundingSphere();
     this.map_ = options.map;
-    /**
-     * @type {!function(): Cesium.JulianDate}
-     * @private
-     */
-
     this.time_ = options.time || function () {
       return Cesium.JulianDate.now();
     };
+
     /**
      * No change of the view projection.
-     * @private
      */
-
-
-    this.to4326Transform_ = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_1__["getTransform"])(this.map_.getView().getProjection(), 'EPSG:4326');
-    /**
-     * @type {number}
-     * @private
-     */
-
-    this.resolutionScale_ = 1.0;
-    /**
-     * @type {number}
-     * @private
-     */
-
-    this.canvasClientWidth_ = 0.0;
-    /**
-     * @type {number}
-     * @private
-     */
-
-    this.canvasClientHeight_ = 0.0;
-    /**
-     * @type {boolean}
-     * @private
-     */
-
-    this.resolutionScaleChanged_ = true; // force resize
-
-    var fillArea = 'position:absolute;top:0;left:0;width:100%;height:100%;';
-    /**
-     * @type {!Element}
-     * @private
-     */
-
+    this.to4326Transform_ = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_3__.getTransform)(this.map_.getView().getProjection(), 'EPSG:4326');
+    const fillArea = 'position:absolute;top:0;left:0;width:100%;height:100%;touch-action:none;';
     this.container_ = document.createElement('DIV');
-    var containerAttribute = document.createAttribute('style');
-    containerAttribute.value = fillArea + "visibility:hidden;";
+    const containerAttribute = document.createAttribute('style');
+    containerAttribute.value = `${fillArea}visibility:hidden;`;
     this.container_.setAttributeNode(containerAttribute);
-    var targetElement = options.target || null;
-
-    if (targetElement) {
-      if (typeof targetElement === 'string') {
-        targetElement = document.getElementById(targetElement);
-      }
-
-      targetElement.appendChild(this.container_);
-    } else {
-      var oc = this.map_.getViewport().querySelector('.ol-overlaycontainer');
-
-      if (oc && oc.parentNode) {
-        oc.parentNode.insertBefore(this.container_, oc);
-      }
+    let targetElement = options.target || this.map_.getViewport();
+    if (typeof targetElement === 'string') {
+      targetElement = document.getElementById(targetElement);
     }
+    targetElement.appendChild(this.container_);
+
     /**
      * Whether the Cesium container is placed over the ol map.
-     * @type {boolean}
-     * @private
+     * a target => side by side mode
+     * no target => over map mode
      */
-
-
-    this.isOverMap_ = !targetElement;
-
+    this.isOverMap_ = !options.target;
     if (this.isOverMap_ && options.stopOpenLayersEventsPropagation) {
-      var overlayEvents = ['click', 'dblclick', 'mousedown', 'touchstart', 'MSPointerDown', 'pointerdown', 'mousewheel', 'wheel'];
-
-      for (var i = 0, ii = overlayEvents.length; i < ii; ++i) {
-        this.container_.addEventListener(overlayEvents[i], function (evt) {
-          return evt.stopPropagation();
-        });
+      const overlayEvents = ['click', 'dblclick', 'mousedown', 'touchstart', 'pointerdown', 'mousewheel', 'wheel'];
+      for (let i = 0, ii = overlayEvents.length; i < ii; ++i) {
+        this.container_.addEventListener(overlayEvents[i], evt => evt.stopPropagation());
       }
     }
-    /**
-     * @type {!HTMLCanvasElement}
-     * @private
-     */
-
-
-    this.canvas_ =
-    /** @type {!HTMLCanvasElement} */
-    document.createElement('CANVAS');
-    var canvasAttribute = document.createAttribute('style');
+    this.canvas_ = document.createElement('canvas');
+    const canvasAttribute = document.createAttribute('style');
     canvasAttribute.value = fillArea;
     this.canvas_.setAttributeNode(canvasAttribute);
-
-    if (_util_js__WEBPACK_IMPORTED_MODULE_2__["default"].supportsImageRenderingPixelated()) {
+    if ((0,_util__WEBPACK_IMPORTED_MODULE_1__.supportsImageRenderingPixelated)()) {
       // non standard CSS4
-      this.canvas_.style['imageRendering'] = _util_js__WEBPACK_IMPORTED_MODULE_2__["default"].imageRenderingValue();
+      this.canvas_.style['imageRendering'] = (0,_util__WEBPACK_IMPORTED_MODULE_1__.imageRenderingValue)();
     }
-
     this.canvas_.oncontextmenu = function () {
       return false;
     };
-
     this.canvas_.onselectstart = function () {
       return false;
     };
-
     this.container_.appendChild(this.canvas_);
-    /**
-     * @type {boolean}
-     * @private
-     */
-
-    this.enabled_ = false;
-    /**
-     * @type {!Array.<ol.interaction.Interaction>}
-     * @private
-     */
-
-    this.pausedInteractions_ = [];
-    /**
-     * @type {?ol.layer.Group}
-     * @private
-     */
-
-    this.hiddenRootGroup_ = null;
-    var sceneOptions = options.sceneOptions !== undefined ? options.sceneOptions :
-    /** @type {Cesium.SceneOptions} */
-    {};
-    sceneOptions.canvas = this.canvas_;
-    sceneOptions.scene3DOnly = true;
-    /**
-     * @type {!Cesium.Scene}
-     * @private
-     */
-
+    const sceneOptions = options.sceneOptions !== undefined ? {
+      ...options.sceneOptions,
+      canvas: this.canvas_,
+      scene3DOnly: true
+    } : {
+      canvas: this.canvas_,
+      scene3DOnly: true
+    };
     this.scene_ = new Cesium.Scene(sceneOptions);
-    var sscc = this.scene_.screenSpaceCameraController;
-    sscc.tiltEventTypes.push({
-      'eventType': Cesium.CameraEventType.LEFT_DRAG,
-      'modifier': Cesium.KeyboardEventModifier.SHIFT
-    });
-    sscc.tiltEventTypes.push({
-      'eventType': Cesium.CameraEventType.LEFT_DRAG,
-      'modifier': Cesium.KeyboardEventModifier.ALT
-    });
+    const sscc = this.scene_.screenSpaceCameraController;
+    if (!Array.isArray(sscc.tiltEventTypes)) {
+      console.log('sscc is not an array');
+    } else {
+      sscc.tiltEventTypes.push({
+        'eventType': Cesium.CameraEventType.LEFT_DRAG,
+        'modifier': Cesium.KeyboardEventModifier.SHIFT
+      });
+      sscc.tiltEventTypes.push({
+        'eventType': Cesium.CameraEventType.LEFT_DRAG,
+        'modifier': Cesium.KeyboardEventModifier.ALT
+      });
+    }
     sscc.enableLook = false;
     this.scene_.camera.constrainedAxis = Cesium.Cartesian3.UNIT_Z;
-    /**
-     * @type {!olcs.Camera}
-     * @private
-     */
-
-    this.camera_ = new _Camera_js__WEBPACK_IMPORTED_MODULE_5__["default"](this.scene_, this.map_);
-    /**
-     * @type {!Cesium.Globe}
-     * @private
-     */
-
+    this.camera_ = new _Camera__WEBPACK_IMPORTED_MODULE_5__["default"](this.scene_, this.map_);
     this.globe_ = new Cesium.Globe(Cesium.Ellipsoid.WGS84);
     this.globe_.baseColor = Cesium.Color.WHITE;
     this.scene_.globe = this.globe_;
-    this.scene_.skyAtmosphere = new Cesium.SkyAtmosphere(); // The first layer of Cesium is special; using a 1x1 transparent image to workaround it.
-    // See https://github.com/AnalyticalGraphicsInc/cesium/issues/1323 for details.
+    this.scene_.skyAtmosphere = new Cesium.SkyAtmosphere();
 
-    var firstImageryProvider = new Cesium.SingleTileImageryProvider({
+    // The first layer of Cesium is special; using a 1x1 transparent image to workaround it.
+    // See https://github.com/AnalyticalGraphicsInc/cesium/issues/1323 for details.
+    const firstImageryProvider = new Cesium.SingleTileImageryProvider({
+      tileHeight: 1,
+      tileWidth: 1,
       url: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=',
       rectangle: Cesium.Rectangle.fromDegrees(0, 0, 1, 1) // the Rectangle dimensions are arbitrary
-
     });
     this.globe_.imageryLayers.addImageryProvider(firstImageryProvider, 0);
     this.dataSourceCollection_ = new Cesium.DataSourceCollection();
@@ -2897,203 +2235,125 @@ function () {
       scene: this.scene_,
       dataSourceCollection: this.dataSourceCollection_
     });
-    var synchronizers = options.createSynchronizers ? options.createSynchronizers(this.map_, this.scene_, this.dataSourceCollection_) : [new _RasterSynchronizer_js__WEBPACK_IMPORTED_MODULE_6__["default"](this.map_, this.scene_), new _VectorSynchronizer_js__WEBPACK_IMPORTED_MODULE_7__["default"](this.map_, this.scene_), new _OverlaySynchronizer_js__WEBPACK_IMPORTED_MODULE_8__["default"](this.map_, this.scene_)]; // Assures correct canvas size after initialisation
+    this.synchronizers_ = options.createSynchronizers ? options.createSynchronizers(this.map_, this.scene_, this.dataSourceCollection_) : [new _RasterSynchronizer__WEBPACK_IMPORTED_MODULE_6__["default"](this.map_, this.scene_), new _VectorSynchronizer__WEBPACK_IMPORTED_MODULE_7__["default"](this.map_, this.scene_), new _OverlaySynchronizer__WEBPACK_IMPORTED_MODULE_8__["default"](this.map_, this.scene_)];
 
+    // Assures correct canvas size after initialisation
     this.handleResize_();
-
-    for (var _i = synchronizers.length - 1; _i >= 0; --_i) {
-      synchronizers[_i].synchronize();
+    for (let i = this.synchronizers_.length - 1; i >= 0; --i) {
+      this.synchronizers_[i].synchronize();
     }
-    /**
-     * Time of the last rendered frame, as returned by `performance.now()`.
-     * @type {number}
-     * @private
-     */
-
-
-    this.lastFrameTime_ = 0;
-    /**
-     * The identifier returned by `requestAnimationFrame`.
-     * @type {number|undefined}
-     * @private
-     */
-
-    this.renderId_ = undefined;
-    /**
-     * Target frame rate for the render loop.
-     * @type {number}
-     * @private
-     */
-
-    this.targetFrameRate_ = Number.POSITIVE_INFINITY;
-    /**
-     * If the Cesium render loop is being blocked.
-     * @type {boolean}
-     * @private
-     */
-
-    this.blockCesiumRendering_ = false;
-    /**
-     * If the warmup routine is active.
-     * @type {boolean}
-     * @private
-     */
-
-    this.warmingUp_ = false;
-    /**
-     * @type {ol.Feature}
-     * @private
-     */
-
-    this.trackedFeature_ = null;
-    /**
-     * @type {Cesium.Entity}
-     * @private
-     */
-
-    this.trackedEntity_ = null;
-    /**
-     * @type {Cesium.EntityView}
-     * @private
-     */
-
-    this.entityView_ = null;
-    /**
-     * @type {boolean}
-     * @private
-     */
-
-    this.needTrackedEntityUpdate_ = false;
-    /**
-     * @type {!Cesium.BoundingSphere}
-     */
-
-    this.boundingSphereScratch_ = new Cesium.BoundingSphere();
-    var eventHelper = new Cesium.EventHelper();
-    eventHelper.add(this.scene_.postRender, OLCesium.prototype.updateTrackedEntity_, this); // Cesium has a mechanism to prevent the camera to go under the terrain.
-    // Unfortunately, it is only active when all the terrain has been loaded, which:
-    // - does not prevent the camera to sink under terrain anymore;
-    // - introduce a jumping effect once all terrain has been loaded and the position of the camera is finally fixed.
-    // The property below enables a workaround found in the Camptocamp Cesium fork.
-    // See also https://github.com/AnalyticalGraphicsInc/cesium/issues/5999.
-
-    Cesium.Camera.enableSuspendTerrainAdjustment = false;
+    const eventHelper = new Cesium.EventHelper();
+    eventHelper.add(this.scene_.postRender, OLCesium.prototype.updateTrackedEntity_, this);
   }
+
+  /**
+   * Destroys the Cesium resources held by this object.
+   */
+  destroy() {
+    cancelAnimationFrame(this.renderId_);
+    this.renderId_ = undefined;
+    this.synchronizers_.forEach(synchronizer => synchronizer.destroyAll());
+    this.camera_.destroy();
+    this.scene_.destroy();
+    // @ts-ignore TS2341
+    this.scene_._postRender = null;
+    this.container_.remove();
+  }
+
   /**
    * Render the Cesium scene.
-   * @private
    */
-
-
-  var _proto = OLCesium.prototype;
-
-  _proto.render_ = function render_() {
+  render_() {
     // if a call to `requestAnimationFrame` is pending, cancel it
     if (this.renderId_ !== undefined) {
       cancelAnimationFrame(this.renderId_);
       this.renderId_ = undefined;
-    } // only render if Cesium is enabled/warming and rendering hasn't been blocked
+    }
 
-
+    // only render if Cesium is enabled/warming and rendering hasn't been blocked
     if ((this.enabled_ || this.warmingUp_) && !this.blockCesiumRendering_) {
       this.renderId_ = requestAnimationFrame(this.onAnimationFrame_.bind(this));
     }
   }
+
   /**
    * Callback for `requestAnimationFrame`.
    * @param {number} frameTime The frame time, from `performance.now()`.
-   * @private
    */
-  ;
+  onAnimationFrame_(frameTime) {
+    this.renderId_ = undefined;
 
-  _proto.onAnimationFrame_ = function onAnimationFrame_(frameTime) {
-    this.renderId_ = undefined; // check if a frame was rendered within the target frame rate
-
-    var interval = 1000.0 / this.targetFrameRate_;
-    var delta = frameTime - this.lastFrameTime_;
-
+    // check if a frame was rendered within the target frame rate
+    const interval = 1000.0 / this.targetFrameRate_;
+    const delta = frameTime - this.lastFrameTime_;
     if (delta < interval) {
       // too soon, don't render yet
       this.render_();
       return;
-    } // time to render a frame, save the time
+    }
 
-
+    // time to render a frame, save the time
     this.lastFrameTime_ = frameTime;
-    var julianDate = this.time_();
+    const julianDate = this.time_();
+    // initializeFrame private property
+    // @ts-ignore TS2341
     this.scene_.initializeFrame();
     this.handleResize_();
-    this.dataSourceDisplay_.update(julianDate); // Update tracked entity
+    this.dataSourceDisplay_.update(julianDate);
 
+    // Update tracked entity
     if (this.entityView_) {
-      var trackedEntity = this.trackedEntity_;
-      var trackedState = this.dataSourceDisplay_.getBoundingSphere(trackedEntity, false, this.boundingSphereScratch_);
-
-      if (trackedState === Cesium.BoundingSphereState.DONE) {
+      const trackedEntity = this.trackedEntity_;
+      // getBoundingSphere private property
+      // @ts-ignore TS2341
+      const trackedState = this.dataSourceDisplay_.getBoundingSphere(trackedEntity, false, this.boundingSphereScratch_);
+      if (trackedState === BoundingSphereState.DONE) {
         this.boundingSphereScratch_.radius = 1; // a radius of 1 is enough for tracking points
-
         this.entityView_.update(julianDate, this.boundingSphereScratch_);
       }
     }
-
     this.scene_.render(julianDate);
-    this.camera_.checkCameraChange(); // request the next render call after this one completes to ensure the browser doesn't get backed up
+    this.camera_.checkCameraChange();
 
+    // request the next render call after this one completes to ensure the browser doesn't get backed up
     this.render_();
   }
-  /**
-   * @private
-   */
-  ;
-
-  _proto.updateTrackedEntity_ = function updateTrackedEntity_() {
+  updateTrackedEntity_() {
     if (!this.needTrackedEntityUpdate_) {
       return;
     }
+    const trackedEntity = this.trackedEntity_;
+    const scene = this.scene_;
 
-    var trackedEntity = this.trackedEntity_;
-    var scene = this.scene_;
-    var state = this.dataSourceDisplay_.getBoundingSphere(trackedEntity, false, this.boundingSphereScratch_);
-
-    if (state === Cesium.BoundingSphereState.PENDING) {
+    // getBoundingSphere private property
+    // @ts-ignore TS2341
+    const state = this.dataSourceDisplay_.getBoundingSphere(trackedEntity, false, this.boundingSphereScratch_);
+    if (state === BoundingSphereState.PENDING) {
       return;
     }
-
     scene.screenSpaceCameraController.enableTilt = false;
-    var bs = state !== Cesium.BoundingSphereState.FAILED ? this.boundingSphereScratch_ : undefined;
-
+    const bs = state !== BoundingSphereState.FAILED ? this.boundingSphereScratch_ : undefined;
     if (bs) {
       bs.radius = 1;
     }
-
     this.entityView_ = new Cesium.EntityView(trackedEntity, scene, scene.mapProjection.ellipsoid);
     this.entityView_.update(this.time_(), bs);
     this.needTrackedEntityUpdate_ = false;
   }
-  /**
-   * @private
-   */
-  ;
-
-  _proto.handleResize_ = function handleResize_() {
-    var width = this.canvas_.clientWidth;
-    var height = this.canvas_.clientHeight;
-
-    if (width === 0 | height === 0) {
+  handleResize_() {
+    let width = this.canvas_.clientWidth;
+    let height = this.canvas_.clientHeight;
+    if (width === 0 || height === 0) {
       // The canvas DOM element is not ready yet.
       return;
     }
-
     if (width === this.canvasClientWidth_ && height === this.canvasClientHeight_ && !this.resolutionScaleChanged_) {
       return;
     }
-
-    var resolutionScale = this.resolutionScale_;
-
-    if (!_util_js__WEBPACK_IMPORTED_MODULE_2__["default"].supportsImageRenderingPixelated()) {
+    let resolutionScale = this.resolutionScale_;
+    if (!(0,_util__WEBPACK_IMPORTED_MODULE_1__.supportsImageRenderingPixelated)()) {
       resolutionScale *= window.devicePixelRatio || 1.0;
     }
-
     this.resolutionScaleChanged_ = false;
     this.canvasClientWidth_ = width;
     this.canvasClientHeight_ = height;
@@ -3103,222 +2363,148 @@ function () {
     this.canvas_.height = height;
     this.scene_.camera.frustum.aspectRatio = width / height;
   }
-  /**
-   * @return {!olcs.Camera}
-   * @api
-   */
-  ;
-
-  _proto.getCamera = function getCamera() {
+  getCamera() {
     return this.camera_;
   }
-  /**
-   * @return {!ol.Map}
-   * @api
-   */
-  ;
-
-  _proto.getOlMap = function getOlMap() {
+  getOlMap() {
     return this.map_;
   }
-  /**
-   * @return {!ol.View}
-   * @api
-   */
-  ;
-
-  _proto.getOlView = function getOlView() {
-    var view = this.map_.getView();
+  getOlView() {
+    const view = this.map_.getView();
     console.assert(view);
     return view;
   }
-  /**
-   * @return {!Cesium.Scene}
-   * @api
-   */
-  ;
-
-  _proto.getCesiumScene = function getCesiumScene() {
+  getCesiumScene() {
     return this.scene_;
   }
-  /**
-   * @return {!Cesium.DataSourceCollection}
-   * @api
-   */
-  ;
-
-  _proto.getDataSources = function getDataSources() {
+  getDataSources() {
     return this.dataSourceCollection_;
   }
-  /**
-   * @return {!Cesium.DataSourceDisplay}
-   * @api
-   */
-  ;
-
-  _proto.getDataSourceDisplay = function getDataSourceDisplay() {
+  getDataSourceDisplay() {
     return this.dataSourceDisplay_;
   }
-  /**
-   * @return {boolean}
-   * @api
-   */
-  ;
-
-  _proto.getEnabled = function getEnabled() {
+  getEnabled() {
     return this.enabled_;
   }
+
   /**
    * Enables/disables the Cesium.
    * This modifies the visibility style of the container element.
-   * @param {boolean} enable
-   * @api
    */
-  ;
-
-  _proto.setEnabled = function setEnabled(enable) {
-    var _this = this;
-
+  setEnabled(enable) {
     if (this.enabled_ === enable) {
       return;
     }
+    this.enabled_ = enable;
 
-    this.enabled_ = enable; // some Cesium operations are operating with canvas.clientWidth,
+    // some Cesium operations are operating with canvas.clientWidth,
     // so we can't remove it from DOM or even make display:none;
-
     this.container_.style.visibility = this.enabled_ ? 'visible' : 'hidden';
-    var interactions;
-
+    let interactions;
     if (this.enabled_) {
       this.throwOnUnitializedMap_();
-
       if (this.isOverMap_) {
         interactions = this.map_.getInteractions();
-        interactions.forEach(function (el, i, arr) {
-          _this.pausedInteractions_.push(el);
+        interactions.forEach((el, i, arr) => {
+          this.pausedInteractions_.push(el);
         });
         interactions.clear();
-
-        this.map_.addInteraction = function (interaction) {
-          return _this.pausedInteractions_.push(interaction);
-        };
-
-        this.map_.removeInteraction = function (interaction) {
-          return _this.pausedInteractions_ = _this.pausedInteractions_.filter(function (i) {
-            return i !== interaction;
+        this.map_.addInteraction = interaction => this.pausedInteractions_.push(interaction);
+        this.map_.removeInteraction = interaction => {
+          let interactionRemoved = false;
+          this.pausedInteractions_ = this.pausedInteractions_.filter(i => {
+            const removed = i !== interaction;
+            if (!interactionRemoved) {
+              interactionRemoved = removed;
+            }
+            return removed;
           });
+          return interactionRemoved ? interaction : undefined;
         };
-
-        var rootGroup = this.map_.getLayerGroup();
-
+        const rootGroup = this.map_.getLayerGroup();
         if (rootGroup.getVisible()) {
           this.hiddenRootGroup_ = rootGroup;
           this.hiddenRootGroup_.setVisible(false);
         }
-
         this.map_.getOverlayContainer().classList.add('olcs-hideoverlay');
-        this.map_.getOverlayContainerStopEvent().classList.add('olcs-hideoverlay');
       }
-
       this.camera_.readFromView();
       this.render_();
     } else {
       if (this.isOverMap_) {
         interactions = this.map_.getInteractions();
-        this.pausedInteractions_.forEach(function (interaction) {
+        this.pausedInteractions_.forEach(interaction => {
           interactions.push(interaction);
         });
         this.pausedInteractions_.length = 0;
-
-        this.map_.addInteraction = function (interaction) {
-          return _this.map_.getInteractions().push(interaction);
-        };
-
-        this.map_.removeInteraction = function (interaction) {
-          return _this.map_.getInteractions().remove(interaction);
-        };
-
+        this.map_.addInteraction = interaction => this.map_.getInteractions().push(interaction);
+        this.map_.removeInteraction = interaction => this.map_.getInteractions().remove(interaction);
         this.map_.getOverlayContainer().classList.remove('olcs-hideoverlay');
-        this.map_.getOverlayContainerStopEvent().classList.remove('olcs-hideoverlay');
-
         if (this.hiddenRootGroup_) {
           this.hiddenRootGroup_.setVisible(true);
           this.hiddenRootGroup_ = null;
         }
       }
-
       this.camera_.updateView();
     }
   }
+
   /**
    * Preload Cesium so that it is ready when transitioning from 2D to 3D.
    * @param {number} height Target height of the camera
    * @param {number} timeout Milliseconds after which the warming will stop
-   * @api
   */
-  ;
-
-  _proto.warmUp = function warmUp(height, timeout) {
-    var _this2 = this;
-
+  warmUp(height, timeout) {
     if (this.enabled_) {
       // already enabled
       return;
     }
-
     this.throwOnUnitializedMap_();
     this.camera_.readFromView();
-    var ellipsoid = this.globe_.ellipsoid;
-    var csCamera = this.scene_.camera;
-    var position = ellipsoid.cartesianToCartographic(csCamera.position);
-
+    const ellipsoid = this.globe_.ellipsoid;
+    const csCamera = this.scene_.camera;
+    const position = ellipsoid.cartesianToCartographic(csCamera.position);
     if (position.height < height) {
       position.height = height;
       csCamera.position = ellipsoid.cartographicToCartesian(position);
     }
-
     this.warmingUp_ = true;
     this.render_();
-    setTimeout(function () {
-      _this2.warmingUp_ = false;
+    setTimeout(() => {
+      this.warmingUp_ = false;
     }, timeout);
   }
+
   /**
    * Block Cesium rendering to save resources.
    * @param {boolean} block True to block.
-   * @api
   */
-  ;
-
-  _proto.setBlockCesiumRendering = function setBlockCesiumRendering(block) {
+  setBlockCesiumRendering(block) {
     if (this.blockCesiumRendering_ !== block) {
-      this.blockCesiumRendering_ = block; // reset the render loop
+      this.blockCesiumRendering_ = block;
 
+      // reset the render loop
       this.render_();
     }
   }
+
   /**
    * Render the globe only when necessary in order to save resources.
    * Experimental.
-   * @api
    */
-  ;
-
-  _proto.enableAutoRenderLoop = function enableAutoRenderLoop() {
+  enableAutoRenderLoop() {
     if (!this.autoRenderLoop_) {
-      this.autoRenderLoop_ = new _AutoRenderLoop_js__WEBPACK_IMPORTED_MODULE_4__["default"](this);
+      this.autoRenderLoop_ = new _AutoRenderLoop__WEBPACK_IMPORTED_MODULE_4__["default"](this);
     }
   }
+
   /**
    * Get the autorender loop.
-   * @return {?olcs.AutoRenderLoop}
-   * @api
   */
-  ;
-
-  _proto.getAutoRenderLoop = function getAutoRenderLoop() {
+  getAutoRenderLoop() {
     return this.autoRenderLoop_;
   }
+
   /**
    * The 3D Cesium globe is rendered in a canvas with two different dimensions:
    * clientWidth and clientHeight which are the dimension on the screen and
@@ -3331,698 +2517,481 @@ function () {
    * Pixel ratio should also be taken into account; by default, a device with
    * pixel ratio of 2.0 will have a buffer surface 4 times bigger than the client
    * surface.
-   *
-   * @param {number} value
-   * @this {olcs.OLCesium}
-   * @api
    */
-  ;
-
-  _proto.setResolutionScale = function setResolutionScale(value) {
+  setResolutionScale(value) {
     value = Math.max(0, value);
-
     if (value !== this.resolutionScale_) {
       this.resolutionScale_ = Math.max(0, value);
       this.resolutionScaleChanged_ = true;
-
       if (this.autoRenderLoop_) {
         this.autoRenderLoop_.restartRenderLoop();
       }
     }
   }
+
   /**
    * Set the target frame rate for the renderer. Set to `Number.POSITIVE_INFINITY`
    * to render as quickly as possible.
    * @param {number} value The frame rate, in frames per second.
-   * @api
    */
-  ;
-
-  _proto.setTargetFrameRate = function setTargetFrameRate(value) {
+  setTargetFrameRate(value) {
     if (this.targetFrameRate_ !== value) {
-      this.targetFrameRate_ = value; // reset the render loop
+      this.targetFrameRate_ = value;
 
+      // reset the render loop
       this.render_();
     }
   }
+
   /**
    * Check if OpenLayers map is not properly initialized.
-   * @private
    */
-  ;
-
-  _proto.throwOnUnitializedMap_ = function throwOnUnitializedMap_() {
-    var map = this.map_;
-    var view = map.getView();
-    var center = view.getCenter();
-
+  throwOnUnitializedMap_() {
+    const map = this.map_;
+    const view = map.getView();
+    const center = view.getCenter();
     if (!view.isDef() || isNaN(center[0]) || isNaN(center[1])) {
-      throw new Error("The OpenLayers map is not properly initialized: " + center + " / " + view.getResolution());
-    }
-  };
-
-  return OLCesium;
-}();
-
-Object.defineProperties(OLCesium.prototype, {
-  'trackedFeature': {
-    'get':
-    /** @this {olcs.OLCesium} */
-    function get() {
-      return this.trackedFeature_;
-    },
-    'set':
-    /** @this {olcs.OLCesium} */
-    function set(feature) {
-      if (this.trackedFeature_ !== feature) {
-        var scene = this.scene_; //Stop tracking
-
-        if (!feature || !feature.getGeometry()) {
-          this.needTrackedEntityUpdate_ = false;
-          scene.screenSpaceCameraController.enableTilt = true;
-
-          if (this.trackedEntity_) {
-            this.dataSourceDisplay_.defaultDataSource.entities.remove(this.trackedEntity_);
-          }
-
-          this.trackedEntity_ = null;
-          this.trackedFeature_ = null;
-          this.entityView_ = null;
-          scene.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
-          return;
-        }
-
-        this.trackedFeature_ = feature; //We can't start tracking immediately, so we set a flag and start tracking
-        //when the bounding sphere is ready (most likely next frame).
-
-        this.needTrackedEntityUpdate_ = true;
-        var to4326Transform = this.to4326Transform_;
-
-        var toCesiumPosition = function toCesiumPosition() {
-          var geometry = feature.getGeometry();
-          console.assert(geometry instanceof ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-          var coo = geometry.getCoordinates();
-          var coo4326 = to4326Transform(coo, undefined, coo.length);
-          return _core_js__WEBPACK_IMPORTED_MODULE_3__["default"].ol4326CoordinateToCesiumCartesian(coo4326);
-        }; // Create an invisible point entity for tracking.
-        // It is independant from the primitive/geometry created by the vector synchronizer.
-
-
-        var options = {
-          'position': new Cesium.CallbackProperty(function (time, result) {
-            return toCesiumPosition();
-          }, false),
-          'point': {
-            'pixelSize': 1,
-            'color': Cesium.Color.TRANSPARENT
-          }
-        };
-        this.trackedEntity_ = this.dataSourceDisplay_.defaultDataSource.entities.add(options);
-      }
+      throw new Error(`The OpenLayers map is not properly initialized: ${center} / ${view.getResolution()}`);
     }
   }
-});
-/* harmony default export */ __webpack_exports__["default"] = (OLCesium);
+  get trackedFeature() {
+    return this.trackedFeature_;
+  }
+  set trackedFeature(feature) {
+    if (this.trackedFeature_ !== feature) {
+      const scene = this.scene_;
+
+      //Stop tracking
+      if (!feature || !feature.getGeometry()) {
+        this.needTrackedEntityUpdate_ = false;
+        scene.screenSpaceCameraController.enableTilt = true;
+        if (this.trackedEntity_) {
+          this.dataSourceDisplay_.defaultDataSource.entities.remove(this.trackedEntity_);
+        }
+        this.trackedEntity_ = null;
+        this.trackedFeature_ = null;
+        this.entityView_ = null;
+        scene.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);
+        return;
+      }
+      this.trackedFeature_ = feature;
+
+      //We can't start tracking immediately, so we set a flag and start tracking
+      //when the bounding sphere is ready (most likely next frame).
+      this.needTrackedEntityUpdate_ = true;
+      const to4326Transform = this.to4326Transform_;
+      const toCesiumPosition = function () {
+        const geometry = feature.getGeometry();
+        console.assert(geometry instanceof (ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0___default()));
+        const coo = geometry instanceof (ol_geom_Point_js__WEBPACK_IMPORTED_MODULE_0___default()) ? geometry.getCoordinates() : [];
+        const coo4326 = to4326Transform(coo, undefined, coo.length);
+        return (0,_core__WEBPACK_IMPORTED_MODULE_2__.ol4326CoordinateToCesiumCartesian)(coo4326);
+      };
+
+      // Create an invisible point entity for tracking.
+      // It is independent of the primitive/geometry created by the vector synchronizer.
+      const options = {
+        // @ts-ignore according to Cesium types, not possible to pass CallbackProperty
+        position: new Cesium.CallbackProperty((time, result) => toCesiumPosition(), false),
+        point: {
+          pixelSize: 1,
+          color: Cesium.Color.TRANSPARENT
+        }
+      };
+      this.trackedEntity_ = this.dataSourceDisplay_.defaultDataSource.entities.add(options);
+    }
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/OverlaySynchronizer.js":
+/***/ "./src/olcs/OverlaySynchronizer.ts":
 /*!*****************************************!*\
-  !*** ./src/olcs/OverlaySynchronizer.js ***!
+  !*** ./src/olcs/OverlaySynchronizer.ts ***!
   \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SynchronizedOverlay_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SynchronizedOverlay.js */ "./src/olcs/SynchronizedOverlay.js");
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/**
- * @module olcs.OverlaySynchronizer
- */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OverlaySynchronizer)
+/* harmony export */ });
+/* harmony import */ var _SynchronizedOverlay__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SynchronizedOverlay */ "./src/olcs/SynchronizedOverlay.ts");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
 
 
-
-var OverlaySynchronizer =
-/*#__PURE__*/
-function () {
+class OverlaySynchronizer {
   /**
-  * @param {!ol.Map} map
-  * @param {!Cesium.Scene} scene
+  * @param map
+  * @param scene
   * @constructor
-  * @template T
   * @api
   */
-  function OverlaySynchronizer(map, scene) {
-    var _this = this;
-
-    /**
-    * @type {!ol.Map}
-    * @protected
-    */
+  constructor(map, scene) {
+    this.overlayMap_ = new Map();
+    this.overlayEvents = ['click', 'dblclick', 'mousedown', 'touchstart', 'pointerdown', 'mousewheel', 'wheel'];
     this.map = map;
-    /**
-    * @type {ol.Collection.<ol.Overlay>}
-    * @private
-    */
-
-    this.overlays_ = this.map.getOverlays();
-    /**
-    * @type {!Cesium.Scene}
-    * @protected
-    */
-
     this.scene = scene;
-    /**
-    * @private
-    * @type {!Element}
-    */
-
-    this.overlayContainerStopEvent_ = document.createElement('DIV');
+    this.map = map;
+    this.overlayCollection_ = this.map.getOverlays();
+    this.scene = scene;
+    this.overlayContainerStopEvent_ = document.createElement('div');
     this.overlayContainerStopEvent_.className = 'ol-overlaycontainer-stopevent';
-    var overlayEvents = ['click', 'dblclick', 'mousedown', 'touchstart', 'MSPointerDown', 'pointerdown', 'mousewheel', 'wheel'];
-    overlayEvents.forEach(function (event) {
-      _this.overlayContainerStopEvent_.addEventListener(event, function (evt) {
-        return evt.stopPropagation();
-      });
+    this.overlayEvents.forEach(name => {
+      this.overlayContainerStopEvent_.addEventListener(name, evt => evt.stopPropagation());
     });
     this.scene.canvas.parentElement.appendChild(this.overlayContainerStopEvent_);
-    /**
-    * @private
-    * @type {!Element}
-    */
-
-    this.overlayContainer_ = document.createElement('DIV');
+    this.overlayContainer_ = document.createElement('div');
     this.overlayContainer_.className = 'ol-overlaycontainer';
     this.scene.canvas.parentElement.appendChild(this.overlayContainer_);
-    /**
-    * @type {!Object<?,olcs.SynchronizedOverlay>}
-    * @private
-    */
-
-    this.overlayMap_ = {};
   }
+
   /**
   * Get the element that serves as a container for overlays that don't allow
   * event propagation. Elements added to this container won't let mousedown and
   * touchstart events through to the map, so clicks and gestures on an overlay
   * don't trigger any {@link ol.MapBrowserEvent}.
-  * @return {!Element} The map's overlay container that stops events.
+  * @return The map's overlay container that stops events.
   */
-
-
-  var _proto = OverlaySynchronizer.prototype;
-
-  _proto.getOverlayContainerStopEvent = function getOverlayContainerStopEvent() {
+  getOverlayContainerStopEvent() {
     return this.overlayContainerStopEvent_;
   }
+
   /**
   * Get the element that serves as a container for overlays.
-  * @return {!Element} The map's overlay container.
+  * @return The map's overlay container.
   */
-  ;
-
-  _proto.getOverlayContainer = function getOverlayContainer() {
+  getOverlayContainer() {
     return this.overlayContainer_;
   }
+
   /**
   * Destroy all and perform complete synchronization of the overlays.
   * @api
   */
-  ;
-
-  _proto.synchronize = function synchronize() {
+  synchronize() {
     this.destroyAll();
-    this.addOverlays();
-    this.overlays_.on('add', this.addOverlayFromEvent_.bind(this));
-    this.overlays_.on('remove', this.removeOverlayFromEvent_.bind(this));
-  }
-  /**
-  * @param {ol.Collection.Event} event
-  * @private
-  */
-  ;
-
-  _proto.addOverlayFromEvent_ = function addOverlayFromEvent_(event) {
-    var overlay =
-    /** @type {ol.Overlay} */
-    event.element;
-    this.addOverlay(overlay);
-  }
-  /**
-  * @api
-  */
-  ;
-
-  _proto.addOverlays = function addOverlays() {
-    var _this2 = this;
-
-    this.overlays_.forEach(function (overlay) {
-      _this2.addOverlay(overlay);
+    this.overlayCollection_.forEach(overlay => {
+      this.addOverlay(overlay);
     });
+    this.overlayCollection_.on('add', evt => this.addOverlay(evt.element));
+    this.overlayCollection_.on('remove', evt => this.removeOverlay(evt.element));
   }
+
   /**
-  * @param {ol.Overlay} overlay
   * @api
   */
-  ;
-
-  _proto.addOverlay = function addOverlay(overlay) {
+  addOverlay(overlay) {
     if (!overlay) {
       return;
     }
-
-    var cesiumOverlay = new _SynchronizedOverlay_js__WEBPACK_IMPORTED_MODULE_0__["default"]({
+    const cesiumOverlay = new _SynchronizedOverlay__WEBPACK_IMPORTED_MODULE_0__["default"]({
       scene: this.scene,
       synchronizer: this,
       parent: overlay
     });
-    var overlayId = Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(overlay).toString();
-    this.overlayMap_[overlayId] = cesiumOverlay;
+    this.overlayMap_.set((0,_util__WEBPACK_IMPORTED_MODULE_1__.getUid)(overlay), cesiumOverlay);
   }
-  /**
-  * @param {ol.Collection.Event} event
-  * @private
-  */
-  ;
 
-  _proto.removeOverlayFromEvent_ = function removeOverlayFromEvent_(event) {
-    var removedOverlay =
-    /** @type {ol.Overlay} */
-    event.element;
-    this.removeOverlay(removedOverlay);
-  }
   /**
   * Removes an overlay from the scene
-  * @param {ol.Overlay} overlay
   * @api
   */
-  ;
-
-  _proto.removeOverlay = function removeOverlay(overlay) {
-    var overlayId = Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(overlay).toString();
-    var csOverlay = this.overlayMap_[overlayId];
-
+  removeOverlay(overlay) {
+    const overlayId = (0,_util__WEBPACK_IMPORTED_MODULE_1__.getUid)(overlay);
+    const csOverlay = this.overlayMap_.get(overlayId);
     if (csOverlay) {
       csOverlay.destroy();
-      delete this.overlayMap_[overlayId];
+      this.overlayMap_.delete(overlayId);
     }
   }
+
   /**
   * Destroys all the created Cesium objects.
-  * @protected
   */
-  ;
-
-  _proto.destroyAll = function destroyAll() {
-    var _this3 = this;
-
-    Object.keys(this.overlayMap_).forEach(function (key) {
-      var overlay = _this3.overlayMap_[key];
+  destroyAll() {
+    this.overlayMap_.forEach(overlay => {
       overlay.destroy();
-      delete _this3.overlayMap_[key];
     });
-  };
-
-  return OverlaySynchronizer;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (OverlaySynchronizer);
+    this.overlayMap_.clear();
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/RasterSynchronizer.js":
+/***/ "./src/olcs/RasterSynchronizer.ts":
 /*!****************************************!*\
-  !*** ./src/olcs/RasterSynchronizer.js ***!
+  !*** ./src/olcs/RasterSynchronizer.ts ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/layer/Group.js */ "ol/layer/Group.js");
-/* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/* harmony import */ var _AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AbstractSynchronizer.js */ "./src/olcs/AbstractSynchronizer.js");
-/* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core.js */ "./src/olcs/core.js");
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-/**
- * @module olcs.RasterSynchronizer
- */
-
-
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RasterSynchronizer)
+/* harmony export */ });
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
+/* harmony import */ var _AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AbstractSynchronizer */ "./src/olcs/AbstractSynchronizer.ts");
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./core */ "./src/olcs/core.ts");
+/* harmony import */ var ol_layer_BaseVector_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/layer/BaseVector.js */ "ol/layer/BaseVector.js");
+/* harmony import */ var ol_layer_BaseVector_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_layer_BaseVector_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/layer/Group.js */ "ol/layer/Group.js");
+/* harmony import */ var ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
-var RasterSynchronizer =
-/*#__PURE__*/
-function (_olcsAbstractSynchron) {
-  _inheritsLoose(RasterSynchronizer, _olcsAbstractSynchron);
 
+
+class RasterSynchronizer extends _AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_1__["default"] {
   /**
    * This object takes care of one-directional synchronization of
    * Openlayers raster layers to the given Cesium globe.
-   * @param {!ol.Map} map
-   * @param {!Cesium.Scene} scene
-   * @constructor
-   * @extends {olcsAbstractSynchronizer.<Cesium.ImageryLayer>}
-   * @api
    */
-  function RasterSynchronizer(map, scene) {
-    var _this;
-
-    _this = _olcsAbstractSynchron.call(this, map, scene) || this;
-    /**
-     * @type {!Cesium.ImageryLayerCollection}
-     * @private
-     */
-
-    _this.cesiumLayers_ = scene.imageryLayers;
-    /**
-     * @type {!Cesium.ImageryLayerCollection}
-     * @private
-     */
-
-    _this.ourLayers_ = new Cesium.ImageryLayerCollection();
-    return _this;
+  constructor(map, scene) {
+    super(map, scene);
+    this.cesiumLayers_ = scene.imageryLayers;
+    this.ourLayers_ = new Cesium.ImageryLayerCollection();
   }
-  /**
-   * @inheritDoc
-   */
-
-
-  var _proto = RasterSynchronizer.prototype;
-
-  _proto.addCesiumObject = function addCesiumObject(object) {
+  addCesiumObject(object) {
     this.cesiumLayers_.add(object);
     this.ourLayers_.add(object);
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.destroyCesiumObject = function destroyCesiumObject(object) {
+  destroyCesiumObject(object) {
     object.destroy();
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.removeSingleCesiumObject = function removeSingleCesiumObject(object, destroy) {
+  removeSingleCesiumObject(object, destroy) {
     this.cesiumLayers_.remove(object, destroy);
     this.ourLayers_.remove(object, false);
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.removeAllCesiumObjects = function removeAllCesiumObjects(destroy) {
-    for (var i = 0; i < this.ourLayers_.length; ++i) {
+  removeAllCesiumObjects(destroy) {
+    for (let i = 0; i < this.ourLayers_.length; ++i) {
       this.cesiumLayers_.remove(this.ourLayers_.get(i), destroy);
     }
-
     this.ourLayers_.removeAll(false);
   }
+
   /**
    * Creates an array of Cesium.ImageryLayer.
    * May be overriden by child classes to implement custom behavior.
    * The default implementation handles tiled imageries in EPSG:4326 or
    * EPSG:3859.
-   * @param {!ol.layer.Base} olLayer
-   * @param {!ol.proj.Projection} viewProj Projection of the view.
-   * @return {?Array.<!Cesium.ImageryLayer>} array or null if not possible
-   * (or supported)
-   * @protected
    */
-  ;
-
-  _proto.convertLayerToCesiumImageries = function convertLayerToCesiumImageries(olLayer, viewProj) {
-    var result = _core_js__WEBPACK_IMPORTED_MODULE_3__["default"].tileLayerToImageryLayer(this.map, olLayer, viewProj);
+  convertLayerToCesiumImageries(olLayer, viewProj) {
+    const result = (0,_core__WEBPACK_IMPORTED_MODULE_2__.tileLayerToImageryLayer)(this.map, olLayer, viewProj);
     return result ? [result] : null;
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.createSingleLayerCounterparts = function createSingleLayerCounterparts(olLayerWithParents) {
-    var _this2 = this;
-
-    var olLayer = olLayerWithParents.layer;
-    var uid = Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer).toString();
-    var viewProj = this.view.getProjection();
+  createSingleLayerCounterparts(olLayerWithParents) {
+    const olLayer = olLayerWithParents.layer;
+    const uid = (0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(olLayer).toString();
+    const viewProj = this.view.getProjection();
     console.assert(viewProj);
-    var cesiumObjects = this.convertLayerToCesiumImageries(olLayer, viewProj);
-
+    const cesiumObjects = this.convertLayerToCesiumImageries(olLayer, viewProj);
     if (cesiumObjects) {
-      var _this$olLayerListenKe;
-
-      var listenKeyArray = [];
-      [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(function (olLayerItem) {
-        listenKeyArray.push(olLayerItem.on(['change:opacity', 'change:visible'], function () {
+      const listenKeyArray = [];
+      [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(olLayerItem => {
+        listenKeyArray.push(olLayerItem.on(['change:opacity', 'change:visible'], () => {
           // the compiler does not seem to be able to infer this
           console.assert(cesiumObjects);
-
-          for (var i = 0; i < cesiumObjects.length; ++i) {
-            _core_js__WEBPACK_IMPORTED_MODULE_3__["default"].updateCesiumLayerProperties(olLayerWithParents, cesiumObjects[i]);
+          for (let i = 0; i < cesiumObjects.length; ++i) {
+            (0,_core__WEBPACK_IMPORTED_MODULE_2__.updateCesiumLayerProperties)(olLayerWithParents, cesiumObjects[i]);
           }
         }));
       });
+      if (olLayer instanceof (ol_layer_BaseVector_js__WEBPACK_IMPORTED_MODULE_3___default())) {
+        let previousStyleFunction = olLayer.getStyleFunction();
+        // there is no convenient way to detect a style function change in OL
+        listenKeyArray.push(olLayer.on('change', () => {
+          const currentStyleFunction = olLayer.getStyleFunction();
+          if (previousStyleFunction === currentStyleFunction) {
+            return;
+          }
+          previousStyleFunction = currentStyleFunction;
+          for (let i = 0; i < cesiumObjects.length; ++i) {
+            const csObj = cesiumObjects[i];
+            // clear cache and set new style
+            // @ts-ignore TS2341
+            if (csObj._imageryCache) {
+              // @ts-ignore TS2341
+              csObj._imageryCache = {};
+            }
+            const ip = csObj.imageryProvider;
+            if (ip) {
+              var _ip$tileCache;
+              // @ts-ignore TS2341
+              (_ip$tileCache = ip.tileCache) == null || _ip$tileCache.clear();
+              // @ts-ignore TS2341
+              ip.styleFunction_ = currentStyleFunction;
+            }
+          }
+          this.scene.requestRender();
+        }));
+      }
+      for (let i = 0; i < cesiumObjects.length; ++i) {
+        (0,_core__WEBPACK_IMPORTED_MODULE_2__.updateCesiumLayerProperties)(olLayerWithParents, cesiumObjects[i]);
+      }
 
-      for (var i = 0; i < cesiumObjects.length; ++i) {
-        _core_js__WEBPACK_IMPORTED_MODULE_3__["default"].updateCesiumLayerProperties(olLayerWithParents, cesiumObjects[i]);
-      } // there is no way to modify Cesium layer extent,
+      // there is no way to modify Cesium layer extent,
       // we have to recreate when OpenLayers layer extent changes:
-
-
-      listenKeyArray.push(olLayer.on('change:extent', function (e) {
-        for (var _i = 0; _i < cesiumObjects.length; ++_i) {
-          _this2.cesiumLayers_.remove(cesiumObjects[_i], true); // destroy
-
-
-          _this2.ourLayers_.remove(cesiumObjects[_i], false);
+      listenKeyArray.push(olLayer.on('change:extent', e => {
+        for (let i = 0; i < cesiumObjects.length; ++i) {
+          this.cesiumLayers_.remove(cesiumObjects[i], true); // destroy
+          this.ourLayers_.remove(cesiumObjects[i], false);
         }
-
-        delete _this2.layerMap[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer)]; // invalidate the map entry
-
-        _this2.synchronize();
+        delete this.layerMap[(0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(olLayer)]; // invalidate the map entry
+        this.synchronize();
       }));
-      listenKeyArray.push(olLayer.on('change', function (e) {
+      listenKeyArray.push(olLayer.on('change', e => {
         // when the source changes, re-add the layer to force update
-        for (var _i2 = 0; _i2 < cesiumObjects.length; ++_i2) {
-          var position = _this2.cesiumLayers_.indexOf(cesiumObjects[_i2]);
-
+        for (let i = 0; i < cesiumObjects.length; ++i) {
+          const position = this.cesiumLayers_.indexOf(cesiumObjects[i]);
           if (position >= 0) {
-            _this2.cesiumLayers_.remove(cesiumObjects[_i2], false);
-
-            _this2.cesiumLayers_.add(cesiumObjects[_i2], position);
+            this.cesiumLayers_.remove(cesiumObjects[i], false);
+            this.cesiumLayers_.add(cesiumObjects[i], position);
           }
         }
       }));
-
-      (_this$olLayerListenKe = this.olLayerListenKeys[uid]).push.apply(_this$olLayerListenKe, listenKeyArray);
+      this.olLayerListenKeys[uid].push(...listenKeyArray);
     }
-
     return Array.isArray(cesiumObjects) ? cesiumObjects : null;
   }
+
   /**
    * Order counterparts using the same algorithm as the Openlayers renderer:
    * z-index then original sequence order.
    * @override
    * @protected
    */
-  ;
-
-  _proto.orderLayers = function orderLayers() {
-    var _this3 = this;
-
-    var layers = [];
-    var zIndices = {};
-    var queue = [this.mapLayerGroup];
-
+  orderLayers() {
+    const layers = [];
+    const zIndices = {};
+    const queue = [this.mapLayerGroup];
     while (queue.length > 0) {
-      var olLayer = queue.splice(0, 1)[0];
+      const olLayer = queue.splice(0, 1)[0];
       layers.push(olLayer);
-      zIndices[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer)] = olLayer.getZIndex();
-
-      if (olLayer instanceof ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_0___default.a) {
-        var sublayers = olLayer.getLayers();
-
+      zIndices[(0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(olLayer)] = olLayer.getZIndex() || 0;
+      if (olLayer instanceof (ol_layer_Group_js__WEBPACK_IMPORTED_MODULE_4___default())) {
+        const sublayers = olLayer.getLayers();
         if (sublayers) {
           // Prepend queue with sublayers in order
-          queue.unshift.apply(queue, sublayers.getArray());
+          queue.unshift(...sublayers.getArray());
         }
       }
     }
 
-    Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["stableSort"])(layers, function (layer1, layer2) {
-      return zIndices[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(layer1)] - zIndices[Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(layer2)];
-    });
-    layers.forEach(function (olLayer) {
-      var olLayerId = Object(_util_js__WEBPACK_IMPORTED_MODULE_1__["getUid"])(olLayer).toString();
-      var cesiumObjects = _this3.layerMap[olLayerId];
-
+    // We assume sort is stable (which has been in the spec since a long time already).
+    // See https://caniuse.com/mdn-javascript_builtins_array_sort_stable
+    layers.sort((layer1, layer2) => zIndices[(0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(layer1)] - zIndices[(0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(layer2)]);
+    layers.forEach(olLayer => {
+      const olLayerId = (0,_util__WEBPACK_IMPORTED_MODULE_0__.getUid)(olLayer).toString();
+      const cesiumObjects = this.layerMap[olLayerId];
       if (cesiumObjects) {
-        cesiumObjects.forEach(function (cesiumObject) {
-          _this3.raiseToTop(cesiumObject);
+        cesiumObjects.forEach(cesiumObject => {
+          this.raiseToTop(cesiumObject);
         });
       }
     });
   }
-  /**
-   * @param {Cesium.ImageryLayer} counterpart
-   */
-  ;
-
-  _proto.raiseToTop = function raiseToTop(counterpart) {
+  raiseToTop(counterpart) {
     this.cesiumLayers_.raiseToTop(counterpart);
-  };
-
-  return RasterSynchronizer;
-}(_AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_2__["default"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (RasterSynchronizer);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/SynchronizedOverlay.js":
+/***/ "./src/olcs/SynchronizedOverlay.ts":
 /*!*****************************************!*\
-  !*** ./src/olcs/SynchronizedOverlay.js ***!
+  !*** ./src/olcs/SynchronizedOverlay.ts ***!
   \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SynchronizedOverlay)
+/* harmony export */ });
 /* harmony import */ var ol_Overlay_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/Overlay.js */ "ol/Overlay.js");
 /* harmony import */ var ol_Overlay_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_Overlay_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
-/* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_3__);
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-/**
- * @module olcs.SynchronizedOverlay
- */
-
+/* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
+/* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
 /**
- * Options for SynchronizedOverlay
- * @typedef {Object} SynchronizedOverlayOptions
- * @property {!Cesium.Scene} scene
- * @property {olOverlay} parent
- * @property {!import('olsc/OverlaySynchronizer.js').default} synchronizer
+ * @param node The node to remove.
+ * @return The node that was removed or null.
  */
+function removeNode(node) {
+  return node && node.parentNode ? node.parentNode.removeChild(node) : null;
+}
 
-var SynchronizedOverlay =
-/*#__PURE__*/
-function (_olOverlay) {
-  _inheritsLoose(SynchronizedOverlay, _olOverlay);
-
+/**
+ * @param {Node} node The node to remove the children from.
+ */
+function removeChildren(node) {
+  while (node.lastChild) {
+    node.removeChild(node.lastChild);
+  }
+}
+function cloneNode(node, parent) {
+  const clone = node.cloneNode();
+  if (node.nodeName === 'CANVAS') {
+    const ctx = clone.getContext('2d');
+    ctx.drawImage(node, 0, 0);
+  }
+  if (parent) {
+    parent.appendChild(clone);
+  }
+  if (node.nodeType !== Node.TEXT_NODE) {
+    clone.addEventListener('click', event => {
+      node.dispatchEvent(new MouseEvent('click', event));
+      event.stopPropagation();
+    });
+  }
+  const nodes = node.childNodes;
+  for (let i = 0; i < nodes.length; i++) {
+    if (!nodes[i]) {
+      continue;
+    }
+    cloneNode(nodes[i], clone);
+  }
+  return clone;
+}
+class SynchronizedOverlay extends (ol_Overlay_js__WEBPACK_IMPORTED_MODULE_0___default()) {
   /**
-   * @param {olcsx.SynchronizedOverlayOptions} options SynchronizedOverlay Options.
+   * @param options SynchronizedOverlay Options.
    * @api
    */
-  function SynchronizedOverlay(options) {
-    var _this;
+  constructor(options) {
+    const parent = options.parent;
+    super(parent.getOptions());
+    this.scenePostRenderListenerRemover_ = null;
+    this.attributeObserver_ = [];
+    this.scene_ = options.scene;
+    this.synchronizer_ = options.synchronizer;
+    this.parent_ = parent;
+    this.positionWGS84_ = undefined;
+    this.observer_ = new MutationObserver(this.handleElementChanged.bind(this));
+    this.attributeObserver_ = [];
+    this.listenerKeys_ = [];
 
-    var parent = options.parent;
-    _this = _olOverlay.call(this, parent.getOptions()) || this;
-    /**
-     * @private
-     * @type {?Function}
-     */
-
-    _this.scenePostRenderListenerRemover_ = null;
-    /**
-     * @private
-     * @type {!Cesium.Scene}
-     */
-
-    _this.scene_ = options.scene;
-    /**
-     * @private
-     * @type {!olcs.OverlaySynchronizer}
-     */
-
-    _this.synchronizer_ = options.synchronizer;
-    /**
-     * @private
-     * @type {!ol.Overlay}
-     */
-
-    _this.parent_ = parent;
-    /**
-     * @private
-     * @type {ol.Coordinate|undefined}
-     */
-
-    _this.positionWGS84_ = undefined;
-    /**
-     * @private
-     * @type {MutationObserver}
-     */
-
-    _this.observer_ = new MutationObserver(_this.handleElementChanged.bind(_assertThisInitialized(_this)));
-    /**
-     * @private
-     * @type {Array.<MutationObserver>}
-     */
-
-    _this.attributeObserver_ = [];
-    /**
-     * @private
-     * @type {Array<ol.EventsKey>}
-     */
-
-    _this.listenerKeys_ = []; // synchronize our Overlay with the parent Overlay
-
-    var setPropertyFromEvent = function setPropertyFromEvent(event) {
-      return _this.setPropertyFromEvent_(event);
-    };
-
-    _this.listenerKeys_.push(_this.parent_.on('change:position', setPropertyFromEvent));
-
-    _this.listenerKeys_.push(_this.parent_.on('change:element', setPropertyFromEvent));
-
-    _this.listenerKeys_.push(_this.parent_.on('change:offset', setPropertyFromEvent));
-
-    _this.listenerKeys_.push(_this.parent_.on('change:position', setPropertyFromEvent));
-
-    _this.listenerKeys_.push(_this.parent_.on('change:positioning', setPropertyFromEvent));
-
-    _this.setProperties(_this.parent_.getProperties());
-
-    _this.handleMapChanged();
-
-    _this.handleElementChanged();
-
-    return _this;
+    // synchronize our Overlay with the parent Overlay
+    const setPropertyFromEvent = event => this.setPropertyFromEvent_(event);
+    this.listenerKeys_.push(this.parent_.on('change:element', setPropertyFromEvent));
+    this.listenerKeys_.push(this.parent_.on('change:offset', setPropertyFromEvent));
+    this.listenerKeys_.push(this.parent_.on('change:position', setPropertyFromEvent));
+    this.listenerKeys_.push(this.parent_.on('change:positioning', setPropertyFromEvent));
+    this.setProperties(this.parent_.getProperties());
+    this.handleMapChanged();
+    this.handleElementChanged();
   }
+
   /**
-   * @param {Node} target
-   * @private
+   * @param target
    */
-
-
-  var _proto = SynchronizedOverlay.prototype;
-
-  _proto.observeTarget_ = function observeTarget_(target) {
+  observeTarget_(target) {
     if (!this.observer_) {
       // not ready, skip the event (this occurs on construction)
       return;
     }
-
     this.observer_.disconnect();
     this.observer_.observe(target, {
       attributes: false,
@@ -4030,16 +2999,14 @@ function (_olOverlay) {
       characterData: true,
       subtree: true
     });
-    this.attributeObserver_.forEach(function (observer) {
+    this.attributeObserver_.forEach(observer => {
       observer.disconnect();
     });
     this.attributeObserver_.length = 0;
-
-    for (var i = 0; i < target.childNodes.length; i++) {
-      var node = target.childNodes[i];
-
+    for (let i = 0; i < target.childNodes.length; i++) {
+      const node = target.childNodes[i];
       if (node.nodeType === 1) {
-        var observer = new MutationObserver(this.handleElementChanged.bind(this));
+        const observer = new MutationObserver(this.handleElementChanged.bind(this));
         observer.observe(node, {
           attributes: true,
           subtree: true
@@ -4048,48 +3015,41 @@ function (_olOverlay) {
       }
     }
   }
+
   /**
    *
-   * @param {ol.Object.Event} event
-   * @private
+   * @param event
    */
-  ;
-
-  _proto.setPropertyFromEvent_ = function setPropertyFromEvent_(event) {
+  setPropertyFromEvent_(event) {
     if (event.target && event.key) {
       this.set(event.key, event.target.get(event.key));
     }
   }
+
   /**
    * Get the scene associated with this overlay.
    * @see ol.Overlay.prototype.getMap
-   * @return {!Cesium.Scene} The scene that the overlay is part of.
+   * @return The scene that the overlay is part of.
    * @api
    */
-  ;
-
-  _proto.getScene = function getScene() {
+  getScene() {
     return this.scene_;
   }
+
   /**
    * @override
    */
-  ;
-
-  _proto.handleMapChanged = function handleMapChanged() {
+  handleMapChanged() {
     if (this.scenePostRenderListenerRemover_) {
       this.scenePostRenderListenerRemover_();
-      Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["removeNode"])(this.element);
+      removeNode(this.element);
     }
-
     this.scenePostRenderListenerRemover_ = null;
-    var scene = this.getScene();
-
+    const scene = this.getScene();
     if (scene) {
       this.scenePostRenderListenerRemover_ = scene.postRender.addEventListener(this.updatePixelPosition.bind(this));
       this.updatePixelPosition();
-      var container = this.stopEvent ? this.synchronizer_.getOverlayContainerStopEvent() : this.synchronizer_.getOverlayContainer();
-
+      const container = this.stopEvent ? this.synchronizer_.getOverlayContainerStopEvent() : this.synchronizer_.getOverlayContainer();
       if (this.insertFirst) {
         container.insertBefore(this.element, container.childNodes[0] || null);
       } else {
@@ -4097,201 +3057,133 @@ function (_olOverlay) {
       }
     }
   }
+
   /**
    * @override
    */
-  ;
-
-  _proto.handlePositionChanged = function handlePositionChanged() {
+  handlePositionChanged() {
     // transform position to WGS84
-    var position = this.getPosition();
-
+    const position = this.getPosition();
     if (position) {
-      var sourceProjection = this.parent_.getMap().getView().getProjection();
-      this.positionWGS84_ = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_1__["transform"])(position, sourceProjection, 'EPSG:4326');
+      const sourceProjection = this.parent_.getMap().getView().getProjection();
+      this.positionWGS84_ = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_1__.transform)(position, sourceProjection, 'EPSG:4326');
     } else {
       this.positionWGS84_ = undefined;
     }
-
     this.updatePixelPosition();
   }
+
   /**
    * @override
    */
-  ;
-
-  _proto.handleElementChanged = function handleElementChanged() {
-    function cloneNode(node, parent) {
-      var clone = node.cloneNode();
-
-      if (parent) {
-        parent.appendChild(clone);
-      }
-
-      if (node.nodeType != Node.TEXT_NODE) {
-        clone.addEventListener('click', function (event) {
-          node.dispatchEvent(new MouseEvent('click', event));
-          event.stopPropagation();
-        });
-      }
-
-      var nodes = node.childNodes;
-
-      for (var i = 0; i < nodes.length; i++) {
-        if (!nodes[i]) {
-          continue;
-        }
-
-        cloneNode(nodes[i], clone);
-      }
-
-      return clone;
-    }
-
-    Object(_util_js__WEBPACK_IMPORTED_MODULE_2__["removeChildren"])(this.element);
-    var element = this.getElement();
-
+  handleElementChanged() {
+    removeChildren(this.element);
+    const element = this.getElement();
     if (element) {
       if (element.parentNode && element.parentNode.childNodes) {
-        for (var _iterator = element.parentNode.childNodes, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-          var _ref;
-
-          if (_isArray) {
-            if (_i >= _iterator.length) break;
-            _ref = _iterator[_i++];
-          } else {
-            _i = _iterator.next();
-            if (_i.done) break;
-            _ref = _i.value;
-          }
-
-          var node = _ref;
-          var clonedNode = cloneNode(node, null);
+        for (const node of Array.from(element.parentNode.childNodes)) {
+          const clonedNode = cloneNode(node, null);
           this.element.appendChild(clonedNode);
         }
       }
     }
-
     if (element.parentNode) {
       // set new Observer
       this.observeTarget_(element.parentNode);
     }
   }
+
   /**
    * @override
    */
-  ;
-
-  _proto.updatePixelPosition = function updatePixelPosition() {
-    var position = this.positionWGS84_;
-
+  updatePixelPosition() {
+    const position = this.positionWGS84_;
     if (!this.scene_ || !position) {
       this.setVisible(false);
       return;
     }
-
-    var height = 0;
-
+    let height = 0;
     if (position.length === 2) {
-      var globeHeight = this.scene_.globe.getHeight(Cesium.Cartographic.fromDegrees(position[0], position[1]));
-
+      const globeHeight = this.scene_.globe.getHeight(Cesium.Cartographic.fromDegrees(position[0], position[1]));
       if (globeHeight && this.scene_.globe.tilesLoaded) {
         position[2] = globeHeight;
       }
-
       if (globeHeight) {
         height = globeHeight;
       }
     } else {
       height = position[2];
     }
-
-    var cartesian = Cesium.Cartesian3.fromDegrees(position[0], position[1], height);
-    var camera = this.scene_.camera;
-    var ellipsoidBoundingSphere = new Cesium.BoundingSphere(new Cesium.Cartesian3(), 6356752);
-    var occluder = new Cesium.Occluder(ellipsoidBoundingSphere, camera.position); // check if overlay position is behind the horizon
-
+    const cartesian = Cesium.Cartesian3.fromDegrees(position[0], position[1], height);
+    const camera = this.scene_.camera;
+    const ellipsoidBoundingSphere = new Cesium.BoundingSphere(new Cesium.Cartesian3(), 6356752);
+    const occluder = new Cesium.Occluder(ellipsoidBoundingSphere, camera.position);
+    // check if overlay position is behind the horizon
     if (!occluder.isPointVisible(cartesian)) {
       this.setVisible(false);
       return;
     }
-
-    var cullingVolume = camera.frustum.computeCullingVolume(camera.position, camera.direction, camera.up); // check if overlay position is visible from the camera
-
+    const cullingVolume = camera.frustum.computeCullingVolume(camera.position, camera.direction, camera.up);
+    // check if overlay position is visible from the camera
     if (cullingVolume.computeVisibility(new Cesium.BoundingSphere(cartesian)) !== 1) {
       this.setVisible(false);
       return;
     }
-
     this.setVisible(true);
-    var pixelCartesian = this.scene_.cartesianToCanvasCoordinates(cartesian);
-    var pixel = [pixelCartesian.x, pixelCartesian.y];
-    var mapSize = [this.scene_.canvas.width, this.scene_.canvas.height];
+    const pixelCartesian = this.scene_.cartesianToCanvasCoordinates(cartesian);
+    const pixel = [pixelCartesian.x, pixelCartesian.y];
+    const mapSize = [this.scene_.canvas.width, this.scene_.canvas.height];
     this.updateRenderedPosition(pixel, mapSize);
   }
+
   /**
    * Destroys the overlay, removing all its listeners and elements
    * @api
    */
-  ;
-
-  _proto.destroy = function destroy() {
+  destroy() {
     if (this.scenePostRenderListenerRemover_) {
       this.scenePostRenderListenerRemover_();
     }
-
     if (this.observer_) {
       this.observer_.disconnect();
     }
-
-    Object(ol_Observable_js__WEBPACK_IMPORTED_MODULE_3__["unByKey"])(this.listenerKeys_);
+    (0,ol_Observable_js__WEBPACK_IMPORTED_MODULE_2__.unByKey)(this.listenerKeys_);
     this.listenerKeys_.splice(0);
-
-    if (this.element.removeNode) {
+    if ('removeNode' in this.element) {
+      // @ts-ignore
       this.element.removeNode(true);
     } else {
       this.element.remove();
     }
-
     this.element = null;
-  };
-
-  return SynchronizedOverlay;
-}(ol_Overlay_js__WEBPACK_IMPORTED_MODULE_0___default.a);
-
-/* harmony default export */ __webpack_exports__["default"] = (SynchronizedOverlay);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/VectorSynchronizer.js":
+/***/ "./src/olcs/VectorSynchronizer.ts":
 /*!****************************************!*\
-  !*** ./src/olcs/VectorSynchronizer.js ***!
+  !*** ./src/olcs/VectorSynchronizer.ts ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ VectorSynchronizer)
+/* harmony export */ });
 /* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/source/Vector.js */ "ol/source/Vector.js");
 /* harmony import */ var ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ol_layer_Layer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/layer/Layer.js */ "ol/layer/Layer.js");
 /* harmony import */ var ol_layer_Layer_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Layer_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ol/source/Cluster.js */ "ol/source/Cluster.js");
 /* harmony import */ var ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/layer/Image.js */ "ol/layer/Image.js");
-/* harmony import */ var ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/* harmony import */ var ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/layer/Vector.js */ "ol/layer/Vector.js");
-/* harmony import */ var ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/layer/VectorTile.js */ "ol/layer/VectorTile.js");
-/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./AbstractSynchronizer.js */ "./src/olcs/AbstractSynchronizer.js");
-/* harmony import */ var _FeatureConverter_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./FeatureConverter.js */ "./src/olcs/FeatureConverter.js");
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-/**
- * @module olcs.VectorSynchronizer
- */
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
+/* harmony import */ var ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/layer/Vector.js */ "ol/layer/Vector.js");
+/* harmony import */ var ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/layer/VectorTile.js */ "ol/layer/VectorTile.js");
+/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AbstractSynchronizer */ "./src/olcs/AbstractSynchronizer.ts");
+/* harmony import */ var _FeatureConverter__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./FeatureConverter */ "./src/olcs/FeatureConverter.ts");
 
 
 
@@ -4301,301 +3193,189 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
 
 
 
+// eslint-disable-next-line no-duplicate-imports
 
-var VectorSynchronizer =
-/*#__PURE__*/
-function (_olcsAbstractSynchron) {
-  _inheritsLoose(VectorSynchronizer, _olcsAbstractSynchron);
-
+class VectorSynchronizer extends _AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_6__["default"] {
   /**
    * Unidirectionally synchronize OpenLayers vector layers to Cesium.
-   * @param {!ol.Map} map
-   * @param {!Cesium.Scene} scene
-   * @param {olcs.FeatureConverter=} opt_converter
-   * @extends {olcs.AbstractSynchronizer.<olcs.core.VectorLayerCounterpart>}
-   * @api
    */
-  function VectorSynchronizer(map, scene, opt_converter) {
-    var _this;
-
-    _this = _olcsAbstractSynchron.call(this, map, scene) || this;
-    /**
-     * @protected
-     */
-
-    _this.converter = opt_converter || new _FeatureConverter_js__WEBPACK_IMPORTED_MODULE_8__["default"](scene);
-    /**
-     * @private
-     */
-
-    _this.csAllPrimitives_ = new Cesium.PrimitiveCollection();
-    scene.primitives.add(_this.csAllPrimitives_);
-    _this.csAllPrimitives_.destroyPrimitives = false;
-    return _this;
+  constructor(map, scene, opt_converter) {
+    super(map, scene);
+    this.converter = opt_converter || new _FeatureConverter__WEBPACK_IMPORTED_MODULE_7__["default"](scene);
+    this.csAllPrimitives_ = new Cesium.PrimitiveCollection();
+    scene.primitives.add(this.csAllPrimitives_);
+    this.csAllPrimitives_.destroyPrimitives = false;
   }
-  /**
-   * @inheritDoc
-   */
-
-
-  var _proto = VectorSynchronizer.prototype;
-
-  _proto.addCesiumObject = function addCesiumObject(counterpart) {
+  addCesiumObject(counterpart) {
     console.assert(counterpart);
-    counterpart.getRootPrimitive()['counterpart'] = counterpart;
+    const collection = counterpart.getRootPrimitive();
+    collection.counterpart = counterpart;
     this.csAllPrimitives_.add(counterpart.getRootPrimitive());
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.destroyCesiumObject = function destroyCesiumObject(object) {
+  destroyCesiumObject(object) {
     object.getRootPrimitive().destroy();
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.removeSingleCesiumObject = function removeSingleCesiumObject(object, destroy) {
+  removeSingleCesiumObject(object, destroy) {
     object.destroy();
     this.csAllPrimitives_.destroyPrimitives = destroy;
     this.csAllPrimitives_.remove(object.getRootPrimitive());
     this.csAllPrimitives_.destroyPrimitives = false;
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.removeAllCesiumObjects = function removeAllCesiumObjects(destroy) {
+  removeAllCesiumObjects(destroy) {
     this.csAllPrimitives_.destroyPrimitives = destroy;
-
     if (destroy) {
-      for (var i = 0; i < this.csAllPrimitives_.length; ++i) {
+      for (let i = 0; i < this.csAllPrimitives_.length; ++i) {
         this.csAllPrimitives_.get(i)['counterpart'].destroy();
       }
     }
-
     this.csAllPrimitives_.removeAll();
     this.csAllPrimitives_.destroyPrimitives = false;
   }
+
   /**
    * Synchronizes the layer visibility properties
    * to the given Cesium Primitive.
-   * @param {import('olsc/core.js').LayerWithParents} olLayerWithParents
-   * @param {!Cesium.Primitive} csPrimitive
    */
-  ;
-
-  _proto.updateLayerVisibility = function updateLayerVisibility(olLayerWithParents, csPrimitive) {
-    var visible = true;
-    [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(function (olLayer) {
-      var layerVisible = olLayer.getVisible();
-
+  updateLayerVisibility(olLayerWithParents, csPrimitive) {
+    let visible = true;
+    [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(olLayer => {
+      const layerVisible = olLayer.getVisible();
       if (layerVisible !== undefined) {
-        visible &= layerVisible;
+        visible = visible && layerVisible;
       } else {
         visible = false;
       }
     });
     csPrimitive.show = visible;
   }
-  /**
-   * @inheritDoc
-   */
-  ;
-
-  _proto.createSingleLayerCounterparts = function createSingleLayerCounterparts(olLayerWithParents) {
-    var _this2 = this;
-
-    var olLayer = olLayerWithParents.layer;
-
-    if (!(olLayer instanceof ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_5___default.a) || olLayer instanceof ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_6___default.a) {
+  createSingleLayerCounterparts(olLayerWithParents) {
+    const olLayer = olLayerWithParents.layer;
+    if (!(olLayer instanceof (ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_4___default())) || olLayer instanceof (ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_5___default())) {
       return null;
     }
-
-    console.assert(olLayer instanceof ol_layer_Layer_js__WEBPACK_IMPORTED_MODULE_1___default.a);
-    var source = olLayer.getSource();
-
-    if (source instanceof ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2___default.a) {
+    console.assert(olLayer instanceof (ol_layer_Layer_js__WEBPACK_IMPORTED_MODULE_1___default()));
+    let source = olLayer.getSource();
+    if (source instanceof (ol_source_Cluster_js__WEBPACK_IMPORTED_MODULE_2___default())) {
       source = source.getSource();
     }
-
     if (!source) {
       return null;
     }
-
-    console.assert(source instanceof ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+    console.assert(source instanceof (ol_source_Vector_js__WEBPACK_IMPORTED_MODULE_0___default()));
     console.assert(this.view);
-    var view = this.view;
-    var featurePrimitiveMap = {};
-    var counterpart = this.converter.olVectorLayerToCesium(olLayer, view, featurePrimitiveMap);
-    var csPrimitives = counterpart.getRootPrimitive();
-    var olListenKeys = counterpart.olListenKeys;
-    [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(function (olLayerItem) {
-      olListenKeys.push(Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["olcsListen"])(olLayerItem, 'change:visible', function () {
-        _this2.updateLayerVisibility(olLayerWithParents, csPrimitives);
+    const view = this.view;
+    const featurePrimitiveMap = {};
+    const counterpart = this.converter.olVectorLayerToCesium(olLayer, view, featurePrimitiveMap);
+    const csPrimitives = counterpart.getRootPrimitive();
+    const olListenKeys = counterpart.olListenKeys;
+    [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(olLayerItem => {
+      olListenKeys.push(olLayerItem.on('change:visible', () => {
+        this.updateLayerVisibility(olLayerWithParents, csPrimitives);
       }));
     });
     this.updateLayerVisibility(olLayerWithParents, csPrimitives);
-
-    var onAddFeature = function (feature) {
-      console.assert(olLayer instanceof ol_layer_Vector_js__WEBPACK_IMPORTED_MODULE_5___default.a || olLayer instanceof ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_3___default.a);
-      var context = counterpart.context;
-      var prim = this.converter.convert(olLayer, view, feature, context);
-
+    const onAddFeature = feature => {
+      const context = counterpart.context;
+      const prim = this.converter.convert(olLayer, view, feature, context);
       if (prim) {
-        featurePrimitiveMap[Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["getUid"])(feature)] = prim;
+        featurePrimitiveMap[(0,_util__WEBPACK_IMPORTED_MODULE_3__.getUid)(feature)] = prim;
         csPrimitives.add(prim);
       }
-    }.bind(this);
-
-    var onRemoveFeature = function (feature) {
-      var id = Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["getUid"])(feature);
-      var context = counterpart.context;
-      var bbs = context.featureToCesiumMap[id];
-
+    };
+    const onRemoveFeature = feature => {
+      const id = (0,_util__WEBPACK_IMPORTED_MODULE_3__.getUid)(feature);
+      const context = counterpart.context;
+      const bbs = context.featureToCesiumMap[id];
       if (bbs) {
         delete context.featureToCesiumMap[id];
-        bbs.forEach(function (bb) {
+        bbs.forEach(bb => {
           if (bb instanceof Cesium.Billboard) {
             context.billboards.remove(bb);
           }
         });
       }
-
-      var csPrimitive = featurePrimitiveMap[id];
+      const csPrimitive = featurePrimitiveMap[id];
       delete featurePrimitiveMap[id];
-
       if (csPrimitive) {
         csPrimitives.remove(csPrimitive);
       }
-    }.bind(this);
-
-    olListenKeys.push(Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["olcsListen"])(source, 'addfeature', function (e) {
+    };
+    olListenKeys.push(source.on('addfeature', e => {
       console.assert(e.feature);
       onAddFeature(e.feature);
-    }, this));
-    olListenKeys.push(Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["olcsListen"])(source, 'removefeature', function (e) {
+    }));
+    olListenKeys.push(source.on('removefeature', e => {
       console.assert(e.feature);
       onRemoveFeature(e.feature);
-    }, this));
-    olListenKeys.push(Object(_util_js__WEBPACK_IMPORTED_MODULE_4__["olcsListen"])(source, 'changefeature', function (e) {
-      var feature = e.feature;
+    }));
+    olListenKeys.push(source.on('changefeature', e => {
+      const feature = e.feature;
       console.assert(feature);
       onRemoveFeature(feature);
       onAddFeature(feature);
-    }, this));
+    }));
     return counterpart ? [counterpart] : null;
-  };
-
-  return VectorSynchronizer;
-}(_AbstractSynchronizer_js__WEBPACK_IMPORTED_MODULE_7__["default"]);
-
-/* harmony default export */ __webpack_exports__["default"] = (VectorSynchronizer);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/contrib/LazyLoader.js":
+/***/ "./src/olcs/contrib/LazyLoader.ts":
 /*!****************************************!*\
-  !*** ./src/olcs/contrib/LazyLoader.js ***!
+  !*** ./src/olcs/contrib/LazyLoader.ts ***!
   \****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/**
- * @module olcs.contrib.LazyLoader
- */
-var exports =
-/*#__PURE__*/
-function () {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ LazyLoader)
+/* harmony export */ });
+class LazyLoader {
   /**
-   * @param {string} url
-   * @struct
+   * @param url
    * @api
    */
-  function exports(url) {
-    /**
-     * @type {Promise<undefined>}
-     * @protected
-     */
-    this.promise;
-    /**
-     * @private
-     * @type {string}
-     */
-
+  constructor(url) {
     this.url_ = url;
   }
+
   /**
-   * @return {Promise<undefined>}
+   * Load Cesium by injecting a script tag.
    * @api
    */
-
-
-  var _proto = exports.prototype;
-
-  _proto.load = function load() {
-    var _this = this;
-
+  load() {
     if (!this.promise) {
       // not yet loading
-      this.promise = new Promise(function (resolve, reject) {
-        var script = document.createElement('script');
-
-        script.onload = function () {
-          return resolve();
-        };
-
-        script.onerror = function () {
-          return reject();
-        };
-
+      this.promise = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.onload = () => resolve();
+        script.onerror = () => reject();
         document.head.appendChild(script);
-        script.src = _this.url_;
+        script.src = this.url_;
       });
     }
-
     return this.promise;
-  };
-
-  return exports;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (exports);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/contrib/Manager.js":
+/***/ "./src/olcs/contrib/Manager.ts":
 /*!*************************************!*\
-  !*** ./src/olcs/contrib/Manager.js ***!
+  !*** ./src/olcs/contrib/Manager.ts ***!
   \*************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _contrib_LazyLoader_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../contrib/LazyLoader.js */ "./src/olcs/contrib/LazyLoader.js");
-/* harmony import */ var _OLCesium_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../OLCesium.js */ "./src/olcs/OLCesium.js");
-/* harmony import */ var _core_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core.js */ "./src/olcs/core.js");
-/* harmony import */ var _math_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../math.js */ "./src/olcs/math.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Manager)
+/* harmony export */ });
+/* harmony import */ var _LazyLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LazyLoader */ "./src/olcs/contrib/LazyLoader.ts");
+/* harmony import */ var _OLCesium__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../OLCesium */ "./src/olcs/OLCesium.ts");
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core */ "./src/olcs/core.ts");
+/* harmony import */ var _math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../math */ "./src/olcs/math.ts");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_4__);
-function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
-
-/**
- * @module olcs.contrib.Manager
- */
 
 
 
@@ -4605,465 +3385,296 @@ function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.crea
  * @typedef {Object} ManagerOptions
  * @property {import('ol/Map.js').default} map
  * @property {import('ol/extent.js').Extent} [cameraExtentInRadians]
+ * @property {string} [cesiumIonDefaultAccessToken]
  */
 
-var Manager =
-/*#__PURE__*/
-function (_olObservable) {
-  _inheritsLoose(Manager, _olObservable);
-
+class Manager extends (ol_Observable_js__WEBPACK_IMPORTED_MODULE_4___default()) {
   /**
    * @param {string} cesiumUrl
    * @param {olcsx.contrib.ManagerOptions} options
    * @api
    */
-  function Manager(cesiumUrl, _temp) {
-    var _this;
-
-    var _ref = _temp === void 0 ? {} : _temp,
-        map = _ref.map,
-        cameraExtentInRadians = _ref.cameraExtentInRadians;
-
-    _this = _olObservable.call(this) || this;
-    /**
-     * @type {string}
-     * @private
-     */
-
-    _this.cesiumUrl_ = cesiumUrl;
-    /**
-     * @type {ol.Map}
-     * @protected
-     */
-
-    _this.map = map;
-    /**
-     * @type {ol.Extent}
-     * @protected
-     */
-
-    _this.cameraExtentInRadians = cameraExtentInRadians || null;
-    /**
-     * @private
-     * @type {Cesium.BoundingSphere}
-     */
-
-    _this.boundingSphere_;
-    /**
-     * @type {boolean}
-     * @private
-     */
-
-    _this.blockLimiter_ = false;
-    /**
-     * @type {Promise.<olcs.OLCesium>}
-     * @private
-     */
-
-    _this.promise_;
-    /**
-     * @type {olcs.OLCesium}
-     * @protected
-     */
-
-    _this.ol3d;
-    /**
-     * @const {number} Tilt angle in radians
-     * @private
-     */
-
-    _this.cesiumInitialTilt_ = Object(_math_js__WEBPACK_IMPORTED_MODULE_3__["toRadians"])(50);
-    /**
-     * @protected
-     * @type {number}
-     */
-
-    _this.fogDensity = 0.0001;
-    /**
-     * @protected
-     * @type {number}
-     */
-
-    _this.fogSSEFactor = 25;
-    /**
-     * Limit the minimum distance to the terrain to 2m.
-     * @protected
-     * @type {number}
-     */
-
-    _this.minimumZoomDistance = 2;
+  constructor(cesiumUrl, _ref) {
+    let {
+      map,
+      cameraExtentInRadians,
+      cesiumIonDefaultAccessToken
+    } = _ref;
+    super();
+    this.cesiumInitialTilt_ = (0,_math__WEBPACK_IMPORTED_MODULE_3__.toRadians)(50);
+    this.fogDensity = 0.0001;
+    this.fogSSEFactor = 25;
+    this.minimumZoomDistance = 2;
     /**
      * Limit the maximum distance to the earth to 10'000km.
-     * @protected
-     * @type {number}
      */
-
-    _this.maximumZoomDistance = 10000000; // when closer to 3000m, restrict the available positions harder
-
-    /**
-     * @protected
-     * @param {number} height
-     */
-
-    _this.limitCameraToBoundingSphereRatio = function (height) {
-      return height > 3000 ? 9 : 3;
-    };
-
-    return _this;
+    this.maximumZoomDistance = 10000000;
+    // when closer to 3000m, restrict the available positions harder
+    this.limitCameraToBoundingSphereRatio = height => height > 3000 ? 9 : 3;
+    this.cesiumUrl_ = cesiumUrl;
+    console.assert(map);
+    this.map = map;
+    this.cameraExtentInRadians = cameraExtentInRadians || null;
+    this.cesiumIonDefaultAccessToken_ = cesiumIonDefaultAccessToken;
   }
+
   /**
-   * @return {Promise.<olcs.OLCesium>}
+   * Lazy load Cesium.
    */
-
-
-  var _proto = Manager.prototype;
-
-  _proto.load = function load() {
-    var _this2 = this;
-
+  load() {
     if (!this.promise_) {
-      var cesiumLazyLoader = new _contrib_LazyLoader_js__WEBPACK_IMPORTED_MODULE_0__["default"](this.cesiumUrl_);
-      this.promise_ = cesiumLazyLoader.load().then(function () {
-        return _this2.onCesiumLoaded();
-      });
+      const cesiumLazyLoader = new _LazyLoader__WEBPACK_IMPORTED_MODULE_0__["default"](this.cesiumUrl_);
+      this.promise_ = cesiumLazyLoader.load().then(() => this.onCesiumLoaded());
     }
-
     return this.promise_;
   }
+
   /**
-   * @protected
-   * @return {olcs.OLCesium}
+   * Hook called when Cesium has been lazy loaded.
    */
-  ;
-
-  _proto.onCesiumLoaded = function onCesiumLoaded() {
+  onCesiumLoaded() {
     if (this.cameraExtentInRadians) {
-      var rect = _construct(Cesium.Rectangle, this.cameraExtentInRadians); // Set the fly home rectangle
-
-
+      const rect = new Cesium.Rectangle(...this.cameraExtentInRadians);
+      // Set the fly home rectangle
       Cesium.Camera.DEFAULT_VIEW_RECTANGLE = rect;
       this.boundingSphere_ = Cesium.BoundingSphere.fromRectangle3D(rect, Cesium.Ellipsoid.WGS84, 300); // lux mean height is 300m
     }
-
+    if (this.cesiumIonDefaultAccessToken_) {
+      Cesium.Ion.defaultAccessToken = this.cesiumIonDefaultAccessToken_;
+    }
     this.ol3d = this.instantiateOLCesium();
-    var scene = this.ol3d.getCesiumScene();
+    const scene = this.ol3d.getCesiumScene();
     this.configureForUsability(scene);
     this.configureForPerformance(scene);
     this.dispatchEvent('load');
     return this.ol3d;
   }
+
   /**
    * Application code should override this method.
-   * @return {olcs.OLCesium}
    */
-  ;
-
-  _proto.instantiateOLCesium = function instantiateOLCesium() {
-    console.assert(this.map);
-    var ol3d = new _OLCesium_js__WEBPACK_IMPORTED_MODULE_1__["default"]({
+  instantiateOLCesium() {
+    const ol3d = new _OLCesium__WEBPACK_IMPORTED_MODULE_1__["default"]({
       map: this.map
     });
-    var scene = ol3d.getCesiumScene();
-    var terrainProvider = Cesium.createWorldTerrain();
-    scene.terrainProvider = terrainProvider;
+    const scene = ol3d.getCesiumScene();
+    // LEGACY
+    if ('createWorldTerrain' in Cesium) {
+      // @ts-ignore
+      const terrainProvider = Cesium.createWorldTerrain();
+      scene.terrainProvider = terrainProvider;
+    } else {
+      // v107+
+      Cesium.createWorldTerrainAsync().then(tp => scene.terrainProvider = tp);
+    }
     return ol3d;
   }
-  /**
-   * @param {!Cesium.Scene} scene The scene, passed as parameter for convenience.
-   * @protected
-   */
-  ;
 
-  _proto.configureForPerformance = function configureForPerformance(scene) {
-    var fog = scene.fog;
+  /**
+   * Override with custom performance optimization logics, if needed.
+   */
+  configureForPerformance(scene) {
+    const fog = scene.fog;
     fog.enabled = true;
     fog.density = this.fogDensity;
     fog.screenSpaceErrorFactor = this.fogSSEFactor;
   }
+
   /**
-   * @param {!Cesium.Scene} scene The scene, passed as parameter for convenience.
-   * @protected
+   * Override with custom usabliity logics, id needed.
    */
-  ;
-
-  _proto.configureForUsability = function configureForUsability(scene) {
-    var sscController = scene.screenSpaceCameraController;
+  configureForUsability(scene) {
+    const sscController = scene.screenSpaceCameraController;
     sscController.minimumZoomDistance = this.minimumZoomDistance;
-    sscController.maximumZoomDistance = this.maximumZoomDistance; // Do not see through the terrain. Seeing through the terrain does not make
+    sscController.maximumZoomDistance = this.maximumZoomDistance;
+
+    // Do not see through the terrain. Seeing through the terrain does not make
     // sense anyway, except for debugging
+    scene.globe.depthTestAgainstTerrain = true;
 
-    scene.globe.depthTestAgainstTerrain = true; // Use white instead of the black default colour for the globe when tiles are missing
-
+    // Use white instead of the black default colour for the globe when tiles are missing
     scene.globe.baseColor = Cesium.Color.WHITE;
     scene.backgroundColor = Cesium.Color.WHITE;
-
     if (this.boundingSphere_) {
-      scene.postRender.addEventListener(this.limitCameraToBoundingSphere.bind(this), scene);
-    } // Stop rendering Cesium when there is nothing to do. This drastically reduces CPU/GPU consumption.
-
-
+      scene.postRender.addEventListener(this.limitCameraToBoundingSphere.bind(this));
+    }
+    // Stop rendering Cesium when there is nothing to do. This drastically reduces CPU/GPU consumption.
     this.ol3d.enableAutoRenderLoop();
   }
+
   /**
    * Constrain the camera so that it stays close to the bounding sphere of the map extent.
    * Near the ground the allowed distance is shorter.
-   * @protected
    */
-  ;
-
-  _proto.limitCameraToBoundingSphere = function limitCameraToBoundingSphere() {
-    var _this3 = this;
-
-    if (this.boundingSphere_ && !this.blockLimiter_) {
-      var scene = this.ol3d.getCesiumScene();
-      var camera = scene.camera;
-      var position = camera.position;
-      var carto = Cesium.Cartographic.fromCartesian(position);
-      var ratio = this.limitCameraToBoundingSphereRatio(carto.height);
-
-      if (Cesium.Cartesian3.distance(this.boundingSphere_.center, position) > this.boundingSphere_.radius * ratio) {
-        var currentlyFlying = camera.flying;
-
-        if (currentlyFlying === true) {
-          // There is a flying property and its value is true
-          return;
-        } else {
-          this.blockLimiter_ = true;
-
-          var unblockLimiter = function unblockLimiter() {
-            return _this3.blockLimiter_ = false;
-          };
-
-          camera.flyToBoundingSphere(this.boundingSphere_, {
-            complete: unblockLimiter,
-            cancel: unblockLimiter
-          });
-        }
-      }
-    }
+  limitCameraToBoundingSphere() {
+    const scene = this.ol3d.getCesiumScene();
+    (0,_core__WEBPACK_IMPORTED_MODULE_2__.limitCameraToBoundingSphere)(scene.camera, this.boundingSphere_, this.limitCameraToBoundingSphereRatio);
   }
+
   /**
    * Enable or disable ol3d with a default animation.
-   * @export
-   * @return {Promise<undefined>}
    */
-  ;
-
-  _proto.toggle3d = function toggle3d() {
-    var _this4 = this;
-
-    return this.load().then(function (
-    /** @const {!olcs.OLCesium} */
-    ol3d) {
-      var is3DCurrentlyEnabled = ol3d.getEnabled();
-      var scene = ol3d.getCesiumScene();
-
+  toggle3d() {
+    return this.load().then(( /** @const {!olcs.OLCesium} */ol3d) => {
+      const is3DCurrentlyEnabled = ol3d.getEnabled();
+      const scene = ol3d.getCesiumScene();
       if (is3DCurrentlyEnabled) {
         // Disable 3D
-        console.assert(_this4.map);
-        return _core_js__WEBPACK_IMPORTED_MODULE_2__["default"].resetToNorthZenith(_this4.map, scene).then(function () {
+        console.assert(this.map);
+        return (0,_core__WEBPACK_IMPORTED_MODULE_2__.resetToNorthZenith)(this.map, scene).then(() => {
           ol3d.setEnabled(false);
-
-          _this4.dispatchEvent('toggle');
+          this.dispatchEvent('toggle');
         });
       } else {
         // Enable 3D
         ol3d.setEnabled(true);
-
-        _this4.dispatchEvent('toggle');
-
-        return _core_js__WEBPACK_IMPORTED_MODULE_2__["default"].rotateAroundBottomCenter(scene, _this4.cesiumInitialTilt_);
+        this.dispatchEvent('toggle');
+        return (0,_core__WEBPACK_IMPORTED_MODULE_2__.rotateAroundBottomCenter)(scene, this.cesiumInitialTilt_);
       }
     });
   }
+
   /**
    * Enable ol3d with a view built from parameters.
-   *
-   * @export
-   * @param {number} lon
-   * @param {number} lat
-   * @param {number} elevation
-   * @param {number} headingDeg Heading value in degrees.
-   * @param {number} pitchDeg Pitch value in degrees.
-   * @returns {Promise<undefined>}
    */
-  ;
-
-  _proto.set3dWithView = function set3dWithView(lon, lat, elevation, headingDeg, pitchDeg) {
-    var _this5 = this;
-
-    return this.load().then(function (
-    /** @const {!olcs.OLCesium} */
-    ol3d) {
-      var is3DCurrentlyEnabled = ol3d.getEnabled();
-      var scene = ol3d.getCesiumScene();
-      var camera = scene.camera;
-      var destination = Cesium.Cartesian3.fromDegrees(lon, lat, elevation);
-      var heading = Cesium.Math.toRadians(headingDeg);
-      var pitch = Cesium.Math.toRadians(pitchDeg);
-      var roll = 0;
-      var orientation = {
-        heading: heading,
-        pitch: pitch,
-        roll: roll
+  set3dWithView(lon, lat, elevation, headingDeg, pitchDeg) {
+    return this.load().then(ol3d => {
+      const is3DCurrentlyEnabled = ol3d.getEnabled();
+      const scene = ol3d.getCesiumScene();
+      const camera = scene.camera;
+      const destination = Cesium.Cartesian3.fromDegrees(lon, lat, elevation);
+      const heading = Cesium.Math.toRadians(headingDeg);
+      const pitch = Cesium.Math.toRadians(pitchDeg);
+      const roll = 0;
+      const orientation = {
+        heading,
+        pitch,
+        roll
       };
-
       if (!is3DCurrentlyEnabled) {
         ol3d.setEnabled(true);
-
-        _this5.dispatchEvent('toggle');
+        this.dispatchEvent('toggle');
       }
-
       camera.setView({
-        destination: destination,
-        orientation: orientation
+        destination,
+        orientation
       });
     });
   }
-  /**
-   * @export
-   * @return {boolean}
-   */
-  ;
 
-  _proto.is3dEnabled = function is3dEnabled() {
+  /**
+   * Whether OL-Cesium has been loaded and 3D mode is enabled.
+   */
+  is3dEnabled() {
     return !!this.ol3d && this.ol3d.getEnabled();
   }
+
   /**
    * @return {number}
    */
-  ;
-
-  _proto.getHeading = function getHeading() {
+  getHeading() {
     return this.map ? this.map.getView().getRotation() || 0 : 0;
   }
+
   /**
    * @return {number|undefined}
    */
-  ;
-
-  _proto.getTiltOnGlobe = function getTiltOnGlobe() {
-    var scene = this.ol3d.getCesiumScene();
-    var tiltOnGlobe = _core_js__WEBPACK_IMPORTED_MODULE_2__["default"].computeSignedTiltAngleOnGlobe(scene);
+  getTiltOnGlobe() {
+    const scene = this.ol3d.getCesiumScene();
+    const tiltOnGlobe = (0,_core__WEBPACK_IMPORTED_MODULE_2__.computeSignedTiltAngleOnGlobe)(scene);
     return -tiltOnGlobe;
   }
+
   /**
-   * @param {number} angle
+   * Set heading.
+   * This assumes ol3d has been loaded.
    */
-  ;
-
-  _proto.setHeading = function setHeading(angle) {
-    var scene = this.ol3d.getCesiumScene();
-    var bottom = _core_js__WEBPACK_IMPORTED_MODULE_2__["default"].pickBottomPoint(scene);
-
+  setHeading(angle) {
+    const scene = this.ol3d.getCesiumScene();
+    const bottom = (0,_core__WEBPACK_IMPORTED_MODULE_2__.pickBottomPoint)(scene);
     if (bottom) {
-      _core_js__WEBPACK_IMPORTED_MODULE_2__["default"].setHeadingUsingBottomCenter(scene, angle, bottom);
+      (0,_core__WEBPACK_IMPORTED_MODULE_2__.setHeadingUsingBottomCenter)(scene, angle, bottom);
     }
   }
-  /**
-   * @export
-   * @return {olcs.OLCesium}
-   */
-  ;
-
-  _proto.getOl3d = function getOl3d() {
+  getOl3d() {
     return this.ol3d;
   }
-  /**
-   * @export
-   * @return {!ol.View}
-   */
-  ;
-
-  _proto.getOlView = function getOlView() {
-    var view = this.map.getView();
-    console.assert(view);
-    return view;
-  }
-  /**
-   * @export
-   * @return {Cesium.Matrix4}
-   */
-  ;
-
-  _proto.getCesiumViewMatrix = function getCesiumViewMatrix() {
+  getCesiumViewMatrix() {
     return this.ol3d.getCesiumScene().camera.viewMatrix;
   }
-  /**
-   * @export
-   * @return {!Cesium.Scene}
-   */
-  ;
-
-  _proto.getCesiumScene = function getCesiumScene() {
+  getCesiumScene() {
     return this.ol3d.getCesiumScene();
   }
+
   /**
-   * @export
-   * @param {!Cesium.Rectangle} rectangle
-   * @param {number=} offset in meters
-   * @return {Promise<undefined>}
+   * Fly to some rectangle.
+   * This assumes ol3d has been loaded.
    */
-  ;
-
-  _proto.flyToRectangle = function flyToRectangle(rectangle, offset) {
-    var _this6 = this;
-
+  flyToRectangle(rectangle, offset) {
     if (offset === void 0) {
       offset = 0;
     }
-
-    var camera = this.getCesiumScene().camera;
-    var destination = camera.getRectangleCameraCoordinates(rectangle);
-    var mag = Cesium.Cartesian3.magnitude(destination) + offset;
+    const camera = this.getCesiumScene().camera;
+    const destination = camera.getRectangleCameraCoordinates(rectangle);
+    const mag = Cesium.Cartesian3.magnitude(destination) + offset;
     Cesium.Cartesian3.normalize(destination, destination);
     Cesium.Cartesian3.multiplyByScalar(destination, mag, destination);
-    return new Promise(function (resolve, reject) {
-      if (!_this6.cameraExtentInRadians) {
+    return new Promise((resolve, reject) => {
+      if (!this.cameraExtentInRadians) {
         reject();
         return;
       }
-
       camera.flyTo({
-        destination: destination,
-        complete: function complete() {
-          return resolve();
-        },
-        cancel: function cancel() {
-          return reject();
-        },
+        destination,
+        complete: () => resolve(),
+        cancel: () => reject(),
         endTransform: Cesium.Matrix4.IDENTITY
       });
     });
   }
-  /**
-   * @protected
-   * @return {Cesium.Rectangle|undefined}
-   */
-  ;
-
-  _proto.getCameraExtentRectangle = function getCameraExtentRectangle() {
-    if (this.cameraExtentInRadians) {
-      return _construct(Cesium.Rectangle, this.cameraExtentInRadians);
-    }
-  };
-
-  return Manager;
-}(ol_Observable_js__WEBPACK_IMPORTED_MODULE_4___default.a);
-
-/* harmony default export */ __webpack_exports__["default"] = (Manager);
+}
 
 /***/ }),
 
-/***/ "./src/olcs/core.js":
+/***/ "./src/olcs/core.ts":
 /*!**************************!*\
-  !*** ./src/olcs/core.js ***!
+  !*** ./src/olcs/core.ts ***!
   \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   applyHeightOffsetToGeometry: () => (/* binding */ applyHeightOffsetToGeometry),
+/* harmony export */   attributionsFunctionToCredits: () => (/* binding */ attributionsFunctionToCredits),
+/* harmony export */   bottomFovRay: () => (/* binding */ bottomFovRay),
+/* harmony export */   calcDistanceForResolution: () => (/* binding */ calcDistanceForResolution),
+/* harmony export */   calcResolutionForDistance: () => (/* binding */ calcResolutionForDistance),
+/* harmony export */   computeAngleToZenith: () => (/* binding */ computeAngleToZenith),
+/* harmony export */   computeBoundingBoxAtTarget: () => (/* binding */ computeBoundingBoxAtTarget),
+/* harmony export */   computePixelSizeAtCoordinate: () => (/* binding */ computePixelSizeAtCoordinate),
+/* harmony export */   computeSignedTiltAngleOnGlobe: () => (/* binding */ computeSignedTiltAngleOnGlobe),
+/* harmony export */   convertColorToCesium: () => (/* binding */ convertColorToCesium),
+/* harmony export */   convertUrlToCesium: () => (/* binding */ convertUrlToCesium),
+/* harmony export */   createMatrixAtCoordinates: () => (/* binding */ createMatrixAtCoordinates),
+/* harmony export */   extentToRectangle: () => (/* binding */ extentToRectangle),
+/* harmony export */   isCesiumProjection: () => (/* binding */ isCesiumProjection),
+/* harmony export */   limitCameraToBoundingSphere: () => (/* binding */ limitCameraToBoundingSphere),
+/* harmony export */   normalizeView: () => (/* binding */ normalizeView),
+/* harmony export */   ol4326CoordinateArrayToCsCartesians: () => (/* binding */ ol4326CoordinateArrayToCsCartesians),
+/* harmony export */   ol4326CoordinateToCesiumCartesian: () => (/* binding */ ol4326CoordinateToCesiumCartesian),
+/* harmony export */   olGeometryCloneTo4326: () => (/* binding */ olGeometryCloneTo4326),
+/* harmony export */   pickBottomPoint: () => (/* binding */ pickBottomPoint),
+/* harmony export */   pickCenterPoint: () => (/* binding */ pickCenterPoint),
+/* harmony export */   pickOnTerrainOrEllipsoid: () => (/* binding */ pickOnTerrainOrEllipsoid),
+/* harmony export */   resetToNorthZenith: () => (/* binding */ resetToNorthZenith),
+/* harmony export */   rotateAroundAxis: () => (/* binding */ rotateAroundAxis),
+/* harmony export */   rotateAroundBottomCenter: () => (/* binding */ rotateAroundBottomCenter),
+/* harmony export */   setHeadingUsingBottomCenter: () => (/* binding */ setHeadingUsingBottomCenter),
+/* harmony export */   signedAngleBetween: () => (/* binding */ signedAngleBetween),
+/* harmony export */   sourceToImageryProvider: () => (/* binding */ sourceToImageryProvider),
+/* harmony export */   tileLayerToImageryLayer: () => (/* binding */ tileLayerToImageryLayer),
+/* harmony export */   updateCesiumLayerProperties: () => (/* binding */ updateCesiumLayerProperties)
+/* harmony export */ });
 /* harmony import */ var ol_easing_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/easing.js */ "ol/easing.js");
 /* harmony import */ var ol_easing_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_easing_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var ol_layer_Tile_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/layer/Tile.js */ "ol/layer/Tile.js");
@@ -5072,21 +3683,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
 /* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/source/ImageStatic */ "ol/source/ImageStatic");
-/* harmony import */ var ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ol/source/ImageStatic.js */ "ol/source/ImageStatic.js");
+/* harmony import */ var ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ol/source/ImageWMS.js */ "ol/source/ImageWMS.js");
 /* harmony import */ var ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ol/source/TileImage.js */ "ol/source/TileImage.js");
 /* harmony import */ var ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var ol_source_TileWMS_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ol/source/TileWMS.js */ "ol/source/TileWMS.js");
 /* harmony import */ var ol_source_TileWMS_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(ol_source_TileWMS_js__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var ol_source_Image_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/source/Image.js */ "ol/source/Image.js");
-/* harmony import */ var ol_source_Image_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(ol_source_Image_js__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _core_OLImageryProvider_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./core/OLImageryProvider.js */ "./src/olcs/core/OLImageryProvider.js");
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./util.js */ "./src/olcs/util.js");
-/**
- * @module olcs.core
- */
+/* harmony import */ var ol_source_VectorTile_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ol/source/VectorTile.js */ "ol/source/VectorTile.js");
+/* harmony import */ var ol_source_VectorTile_js__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(ol_source_VectorTile_js__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var ol_source_Image_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ol/source/Image.js */ "ol/source/Image.js");
+/* harmony import */ var ol_source_Image_js__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(ol_source_Image_js__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./core/OLImageryProvider */ "./src/olcs/core/OLImageryProvider.ts");
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./util */ "./src/olcs/util.ts");
+/* harmony import */ var _MVTImageryProvider__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./MVTImageryProvider */ "./src/olcs/MVTImageryProvider.ts");
+/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ol/layer/VectorTile.js */ "ol/layer/VectorTile.js");
+/* harmony import */ var ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ol/extent.js */ "ol/extent.js");
+/* harmony import */ var ol_extent_js__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(ol_extent_js__WEBPACK_IMPORTED_MODULE_14__);
 
 
 
@@ -5098,44 +3713,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var exports = {};
-/**
- * @typedef {Object} CesiumUrlDefinition
- * @property {string} url
- * @property {string} subdomains
- */
+
+
+
+
+
+// eslint-disable-next-line no-duplicate-imports
 
 /**
  * Options for rotate around axis core function.
- * @typedef {Object} RotateAroundAxisOption
- * @property {number} [duration]
- * @property {function(number): number} [easing]
- * @property {function(): void} [callback]
- */
-
-/**
- * @typedef {Object} LayerWithParents
- * @property {import('ol/layer/Base.js').default} layer
- * @property {Array<import('ol/layer/Group.js').default>} parents
  */
 
 /**
  * Compute the pixel width and height of a point in meters using the
  * camera frustum.
- * @param {!Cesium.Scene} scene
- * @param {!Cesium.Cartesian3} target
- * @return {!Cesium.Cartesian2} the pixel size
- * @api
  */
+function computePixelSizeAtCoordinate(scene, target) {
+  const camera = scene.camera;
+  const canvas = scene.canvas;
+  const frustum = camera.frustum;
+  const distance = Cesium.Cartesian3.magnitude(Cesium.Cartesian3.subtract(camera.position, target, new Cesium.Cartesian3()));
+  // @ts-ignore TS2341
+  return frustum.getPixelDimensions(canvas.clientWidth, canvas.clientHeight, distance, scene.pixelRatio, new Cesium.Cartesian2());
+}
 
-exports.computePixelSizeAtCoordinate = function (scene, target) {
-  var camera = scene.camera;
-  var canvas = scene.canvas;
-  var frustum = camera.frustum;
-  var distance = Cesium.Cartesian3.magnitude(Cesium.Cartesian3.subtract(camera.position, target, new Cesium.Cartesian3()));
-  var pixelSize = new Cesium.Cartesian2();
-  return frustum.getPixelDimensions(canvas.clientWidth, canvas.clientHeight, distance, pixelSize);
-};
 /**
  * Compute bounding box around a target point.
  * @param {!Cesium.Scene} scene
@@ -5144,99 +3745,61 @@ exports.computePixelSizeAtCoordinate = function (scene, target) {
  * @return {Array<Cesium.Cartographic>} bottom left and top right
  * coordinates of the box
  */
-
-
-exports.computeBoundingBoxAtTarget = function (scene, target, amount) {
-  var pixelSize = exports.computePixelSizeAtCoordinate(scene, target);
-  var transform = Cesium.Transforms.eastNorthUpToFixedFrame(target);
-  var bottomLeft = Cesium.Matrix4.multiplyByPoint(transform, new Cesium.Cartesian3(-pixelSize.x * amount, -pixelSize.y * amount, 0), new Cesium.Cartesian3());
-  var topRight = Cesium.Matrix4.multiplyByPoint(transform, new Cesium.Cartesian3(pixelSize.x * amount, pixelSize.y * amount, 0), new Cesium.Cartesian3());
+function computeBoundingBoxAtTarget(scene, target, amount) {
+  const pixelSize = computePixelSizeAtCoordinate(scene, target);
+  const transform = Cesium.Transforms.eastNorthUpToFixedFrame(target);
+  const bottomLeft = Cesium.Matrix4.multiplyByPoint(transform, new Cesium.Cartesian3(-pixelSize.x * amount, -pixelSize.y * amount, 0), new Cesium.Cartesian3());
+  const topRight = Cesium.Matrix4.multiplyByPoint(transform, new Cesium.Cartesian3(pixelSize.x * amount, pixelSize.y * amount, 0), new Cesium.Cartesian3());
   return Cesium.Ellipsoid.WGS84.cartesianArrayToCartographicArray([bottomLeft, topRight]);
-};
-/**
- *
- * @param {!ol.geom.Geometry} geometry
- * @param {number} height
- * @api
- */
-
-
-exports.applyHeightOffsetToGeometry = function (geometry, height) {
-  geometry.applyTransform(function (input, output, stride) {
+}
+function applyHeightOffsetToGeometry(geometry, height) {
+  geometry.applyTransform((input, output, stride) => {
     console.assert(input === output);
-
     if (stride !== undefined && stride >= 3) {
-      for (var i = 0; i < output.length; i += stride) {
+      for (let i = 0; i < output.length; i += stride) {
         output[i + 2] = output[i + 2] + height;
       }
     }
-
     return output;
   });
-};
-/**
- * @param {ol.Coordinate} coordinates
- * @param {number=} rotation
- * @param {!Cesium.Cartesian3=} translation
- * @param {!Cesium.Cartesian3=} scale
- * @return {!Cesium.Matrix4}
- * @api
- */
-
-
-exports.createMatrixAtCoordinates = function (coordinates, rotation, translation, scale) {
+}
+function createMatrixAtCoordinates(coordinates, rotation, translation, scale) {
   if (rotation === void 0) {
     rotation = 0;
   }
-
   if (translation === void 0) {
     translation = Cesium.Cartesian3.ZERO;
   }
-
   if (scale === void 0) {
     scale = new Cesium.Cartesian3(1, 1, 1);
   }
-
-  var position = exports.ol4326CoordinateToCesiumCartesian(coordinates);
-  var rawMatrix = Cesium.Transforms.eastNorthUpToFixedFrame(position);
-  var quaternion = Cesium.Quaternion.fromAxisAngle(Cesium.Cartesian3.UNIT_Z, -rotation);
-  var rotationMatrix = Cesium.Matrix4.fromTranslationQuaternionRotationScale(translation, quaternion, scale);
+  const position = ol4326CoordinateToCesiumCartesian(coordinates);
+  const rawMatrix = Cesium.Transforms.eastNorthUpToFixedFrame(position);
+  const quaternion = Cesium.Quaternion.fromAxisAngle(Cesium.Cartesian3.UNIT_Z, -rotation);
+  const rotationMatrix = Cesium.Matrix4.fromTranslationQuaternionRotationScale(translation, quaternion, scale);
   return Cesium.Matrix4.multiply(rawMatrix, rotationMatrix, new Cesium.Matrix4());
-};
-/**
- * @param {!Cesium.Camera} camera
- * @param {number} angle
- * @param {!Cesium.Cartesian3} axis
- * @param {!Cesium.Matrix4} transform
- * @param {RotateAroundAxisOption=} opt_options
- * @api
- */
-
-
-exports.rotateAroundAxis = function (camera, angle, axis, transform, opt_options) {
-  var clamp = Cesium.Math.clamp;
-  var defaultValue = Cesium.defaultValue;
-  var options = opt_options || {};
-  var duration = defaultValue(options.duration, 500); // ms
-
-  var easing = defaultValue(options.easing, ol_easing_js__WEBPACK_IMPORTED_MODULE_0__["linear"]);
-  var callback = options.callback;
-  var lastProgress = 0;
-  var oldTransform = new Cesium.Matrix4();
-  var start = Date.now();
-
-  var step = function step() {
-    var timestamp = Date.now();
-    var timeDifference = timestamp - start;
-    var progress = easing(clamp(timeDifference / duration, 0, 1));
+}
+function rotateAroundAxis(camera, angle, axis, transform, opt_options) {
+  const clamp = Cesium.Math.clamp;
+  const defaultValue = Cesium.defaultValue;
+  const options = opt_options;
+  const duration = defaultValue(options == null ? void 0 : options.duration, 500); // ms
+  const easing = defaultValue(options == null ? void 0 : options.easing, ol_easing_js__WEBPACK_IMPORTED_MODULE_0__.linear);
+  const callback = options == null ? void 0 : options.callback;
+  let lastProgress = 0;
+  const oldTransform = new Cesium.Matrix4();
+  const start = Date.now();
+  const step = function () {
+    const timestamp = Date.now();
+    const timeDifference = timestamp - start;
+    const progress = easing(clamp(timeDifference / duration, 0, 1));
     console.assert(progress >= lastProgress);
     camera.transform.clone(oldTransform);
-    var stepAngle = (progress - lastProgress) * angle;
+    const stepAngle = (progress - lastProgress) * angle;
     lastProgress = progress;
     camera.lookAtTransform(transform);
     camera.rotate(axis, stepAngle);
     camera.lookAtTransform(oldTransform);
-
     if (progress < 1) {
       window.requestAnimationFrame(step);
     } else {
@@ -5245,153 +3808,117 @@ exports.rotateAroundAxis = function (camera, angle, axis, transform, opt_options
       }
     }
   };
-
   window.requestAnimationFrame(step);
-};
-/**
- * @param {!Cesium.Scene} scene
- * @param {number} heading
- * @param {!Cesium.Cartesian3} bottomCenter
- * @param {RotateAroundAxisOption=} opt_options
- * @api
- */
+}
+function setHeadingUsingBottomCenter(scene, heading, bottomCenter, options) {
+  const camera = scene.camera;
+  // Compute the camera position to zenith quaternion
+  const angleToZenith = computeAngleToZenith(scene, bottomCenter);
+  const axis = camera.right;
+  const quaternion = Cesium.Quaternion.fromAxisAngle(axis, angleToZenith);
+  const rotation = Cesium.Matrix3.fromQuaternion(quaternion);
 
-
-exports.setHeadingUsingBottomCenter = function (scene, heading, bottomCenter, opt_options) {
-  var camera = scene.camera; // Compute the camera position to zenith quaternion
-
-  var angleToZenith = exports.computeAngleToZenith(scene, bottomCenter);
-  var axis = camera.right;
-  var quaternion = Cesium.Quaternion.fromAxisAngle(axis, angleToZenith);
-  var rotation = Cesium.Matrix3.fromQuaternion(quaternion); // Get the zenith point from the rotation of the position vector
-
-  var vector = new Cesium.Cartesian3();
+  // Get the zenith point from the rotation of the position vector
+  const vector = new Cesium.Cartesian3();
   Cesium.Cartesian3.subtract(camera.position, bottomCenter, vector);
-  var zenith = new Cesium.Cartesian3();
+  const zenith = new Cesium.Cartesian3();
   Cesium.Matrix3.multiplyByVector(rotation, vector, zenith);
-  Cesium.Cartesian3.add(zenith, bottomCenter, zenith); // Actually rotate around the zenith normal
+  Cesium.Cartesian3.add(zenith, bottomCenter, zenith);
 
-  var transform = Cesium.Matrix4.fromTranslation(zenith);
-  var rotateAroundAxis = exports.rotateAroundAxis;
-  rotateAroundAxis(camera, heading, zenith, transform, opt_options);
-};
+  // Actually rotate around the zenith normal
+  const transform = Cesium.Matrix4.fromTranslation(zenith);
+  rotateAroundAxis(camera, heading, zenith, transform, options);
+}
+
 /**
  * Get the 3D position of the given pixel of the canvas.
- * @param {!Cesium.Scene} scene
- * @param {!Cesium.Cartesian2} pixel
- * @return {!Cesium.Cartesian3|undefined}
- * @api
  */
-
-
-exports.pickOnTerrainOrEllipsoid = function (scene, pixel) {
-  var ray = scene.camera.getPickRay(pixel);
-  var target = scene.globe.pick(ray, scene);
+function pickOnTerrainOrEllipsoid(scene, pixel) {
+  const ray = scene.camera.getPickRay(pixel);
+  const target = scene.globe.pick(ray, scene);
   return target || scene.camera.pickEllipsoid(pixel);
-};
+}
+
 /**
  * Get the 3D position of the point at the bottom-center of the screen.
- * @param {!Cesium.Scene} scene
- * @return {!Cesium.Cartesian3|undefined}
- * @api
  */
+function pickBottomPoint(scene) {
+  const canvas = scene.canvas;
+  const bottom = new Cesium.Cartesian2(canvas.clientWidth / 2, canvas.clientHeight);
+  return pickOnTerrainOrEllipsoid(scene, bottom);
+}
 
-
-exports.pickBottomPoint = function (scene) {
-  var canvas = scene.canvas;
-  var bottom = new Cesium.Cartesian2(canvas.clientWidth / 2, canvas.clientHeight);
-  return exports.pickOnTerrainOrEllipsoid(scene, bottom);
-};
 /**
  * Get the 3D position of the point at the center of the screen.
- * @param {!Cesium.Scene} scene
- * @return {!Cesium.Cartesian3|undefined}
- * @api
  */
+function pickCenterPoint(scene) {
+  const canvas = scene.canvas;
+  const center = new Cesium.Cartesian2(canvas.clientWidth / 2, canvas.clientHeight / 2);
+  return pickOnTerrainOrEllipsoid(scene, center);
+}
 
-
-exports.pickCenterPoint = function (scene) {
-  var canvas = scene.canvas;
-  var center = new Cesium.Cartesian2(canvas.clientWidth / 2, canvas.clientHeight / 2);
-  return exports.pickOnTerrainOrEllipsoid(scene, center);
-};
 /**
  * Compute the signed tilt angle on globe, between the opposite of the
  * camera direction and the target normal. Return undefined if there is no
- * intersection of the camera direction with the globe.
- * @param {!Cesium.Scene} scene
- * @return {number|undefined}
- * @api
  */
-
-
-exports.computeSignedTiltAngleOnGlobe = function (scene) {
-  var camera = scene.camera;
-  var ray = new Cesium.Ray(camera.position, camera.direction);
-  var target = scene.globe.pick(ray, scene);
-
+function computeSignedTiltAngleOnGlobe(scene) {
+  const camera = scene.camera;
+  const ray = new Cesium.Ray(camera.position, camera.direction);
+  let target = scene.globe.pick(ray, scene);
   if (!target) {
     // no tiles in the area were loaded?
-    var ellipsoid = Cesium.Ellipsoid.WGS84;
-    var obj = Cesium.IntersectionTests.rayEllipsoid(ray, ellipsoid);
-
+    const ellipsoid = Cesium.Ellipsoid.WGS84;
+    const obj = Cesium.IntersectionTests.rayEllipsoid(ray, ellipsoid);
     if (obj) {
       target = Cesium.Ray.getPoint(ray, obj.start);
     }
   }
-
   if (!target) {
     return undefined;
   }
-
-  var normal = new Cesium.Cartesian3();
+  const normal = new Cesium.Cartesian3();
   Cesium.Ellipsoid.WGS84.geocentricSurfaceNormal(target, normal);
-  var angleBetween = exports.signedAngleBetween;
-  var angle = angleBetween(camera.direction, normal, camera.right) - Math.PI;
+  const angleBetween = signedAngleBetween;
+  const angle = angleBetween(camera.direction, normal, camera.right) - Math.PI;
   return Cesium.Math.convertLongitudeRange(angle);
-};
+}
+
 /**
  * Compute the ray from the camera to the bottom-center of the screen.
- * @param {!Cesium.Scene} scene
- * @return {!Cesium.Ray}
  */
-
-
-exports.bottomFovRay = function (scene) {
-  var camera = scene.camera;
-  var fovy2 = camera.frustum.fovy / 2;
-  var direction = camera.direction;
-  var rotation = Cesium.Quaternion.fromAxisAngle(camera.right, fovy2);
-  var matrix = Cesium.Matrix3.fromQuaternion(rotation);
-  var vector = new Cesium.Cartesian3();
+function bottomFovRay(scene) {
+  const camera = scene.camera;
+  // @ts-ignore TS2341
+  const fovy2 = camera.frustum.fovy / 2;
+  const direction = camera.direction;
+  const rotation = Cesium.Quaternion.fromAxisAngle(camera.right, fovy2);
+  const matrix = Cesium.Matrix3.fromQuaternion(rotation);
+  const vector = new Cesium.Cartesian3();
   Cesium.Matrix3.multiplyByVector(matrix, direction, vector);
   return new Cesium.Ray(camera.position, vector);
-};
+}
+
 /**
  * Compute the angle between two Cartesian3.
- * @param {!Cesium.Cartesian3} first
- * @param {!Cesium.Cartesian3} second
- * @param {!Cesium.Cartesian3} normal Normal to test orientation against.
- * @return {number}
  */
-
-
-exports.signedAngleBetween = function (first, second, normal) {
+function signedAngleBetween(first, second, normal) {
   // We are using the dot for the angle.
   // Then the cross and the dot for the sign.
-  var a = new Cesium.Cartesian3();
-  var b = new Cesium.Cartesian3();
-  var c = new Cesium.Cartesian3();
+  const a = new Cesium.Cartesian3();
+  const b = new Cesium.Cartesian3();
+  const c = new Cesium.Cartesian3();
   Cesium.Cartesian3.normalize(first, a);
   Cesium.Cartesian3.normalize(second, b);
   Cesium.Cartesian3.cross(a, b, c);
-  var cosine = Cesium.Cartesian3.dot(a, b);
-  var sine = Cesium.Cartesian3.magnitude(c); // Sign of the vector product and the orientation normal
+  const cosine = Cesium.Cartesian3.dot(a, b);
+  const sine = Cesium.Cartesian3.magnitude(c);
 
-  var sign = Cesium.Cartesian3.dot(normal, c);
-  var angle = Math.atan2(sine, cosine);
+  // Sign of the vector product and the orientation normal
+  const sign = Cesium.Cartesian3.dot(normal, c);
+  const angle = Math.atan2(sine, cosine);
   return sign >= 0 ? angle : -angle;
-};
+}
+
 /**
  * Compute the rotation angle around a given point, needed to reach the
  * zenith position.
@@ -5399,14 +3926,8 @@ exports.signedAngleBetween = function (first, second, normal) {
  * center and the frustrum bottom ray is going through the chosen pivot
  * point.
  * The bottom-center of the screen is a good candidate for the pivot point.
- * @param {!Cesium.Scene} scene
- * @param {!Cesium.Cartesian3} pivot Point around which the camera rotates.
- * @return {number}
- * @api
  */
-
-
-exports.computeAngleToZenith = function (scene, pivot) {
+function computeAngleToZenith(scene, pivot) {
   // This angle is the sum of the angles 'fy' and 'a', which are defined
   // using the pivot point and its surface normal.
   //        Zenith |    camera
@@ -5414,62 +3935,49 @@ exports.computeAngleToZenith = function (scene, pivot) {
   //            \fy|  /
   //             \ |a/
   //              \|/pivot
-  var camera = scene.camera;
-  var fy = camera.frustum.fovy / 2;
-  var ray = exports.bottomFovRay(scene);
-  var direction = Cesium.Cartesian3.clone(ray.direction);
+  const camera = scene.camera;
+  // @ts-ignore TS2341
+  const fy = camera.frustum.fovy / 2;
+  const ray = bottomFovRay(scene);
+  const direction = Cesium.Cartesian3.clone(ray.direction);
   Cesium.Cartesian3.negate(direction, direction);
-  var normal = new Cesium.Cartesian3();
+  const normal = new Cesium.Cartesian3();
   Cesium.Ellipsoid.WGS84.geocentricSurfaceNormal(pivot, normal);
-  var left = new Cesium.Cartesian3();
+  const left = new Cesium.Cartesian3();
   Cesium.Cartesian3.negate(camera.right, left);
-  var a = exports.signedAngleBetween(normal, direction, left);
+  const a = signedAngleBetween(normal, direction, left);
   return a + fy;
-};
+}
+
 /**
  * Convert an OpenLayers extent to a Cesium rectangle.
  * @param {ol.Extent} extent Extent.
  * @param {ol.ProjectionLike} projection Extent projection.
  * @return {Cesium.Rectangle} The corresponding Cesium rectangle.
- * @api
  */
-
-
-exports.extentToRectangle = function (extent, projection) {
+function extentToRectangle(extent, projection) {
   if (extent && projection) {
-    var ext = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__["transformExtent"])(extent, projection, 'EPSG:4326');
+    const ext = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_3__.transformExtent)(extent, projection, 'EPSG:4326');
     return Cesium.Rectangle.fromDegrees(ext[0], ext[1], ext[2], ext[3]);
   } else {
     return null;
   }
-};
-/**
- * Creates Cesium.ImageryLayer best corresponding to the given ol.layer.Layer.
- * Only supports raster layers and static images
- * @param {!ol.Map} olMap
- * @param {!ol.layer.Base} olLayer
- * @param {!ol.proj.Projection} viewProj Projection of the view.
- * @return {?Cesium.ImageryLayer} null if not possible (or supported)
- * @api
- */
-
-
-exports.tileLayerToImageryLayer = function (olMap, olLayer, viewProj) {
-  if (!(olLayer instanceof ol_layer_Tile_js__WEBPACK_IMPORTED_MODULE_1___default.a) && !(olLayer instanceof ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2___default.a)) {
+}
+function sourceToImageryProvider(olMap, source, viewProj, olLayer) {
+  const skip = source.get('olcs_skip');
+  if (skip) {
     return null;
   }
-
-  var provider = null;
-  var source = olLayer.getSource(); // Convert ImageWMS to TileWMS
-
-  if (source instanceof ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5___default.a && source.getUrl() && source.getImageLoadFunction() === ol_source_Image_js__WEBPACK_IMPORTED_MODULE_8__["defaultImageLoadFunction"]) {
-    var sourceProps = {
+  let provider = null;
+  // Convert ImageWMS to TileWMS
+  if (source instanceof (ol_source_ImageWMS_js__WEBPACK_IMPORTED_MODULE_5___default()) && source.getUrl() && source.getImageLoadFunction() === ol_source_Image_js__WEBPACK_IMPORTED_MODULE_9__.defaultImageLoadFunction) {
+    const sourceProps = {
       'olcs.proxy': source.get('olcs.proxy'),
       'olcs.extent': source.get('olcs.extent'),
       'olcs.projection': source.get('olcs.projection'),
       'olcs.imagesource': source
     };
-    source = new ol_source_TileWMS_js__WEBPACK_IMPORTED_MODULE_7___default.a({
+    source = new (ol_source_TileWMS_js__WEBPACK_IMPORTED_MODULE_7___default())({
       url: source.getUrl(),
       attributions: source.getAttributions(),
       projection: source.getProjection(),
@@ -5477,160 +3985,174 @@ exports.tileLayerToImageryLayer = function (olMap, olLayer, viewProj) {
     });
     source.setProperties(sourceProps);
   }
-
-  if (source instanceof ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6___default.a) {
-    var projection = _util_js__WEBPACK_IMPORTED_MODULE_10__["default"].getSourceProjection(source);
-
+  if (source instanceof (ol_source_TileImage_js__WEBPACK_IMPORTED_MODULE_6___default())) {
+    let projection = (0,_util__WEBPACK_IMPORTED_MODULE_11__.getSourceProjection)(source);
     if (!projection) {
       // if not explicit, assume the same projection as view
       projection = viewProj;
     }
-
-    if (exports.isCesiumProjection(projection)) {
-      provider = new _core_OLImageryProvider_js__WEBPACK_IMPORTED_MODULE_9__["default"](olMap, source, viewProj);
-    } // Projection not supported by Cesium
-    else {
-        return null;
-      }
-  } else if (source instanceof ol_source_ImageStatic__WEBPACK_IMPORTED_MODULE_4___default.a) {
-    var _projection = _util_js__WEBPACK_IMPORTED_MODULE_10__["default"].getSourceProjection(source);
-
-    if (!_projection) {
-      _projection = viewProj;
+    if (isCesiumProjection(projection)) {
+      provider = new _core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_10__["default"](olMap, source, viewProj);
     }
-
-    if (exports.isCesiumProjection(_projection)) {
+    // Projection not supported by Cesium
+    else {
+      return null;
+    }
+  } else if (source instanceof (ol_source_ImageStatic_js__WEBPACK_IMPORTED_MODULE_4___default())) {
+    let projection = (0,_util__WEBPACK_IMPORTED_MODULE_11__.getSourceProjection)(source);
+    if (!projection) {
+      projection = viewProj;
+    }
+    if (isCesiumProjection(projection)) {
+      const rectangle = Cesium.Rectangle.fromDegrees(source.getImageExtent()[0], source.getImageExtent()[1], source.getImageExtent()[2], source.getImageExtent()[3], new Cesium.Rectangle());
       provider = new Cesium.SingleTileImageryProvider({
         url: source.getUrl(),
-        rectangle: new Cesium.Rectangle.fromDegrees(source.getImageExtent()[0], source.getImageExtent()[1], source.getImageExtent()[2], source.getImageExtent()[3])
+        rectangle
       });
-    } // Projection not supported by Cesium
+    }
+    // Projection not supported by Cesium
     else {
-        return null;
+      return null;
+    }
+  } else if (source instanceof (ol_source_VectorTile_js__WEBPACK_IMPORTED_MODULE_8___default()) && olLayer instanceof (ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_13___default())) {
+    let projection = (0,_util__WEBPACK_IMPORTED_MODULE_11__.getSourceProjection)(source);
+    if (!projection) {
+      projection = viewProj;
+    }
+    if (skip === false) {
+      // MVT is experimental, it should be whitelisted to be synchronized
+      const fromCode = projection.getCode().split(':')[1];
+      // @ts-ignore TS2341
+      const urls = source.urls.map(u => u.replace(fromCode, '3857'));
+      const extent = olLayer.getExtent();
+      const rectangle = extentToRectangle(extent, projection);
+      const minimumLevel = source.get('olcs_minimumLevel');
+      const attributionsFunction = source.getAttributions();
+      const styleFunction = olLayer.getStyleFunction();
+      let credit;
+      if (extent && attributionsFunction) {
+        const center = (0,ol_extent_js__WEBPACK_IMPORTED_MODULE_14__.getCenter)(extent);
+        credit = attributionsFunctionToCredits(attributionsFunction, 0, center, extent)[0];
       }
+      provider = new _MVTImageryProvider__WEBPACK_IMPORTED_MODULE_12__["default"]({
+        credit,
+        rectangle,
+        minimumLevel,
+        styleFunction,
+        urls
+      });
+      return provider;
+    }
+    return null; // FIXME: it is disabled by default right now
   } else {
-    // sources other than TileImage|ImageStatic are currently not supported
+    // sources other than TileImage|Imageexport function are currently not supported
     return null;
-  } // the provider is always non-null if we got this far
-
-
-  var layerOptions = {};
-  var forcedExtent =
-  /** @type {ol.Extent} */
-  olLayer.get('olcs.extent');
-  var ext = forcedExtent || olLayer.getExtent();
-
-  if (ext) {
-    layerOptions.rectangle = exports.extentToRectangle(ext, viewProj);
   }
+  return provider;
+}
 
-  var cesiumLayer = new Cesium.ImageryLayer(provider, layerOptions);
+/**
+ * Creates Cesium.ImageryLayer best corresponding to the given ol.layer.Layer.
+ * Only supports raster layers and export function images
+ */
+function tileLayerToImageryLayer(olMap, olLayer, viewProj) {
+  if (!(olLayer instanceof (ol_layer_Tile_js__WEBPACK_IMPORTED_MODULE_1___default())) && !(olLayer instanceof (ol_layer_Image_js__WEBPACK_IMPORTED_MODULE_2___default())) && !(olLayer instanceof (ol_layer_VectorTile_js__WEBPACK_IMPORTED_MODULE_13___default()))) {
+    return null;
+  }
+  const source = olLayer.getSource();
+  if (!source) {
+    return null;
+  }
+  let provider = source.get('olcs_provider');
+  if (!provider) {
+    provider = sourceToImageryProvider(olMap, source, viewProj, olLayer);
+  }
+  if (!provider) {
+    return null;
+  }
+  const layerOptions = {};
+  const forcedExtent = olLayer.get('olcs.extent');
+  const ext = forcedExtent || olLayer.getExtent();
+  if (ext) {
+    layerOptions.rectangle = extentToRectangle(ext, viewProj);
+  }
+  const cesiumLayer = new Cesium.ImageryLayer(provider, layerOptions);
   return cesiumLayer;
-};
+}
+
 /**
  * Synchronizes the layer rendering properties (opacity, visible)
  * to the given Cesium ImageryLayer.
- * @param {olcsx.LayerWithParents} olLayerWithParents
- * @param {!Cesium.ImageryLayer} csLayer
- * @api
  */
-
-
-exports.updateCesiumLayerProperties = function (olLayerWithParents, csLayer) {
-  var opacity = 1;
-  var visible = true;
-  [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(function (olLayer) {
-    var layerOpacity = olLayer.getOpacity();
-
+function updateCesiumLayerProperties(olLayerWithParents, csLayer) {
+  let opacity = 1;
+  let visible = true;
+  [olLayerWithParents.layer].concat(olLayerWithParents.parents).forEach(olLayer => {
+    const layerOpacity = olLayer.getOpacity();
     if (layerOpacity !== undefined) {
       opacity *= layerOpacity;
     }
-
-    var layerVisible = olLayer.getVisible();
-
+    const layerVisible = olLayer.getVisible();
     if (layerVisible !== undefined) {
-      visible &= layerVisible;
+      visible = visible && layerVisible;
     }
   });
   csLayer.alpha = opacity;
   csLayer.show = visible;
-};
+}
+
 /**
  * Convert a 2D or 3D OpenLayers coordinate to Cesium.
- * @param {ol.Coordinate} coordinate Ol3 coordinate.
- * @return {!Cesium.Cartesian3} Cesium cartesian coordinate
- * @api
  */
-
-
-exports.ol4326CoordinateToCesiumCartesian = function (coordinate) {
-  var coo = coordinate;
+function ol4326CoordinateToCesiumCartesian(coordinate) {
+  const coo = coordinate;
   return coo.length > 2 ? Cesium.Cartesian3.fromDegrees(coo[0], coo[1], coo[2]) : Cesium.Cartesian3.fromDegrees(coo[0], coo[1]);
-};
+}
+
 /**
  * Convert an array of 2D or 3D OpenLayers coordinates to Cesium.
- * @param {Array.<!ol.Coordinate>} coordinates Ol3 coordinates.
- * @return {!Array.<Cesium.Cartesian3>} Cesium cartesian coordinates
- * @api
  */
-
-
-exports.ol4326CoordinateArrayToCsCartesians = function (coordinates) {
+function ol4326CoordinateArrayToCsCartesians(coordinates) {
   console.assert(coordinates !== null);
-  var toCartesian = exports.ol4326CoordinateToCesiumCartesian;
-  var cartesians = [];
-
-  for (var i = 0; i < coordinates.length; ++i) {
+  const toCartesian = ol4326CoordinateToCesiumCartesian;
+  const cartesians = [];
+  for (let i = 0; i < coordinates.length; ++i) {
     cartesians.push(toCartesian(coordinates[i]));
   }
-
   return cartesians;
-};
+}
+
 /**
  * Reproject an OpenLayers geometry to EPSG:4326 if needed.
  * The geometry will be cloned only when original projection is not EPSG:4326
  * and the properties will be shallow copied.
- * @param {!T} geometry
- * @param {!ol.ProjectionLike} projection
- * @return {!T}
- * @template T
- * @api
  */
-
-
-exports.olGeometryCloneTo4326 = function (geometry, projection) {
+function olGeometryCloneTo4326(geometry, projection) {
   console.assert(projection);
-  var proj4326 = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__["get"])('EPSG:4326');
-  var proj = Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__["get"])(projection);
-
-  if (proj !== proj4326) {
-    var properties = geometry.getProperties();
+  const proj4326 = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_3__.get)('EPSG:4326');
+  const proj = (0,ol_proj_js__WEBPACK_IMPORTED_MODULE_3__.get)(projection);
+  if (proj.getCode() !== proj4326.getCode()) {
+    const properties = geometry.getProperties();
     geometry = geometry.clone();
     geometry.transform(proj, proj4326);
     geometry.setProperties(properties);
   }
-
   return geometry;
-};
+}
+
 /**
  * Convert an OpenLayers color to Cesium.
- * @param {ol.Color|CanvasGradient|CanvasPattern|string} olColor
- * @return {!Cesium.Color}
- * @api
  */
-
-
-exports.convertColorToCesium = function (olColor) {
+function convertColorToCesium(olColor) {
   olColor = olColor || 'black';
-
   if (Array.isArray(olColor)) {
     return new Cesium.Color(Cesium.Color.byteToFloat(olColor[0]), Cesium.Color.byteToFloat(olColor[1]), Cesium.Color.byteToFloat(olColor[2]), olColor[3]);
   } else if (typeof olColor == 'string') {
     return Cesium.Color.fromCssColorString(olColor);
   } else if (olColor instanceof CanvasPattern || olColor instanceof CanvasGradient) {
     // Render the CanvasPattern/CanvasGradient into a canvas that will be sent to Cesium as material
-    var canvas = document.createElement('canvas');
-    var ctx = canvas.getContext('2d');
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     canvas.width = canvas.height = 256;
     ctx.fillStyle = olColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -5638,719 +4160,940 @@ exports.convertColorToCesium = function (olColor) {
       image: canvas
     });
   }
-
   console.assert(false, 'impossible');
-};
+}
+
 /**
  * Convert an OpenLayers url to Cesium.
- * @param {string} url
- * @return {!CesiumUrlDefinition}
- * @api
  */
-
-
-exports.convertUrlToCesium = function (url) {
-  var subdomains = '';
-  var re = /\{(\d|[a-z])-(\d|[a-z])\}/;
-  var match = re.exec(url);
-
+function convertUrlToCesium(url) {
+  let subdomains = '';
+  const re = /\{(\d|[a-z])-(\d|[a-z])\}/;
+  const match = re.exec(url);
   if (match) {
     url = url.replace(re, '{s}');
-    var startCharCode = match[1].charCodeAt(0);
-    var stopCharCode = match[2].charCodeAt(0);
-    var charCode;
-
+    const startCharCode = match[1].charCodeAt(0);
+    const stopCharCode = match[2].charCodeAt(0);
+    let charCode;
     for (charCode = startCharCode; charCode <= stopCharCode; ++charCode) {
       subdomains += String.fromCharCode(charCode);
     }
   }
-
   return {
-    url: url,
-    subdomains: subdomains
+    url,
+    subdomains
   };
-};
+}
+
 /**
  * Animate the return to a top-down view from the zenith.
  * The camera is rotated to orient to the North.
- * @param {!ol.Map} map
- * @param {!Cesium.Scene} scene
- * @return {Promise<undefined>}
- * @api
  */
-
-
-exports.resetToNorthZenith = function (map, scene) {
-  return new Promise(function (resolve, reject) {
-    var camera = scene.camera;
-    var pivot = exports.pickBottomPoint(scene);
-
+function resetToNorthZenith(map, scene) {
+  return new Promise((resolve, reject) => {
+    const camera = scene.camera;
+    const pivot = pickBottomPoint(scene);
     if (!pivot) {
       reject('Could not get bottom pivot');
       return;
     }
-
-    var currentHeading = map.getView().getRotation();
-
+    const currentHeading = map.getView().getRotation();
     if (currentHeading === undefined) {
       reject('The view is not initialized');
       return;
     }
+    const angle = computeAngleToZenith(scene, pivot);
 
-    var angle = exports.computeAngleToZenith(scene, pivot); // Point to North
+    // Point to North
+    setHeadingUsingBottomCenter(scene, currentHeading, pivot);
 
-    exports.setHeadingUsingBottomCenter(scene, currentHeading, pivot); // Go to zenith
-
-    var transform = Cesium.Matrix4.fromTranslation(pivot);
-    var axis = camera.right;
-    var options = {
-      callback: function callback() {
-        var view = map.getView();
-        exports.normalizeView(view);
-        resolve();
+    // Go to zenith
+    const transform = Cesium.Matrix4.fromTranslation(pivot);
+    const axis = camera.right;
+    const options = {
+      callback: () => {
+        const view = map.getView();
+        normalizeView(view);
+        resolve(undefined);
       }
     };
-    exports.rotateAroundAxis(camera, -angle, axis, transform, options);
+    rotateAroundAxis(camera, -angle, axis, transform, options);
   });
-};
+}
+
 /**
  * @param {!Cesium.Scene} scene
  * @param {number} angle in radian
  * @return {Promise<undefined>}
  * @api
  */
-
-
-exports.rotateAroundBottomCenter = function (scene, angle) {
-  return new Promise(function (resolve, reject) {
-    var camera = scene.camera;
-    var pivot = exports.pickBottomPoint(scene);
-
+function rotateAroundBottomCenter(scene, angle) {
+  return new Promise((resolve, reject) => {
+    const camera = scene.camera;
+    const pivot = pickBottomPoint(scene);
     if (!pivot) {
       reject('could not get bottom pivot');
       return;
     }
-
-    var options = {
-      callback: resolve
+    const options = {
+      callback: () => resolve(undefined)
     };
-    var transform = Cesium.Matrix4.fromTranslation(pivot);
-    var axis = camera.right;
-    var rotateAroundAxis = exports.rotateAroundAxis;
+    const transform = Cesium.Matrix4.fromTranslation(pivot);
+    const axis = camera.right;
     rotateAroundAxis(camera, -angle, axis, transform, options);
   });
-};
+}
+
 /**
  * Set the OpenLayers view to a specific rotation and
  * the nearest resolution.
- * @param {ol.View} view
- * @param {number=} angle
- * @api
  */
-
-
-exports.normalizeView = function (view, angle) {
+function normalizeView(view, angle) {
   if (angle === void 0) {
     angle = 0;
   }
-
-  var resolution = view.getResolution();
+  const resolution = view.getResolution();
   view.setRotation(angle);
-  view.setResolution(view.constrainResolution(resolution));
-};
+
+  // @ts-ignore TS2341
+  if (view.constrainResolution) {
+    // @ts-ignore TS2341
+    view.setResolution(view.constrainResolution(resolution));
+  } else {
+    view.setResolution(view.getConstrainedResolution(resolution));
+  }
+}
+
 /**
  * Check if the given projection is managed by Cesium (WGS84 or Mercator Spheric)
- *
- * @param {ol.proj.Projection} projection Projection to check.
- * @returns {boolean} Whether it's managed by Cesium.
  */
-
-
-exports.isCesiumProjection = function (projection) {
-  var is3857 = projection === Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__["get"])('EPSG:3857');
-  var is4326 = projection === Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_3__["get"])('EPSG:4326');
+function isCesiumProjection(projection) {
+  const is3857 = projection.getCode() === 'EPSG:3857';
+  const is4326 = projection.getCode() === 'EPSG:4326';
   return is3857 || is4326;
-};
+}
+function attributionsFunctionToCredits(attributionsFunction, zoom, center, extent) {
+  if (!attributionsFunction) {
+    return [];
+  }
+  let attributions = attributionsFunction({
+    viewState: {
+      zoom,
+      center,
+      projection: undefined,
+      resolution: undefined,
+      rotation: undefined
+    },
+    extent
+  });
+  if (!Array.isArray(attributions)) {
+    attributions = [attributions];
+  }
+  return attributions.map(html => new Cesium.Credit(html, true));
+}
 
-/* harmony default export */ __webpack_exports__["default"] = (exports);
+/**
+ * calculate the distance between camera and centerpoint based on the resolution and latitude value
+ */
+function calcDistanceForResolution(resolution, latitude, scene, projection) {
+  const canvas = scene.canvas;
+  const camera = scene.camera;
+  // @ts-ignore TS2341
+  const fovy = camera.frustum.fovy; // vertical field of view
+  console.assert(!isNaN(fovy));
+  const metersPerUnit = projection.getMetersPerUnit();
+
+  // number of "map units" visible in 2D (vertically)
+  const visibleMapUnits = resolution * canvas.clientHeight;
+
+  // The metersPerUnit does not take latitude into account, but it should
+  // be lower with increasing latitude -- we have to compensate.
+  // In 3D it is not possible to maintain the resolution at more than one point,
+  // so it only makes sense to use the latitude of the "target" point.
+  const relativeCircumference = Math.cos(Math.abs(latitude));
+
+  // how many meters should be visible in 3D
+  const visibleMeters = visibleMapUnits * metersPerUnit * relativeCircumference;
+
+  // distance required to view the calculated length in meters
+  //
+  //  fovy/2
+  //    |\
+  //  x | \
+  //    |--\
+  // visibleMeters/2
+  const requiredDistance = visibleMeters / 2 / Math.tan(fovy / 2);
+
+  // NOTE: This calculation is not absolutely precise, because metersPerUnit
+  // is a great simplification. It does not take ellipsoid/terrain into account.
+
+  return requiredDistance;
+}
+
+/**
+ * calculate the resolution based on a distance(camera to position) and latitude value
+ */
+function calcResolutionForDistance(distance, latitude, scene, projection) {
+  // See the reverse calculation (calcDistanceForResolution) for details
+  const canvas = scene.canvas;
+  const camera = scene.camera;
+  // @ts-ignore TS2341
+  const fovy = camera.frustum.fovy; // vertical field of view
+  console.assert(!isNaN(fovy));
+  const metersPerUnit = projection.getMetersPerUnit();
+  const visibleMeters = 2 * distance * Math.tan(fovy / 2);
+  const relativeCircumference = Math.cos(Math.abs(latitude));
+  const visibleMapUnits = visibleMeters / metersPerUnit / relativeCircumference;
+  const resolution = visibleMapUnits / canvas.clientHeight;
+  return resolution;
+}
+
+/**
+ * Constrain the camera so that it stays close to the bounding sphere of the map extent.
+ * Near the ground the allowed distance is shorter.
+ */
+function limitCameraToBoundingSphere(camera, boundingSphere, ratio) {
+  let blockLimiter = false;
+  return function () {
+    if (!blockLimiter) {
+      const position = camera.position;
+      const carto = Cesium.Cartographic.fromCartesian(position);
+      if (Cesium.Cartesian3.distance(boundingSphere.center, position) > boundingSphere.radius * ratio(carto.height)) {
+        // @ts-ignore TS2339: FIXME, there is no flying property in Camera
+        const currentlyFlying = camera.flying;
+        if (currentlyFlying === true) {
+          // There is a flying property and its value is true
+          return;
+        } else {
+          blockLimiter = true;
+          const unblockLimiter = () => blockLimiter = false;
+          camera.flyToBoundingSphere(boundingSphere, {
+            complete: unblockLimiter,
+            cancel: unblockLimiter
+          });
+        }
+      }
+    }
+  };
+}
 
 /***/ }),
 
-/***/ "./src/olcs/core/OLImageryProvider.js":
+/***/ "./src/olcs/core/OLImageryProvider.ts":
 /*!********************************************!*\
-  !*** ./src/olcs/core/OLImageryProvider.js ***!
+  !*** ./src/olcs/core/OLImageryProvider.ts ***!
   \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/proj.js */ "ol/proj.js");
-/* harmony import */ var ol_proj_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util.js */ "./src/olcs/util.js");
-/**
- * @module olcs.core.OLImageryProvider
- */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createEmptyCanvas: () => (/* binding */ createEmptyCanvas),
+/* harmony export */   "default": () => (/* binding */ OLImageryProvider)
+/* harmony export */ });
+/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util */ "./src/olcs/util.ts");
+/* harmony import */ var ol_source_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ol/source.js */ "ol/source.js");
+/* harmony import */ var ol_source_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ol_source_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../core */ "./src/olcs/core.ts");
 
 
 
-var OLImageryProvider
-/* should not extend Cesium.ImageryProvider */
-=
-/*#__PURE__*/
-function () {
+function createEmptyCanvas() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 1;
+  canvas.height = 1;
+  return canvas;
+}
+const olUseNewCoordinates = function () {
+  const tileSource = new ol_source_js__WEBPACK_IMPORTED_MODULE_1__.Tile({
+    projection: 'EPSG:3857',
+    wrapX: true
+  });
+  const tileCoord = tileSource.getTileCoordForTileUrlFunction([6, -31, 22]);
+  return tileCoord && tileCoord[1] === 33 && tileCoord[2] === 22;
+  // See b/test/spec/ol/source/tile.test.js
+  // of e9a30c5cb7e3721d9370025fbe5472c322847b35 in OpenLayers repository
+}();
+class OLImageryProvider /* should not extend Cesium.ImageryProvider */{
+  /**
+  * When <code>true</code>, this model is ready to render, i.e., the external binary, image,
+  * and shader files were downloaded and the WebGL resources were created.
+  */
+  get ready() {
+    return this.ready_;
+  }
+
+  /**
+  * Gets the rectangle, in radians, of the imagery provided by the instance.
+  */
+  get rectangle() {
+    return this.rectangle_;
+  }
+
+  /**
+   * Gets the tiling scheme used by the provider.
+   */
+  get tilingScheme() {
+    return this.tilingScheme_;
+  }
+
+  /**
+   * Gets an event that is raised when the imagery provider encounters an asynchronous error.  By subscribing
+   * to the event, you will be notified of the error and can potentially recover from it.  Event listeners
+   * are passed an instance of {@link Cesium.TileProviderError}.
+   */
+
+  /**
+   * Gets the credit to display when this imagery provider is active.  Typically this is used to credit
+   * the source of the imagery.
+   */
+
+  /**
+   * Gets the proxy used by this provider.
+   */
+
+  get _ready() {
+    return this.ready_;
+  }
+
+  /**
+   * Gets the width of each tile, in pixels.
+   */
+  get tileWidth() {
+    const tileGrid = this.source_.getTileGrid();
+    if (tileGrid) {
+      const tileSizeAtZoom0 = tileGrid.getTileSize(0);
+      if (Array.isArray(tileSizeAtZoom0)) {
+        return tileSizeAtZoom0[0];
+      } else {
+        return tileSizeAtZoom0; // same width and height
+      }
+    }
+    return 256;
+  }
+
+  /**
+   * Gets the height of each tile, in pixels.
+   */
+  get tileHeight() {
+    const tileGrid = this.source_.getTileGrid();
+    if (tileGrid) {
+      const tileSizeAtZoom0 = tileGrid.getTileSize(0);
+      if (Array.isArray(tileSizeAtZoom0)) {
+        return tileSizeAtZoom0[1];
+      } else {
+        return tileSizeAtZoom0; // same width and height
+      }
+    }
+    return 256;
+  }
+
+  /**
+   * Gets the maximum level-of-detail that can be requested.
+   */
+  get maximumLevel() {
+    const tileGrid = this.source_.getTileGrid();
+    if (tileGrid) {
+      return tileGrid.getMaxZoom();
+    } else {
+      return 18; // some arbitrary value
+    }
+  }
+
+  // FIXME: to implement, we could check the number of tiles at minzoom (for this rectangle) and return 0 if too big
+  /**
+   * Gets the minimum level-of-detail that can be requested.  Generally,
+   * a minimum level should only be used when the rectangle of the imagery is small
+   * enough that the number of tiles at the minimum level is small.  An imagery
+   * provider with more than a few tiles at the minimum level will lead to
+   * rendering problems.
+   */
+  get minimumLevel() {
+    // WARNING: Do not use the minimum level (at least until the extent is
+    // properly set). Cesium assumes the minimumLevel to contain only
+    // a few tiles and tries to load them all at once -- this can
+    // freeze and/or crash the browser !
+    return 0;
+    //var tg = this.source_.getTileGrid();
+    //return tg ? tg.getMinZoom() : 0;
+  }
+
+  /**
+   * Gets the tile discard policy.  If not undefined, the discard policy is responsible
+   * for filtering out "missing" tiles via its shouldDiscardImage function.  If this function
+   * returns undefined, no tiles are filtered.
+   */
+  get tileDiscardPolicy() {
+    return undefined;
+  }
+
+  // FIXME: this might be exposed
+  /**
+   * Gets a value indicating whether or not the images provided by this imagery provider
+   * include an alpha channel.  If this property is false, an alpha channel, if present, will
+   * be ignored.  If this property is true, any images without an alpha channel will be treated
+   * as if their alpha is 1.0 everywhere.  When this property is false, memory usage
+   * and texture upload time are reduced.
+   */
+  get hasAlphaChannel() {
+    return true;
+  }
+
+  // FIXME: this could be implemented by proxying to OL
+  /**
+   * Asynchronously determines what features, if any, are located at a given longitude and latitude within
+   * a tile.
+   * This function is optional, so it may not exist on all ImageryProviders.
+   * @param x - The tile X coordinate.
+   * @param y - The tile Y coordinate.
+   * @param level - The tile level.
+   * @param longitude - The longitude at which to pick features.
+   * @param latitude - The latitude at which to pick features.
+   * @return A promise for the picked features that will resolve when the asynchronous
+   *                   picking completes.  The resolved value is an array of {@link ImageryLayerFeatureInfo}
+   *                   instances.  The array may be empty if no features are found at the given location.
+   *                   It may also be undefined if picking is not supported.
+   */
+  pickFeatures(x, y, level, longitude, latitude) {
+    return undefined;
+  }
+
   /**
    * Special class derived from Cesium.ImageryProvider
    * that is connected to the given ol.source.TileImage.
-   * @param {!ol.Map} olMap
-   * @param {!ol.source.TileImage} source
-   * @param {ol.proj.Projection=} opt_fallbackProj Projection to assume if the
-   *                                               projection of the source is not defined.
-   * @constructor
-   * @extends {Cesium.ImageryProvider}
+   * @param olMap OL map
+   * @param source Tile image source
+   * @param [opt_fallbackProj] Projection to assume if source has no projection
    */
-  function OLImageryProvider(olMap, source, opt_fallbackProj) {
-    var _this = this;
-
-    // Do not extend or call super constructor from
-    // Cesium.ImageryProvider since this particular function is a
-    // 'non instanciable interface' which throws on instanciation.
-
-    /**
-     * @type {!ol.source.TileImage}
-     * @private
-     */
+  constructor(olMap, source, opt_fallbackProj) {
+    this.emptyCanvas_ = createEmptyCanvas();
+    this.emptyCanvasPromise_ = Promise.resolve(this.emptyCanvas_);
+    this.errorEvent = new Cesium.Event();
     this.source_ = source;
-    /**
-     * @type {?ol.proj.Projection}
-     * @private
-     */
-
     this.projection_ = null;
-    /**
-     * @type {?ol.proj.Projection}
-     * @private
-     */
-
-    this.fallbackProj_ = opt_fallbackProj || null;
-    /**
-     * @type {boolean}
-     * @private
-     */
-
     this.ready_ = false;
-    /**
-     * @type {?Cesium.TilingScheme}
-     * @private
-     */
+    this.fallbackProj_ = opt_fallbackProj || null;
 
-    this.tilingScheme_ = null;
-    /**
-     * @type {?Cesium.Rectangle}
-     * @private
-     */
-
+    // cesium v107+ don't wait for ready anymore so we put somehing here while it loads
+    this.tilingScheme_ = new Cesium.WebMercatorTilingScheme();
     this.rectangle_ = null;
-    /**
-     * @type {!ol.Map}
-     * @private
-     */
-
     this.map_ = olMap;
-    var proxy = this.source_.get('olcs.proxy');
-
+    this.shouldRequestNextLevel = false;
+    const proxy = this.source_.get('olcs.proxy');
     if (proxy) {
       if (typeof proxy === 'function') {
-        this.proxy_ = {
+        // Duck typing a proxy
+        this.proxy = {
           'getURL': proxy
         };
       } else if (typeof proxy === 'string') {
-        this.proxy_ = new Cesium.DefaultProxy(proxy);
+        this.proxy = new Cesium.DefaultProxy(proxy);
       }
     }
-
-    this.errorEvent_ = new Cesium.Event();
-    this.emptyCanvas_ = document.createElement('canvas');
-    this.emptyCanvas_.width = 1;
-    this.emptyCanvas_.height = 1;
-    this.source_.on('change', function (e) {
-      _this.handleSourceChanged_();
+    this.source_.on('change', e => {
+      this.handleSourceChanged_();
     });
     this.handleSourceChanged_();
   }
+
   /**
    * Checks if the underlying source is ready and cached required data.
-   * @private
    */
-
-
-  var _proto = OLImageryProvider.prototype;
-
-  _proto.handleSourceChanged_ = function handleSourceChanged_(frameState) {
+  handleSourceChanged_() {
     if (!this.ready_ && this.source_.getState() == 'ready') {
-      this.projection_ = _util_js__WEBPACK_IMPORTED_MODULE_1__["default"].getSourceProjection(this.source_) || this.fallbackProj_;
-
-      if (this.projection_ == Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__["get"])('EPSG:4326')) {
-        this.tilingScheme_ = new Cesium.GeographicTilingScheme();
-      } else if (this.projection_ == Object(ol_proj_js__WEBPACK_IMPORTED_MODULE_0__["get"])('EPSG:3857')) {
-        this.tilingScheme_ = new Cesium.WebMercatorTilingScheme();
+      this.projection_ = (0,_util__WEBPACK_IMPORTED_MODULE_0__.getSourceProjection)(this.source_) || this.fallbackProj_;
+      const options = {
+        numberOfLevelZeroTilesX: 1,
+        numberOfLevelZeroTilesY: 1
+      };
+      if (this.source_.tileGrid !== null) {
+        // Get the number of tiles at level 0 if it is defined
+        this.source_.tileGrid.forEachTileCoord(this.projection_.getExtent(), 0, _ref => {
+          let [zoom, xIndex, yIndex] = _ref;
+          options.numberOfLevelZeroTilesX = xIndex + 1;
+          options.numberOfLevelZeroTilesY = yIndex + 1;
+        });
+      }
+      if (this.projection_.getCode() === 'EPSG:4326') {
+        // Cesium zoom level 0 is OpenLayers zoom level 1 for layer in EPSG:4326 with a single tile on level 0
+        this.shouldRequestNextLevel = options.numberOfLevelZeroTilesX === 1 && options.numberOfLevelZeroTilesY === 1;
+        this.tilingScheme_ = new Cesium.GeographicTilingScheme(options);
+      } else if (this.projection_.getCode() === 'EPSG:3857') {
+        this.shouldRequestNextLevel = false;
+        this.tilingScheme_ = new Cesium.WebMercatorTilingScheme(options);
       } else {
         return;
       }
-
       this.rectangle_ = this.tilingScheme_.rectangle;
       this.ready_ = true;
     }
   }
+
   /**
    * Generates the proper attributions for a given position and zoom
    * level.
-   * @export
-   * @override
+   * @implements
    */
-  ;
-
-  _proto.getTileCredits = function getTileCredits(x, y, level) {
-    var extent = this.map_.getView().calculateExtent(this.map_.getSize());
-    var center = this.map_.getView().getCenter();
-    var zoom = this.tilingScheme_ instanceof Cesium.GeographicTilingScheme ? level + 1 : level;
-    var frameState = {
-      viewState: {
-        zoom: zoom,
-        center: center
-      },
-      extent: extent
-    };
-    var attributionsFunction = this.source_.getAttributions();
-
+  getTileCredits(x, y, level) {
+    const attributionsFunction = this.source_.getAttributions();
     if (!attributionsFunction) {
       return [];
     }
-
-    var attributions = attributionsFunction(frameState);
-
-    if (!Array.isArray(attributions)) {
-      attributions = [attributions];
-    }
-
-    return attributions.map(function (html) {
-      return new Cesium.Credit(html, true);
-    });
+    const extent = this.map_.getView().calculateExtent(this.map_.getSize());
+    const center = this.map_.getView().getCenter();
+    const zoom = this.shouldRequestNextLevel ? level + 1 : level;
+    return (0,_core__WEBPACK_IMPORTED_MODULE_2__.attributionsFunctionToCredits)(attributionsFunction, zoom, center, extent);
   }
+
   /**
-   * @export
-   * @override
+   * @implements
    */
-  ;
-
-  _proto.requestImage = function requestImage(x, y, level) {
-    var tileUrlFunction = this.source_.getTileUrlFunction();
-
+  requestImage(x, y, level, request) {
+    const tileUrlFunction = this.source_.getTileUrlFunction();
     if (tileUrlFunction && this.projection_) {
-      // Perform mapping of Cesium tile coordinates to OpenLayers tile coordinates:
-      // 1) Cesium zoom level 0 is OpenLayers zoom level 1 for EPSG:4326
-      var z_ = this.tilingScheme_ instanceof Cesium.GeographicTilingScheme ? level + 1 : level; // 2) OpenLayers tile coordinates increase from bottom to top
-
-      var y_ = -y - 1;
-      var url = tileUrlFunction.call(this.source_, [z_, x, y_], 1, this.projection_);
-
-      if (this.proxy_) {
-        url = this.proxy_.getURL(url);
+      const z_ = this.shouldRequestNextLevel ? level + 1 : level;
+      let y_ = y;
+      if (!olUseNewCoordinates) {
+        // LEGACY
+        // OpenLayers version 3 to 5 tile coordinates increase from bottom to top
+        y_ = -y - 1;
       }
-
-      return url ? Cesium.ImageryProvider.loadImage(this, url) : this.emptyCanvas_;
+      let url = tileUrlFunction.call(this.source_, [z_, x, y_], 1, this.projection_);
+      if (this.proxy) {
+        url = this.proxy.getURL(url);
+      }
+      if (url) {
+        // It is probably safe to cast here
+        return Cesium.ImageryProvider.loadImage(this, url);
+      }
+      return this.emptyCanvasPromise_;
     } else {
       // return empty canvas to stop Cesium from retrying later
-      return this.emptyCanvas_;
-    }
-  };
-
-  return OLImageryProvider;
-}(); // definitions of getters that are required to be present
-// in the Cesium.ImageryProvider instance:
-
-
-Object.defineProperties(OLImageryProvider.prototype, {
-  'ready': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      return this.ready_;
-    }
-  },
-  'rectangle': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      return this.rectangle_;
-    }
-  },
-  'tileWidth': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      var tg = this.source_.getTileGrid();
-      return tg ? Array.isArray(tg.getTileSize(0)) ? tg.getTileSize(0)[0] : tg.getTileSize(0) : 256;
-    }
-  },
-  'tileHeight': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      var tg = this.source_.getTileGrid();
-      return tg ? Array.isArray(tg.getTileSize(0)) ? tg.getTileSize(0)[1] : tg.getTileSize(0) : 256;
-    }
-  },
-  'maximumLevel': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      var tg = this.source_.getTileGrid();
-      return tg ? tg.getMaxZoom() : 18;
-    }
-  },
-  'minimumLevel': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      // WARNING: Do not use the minimum level (at least until the extent is
-      // properly set). Cesium assumes the minimumLevel to contain only
-      // a few tiles and tries to load them all at once -- this can
-      // freeze and/or crash the browser !
-      return 0; //var tg = this.source_.getTileGrid();
-      //return tg ? tg.getMinZoom() : 0;
-    }
-  },
-  'tilingScheme': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      return this.tilingScheme_;
-    }
-  },
-  'tileDiscardPolicy': {
-    'get': function get() {
-      return undefined;
-    }
-  },
-  'errorEvent': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      return this.errorEvent_;
-    }
-  },
-  'proxy': {
-    'get':
-    /** @this {olcs.core.OLImageryProvider} */
-    function get() {
-      return this.proxy_;
-    }
-  },
-  'hasAlphaChannel': {
-    'get': function get() {
-      return true;
-    }
-  },
-  'pickFeatures': {
-    'get': function get() {
-      return undefined;
+      return this.emptyCanvasPromise_;
     }
   }
-});
-/* harmony default export */ __webpack_exports__["default"] = (OLImageryProvider);
+}
 
 /***/ }),
 
-/***/ "./src/olcs/core/VectorLayerCounterpart.js":
+/***/ "./src/olcs/core/VectorLayerCounterpart.ts":
 /*!*************************************************!*\
-  !*** ./src/olcs/core/VectorLayerCounterpart.js ***!
+  !*** ./src/olcs/core/VectorLayerCounterpart.ts ***!
   \*************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ VectorLayerCounterpart)
+/* harmony export */ });
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ol/Observable.js */ "ol/Observable.js");
 /* harmony import */ var ol_Observable_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__);
-/**
- * @module olcs.core.VectorLayerCounterpart
- */
+
 
 /**
  * Context for feature conversion.
- * @typedef {Object} OlFeatureToCesiumContext
- * @property {!(import('ol/Projection.js').default|string)} projection
- * @property {!Cesium.PrimitiveCollection} primitives
- * @property {Object<number, Array<!Cesium.Primitive|!Cesium.Billboard>>} featureToCesiumMap
- * @property {!Cesium.BillboardCollection} billboards
  */
 
-var VectorLayerCounterpart =
-/*#__PURE__*/
-function () {
+class VectorLayerCounterpart {
   /**
   * Result of the conversion of an OpenLayers layer to Cesium.
-  * @param {!(ol.proj.Projection|string)} layerProjection
-  * @param {!Cesium.Scene} scene
   */
-  function VectorLayerCounterpart(layerProjection, scene) {
-    var billboards = new Cesium.BillboardCollection({
-      scene: scene
-    });
-    var primitives = new Cesium.PrimitiveCollection();
-    /**
-    * @type {!Array.<ol.EventsKey>}
-    */
-
+  constructor(layerProjection, scene) {
     this.olListenKeys = [];
+    const billboards = new Cesium.BillboardCollection({
+      scene
+    });
+    const primitives = new Cesium.PrimitiveCollection();
     this.rootCollection_ = new Cesium.PrimitiveCollection();
-    /**
-    * @type {!OlFeatureToCesiumContext}
-    */
-
     this.context = {
       projection: layerProjection,
-      billboards: billboards,
+      billboards,
       featureToCesiumMap: {},
-      primitives: primitives
+      primitives
     };
     this.rootCollection_.add(billboards);
     this.rootCollection_.add(primitives);
   }
+
   /**
   * Unlisten.
   */
-
-
-  var _proto = VectorLayerCounterpart.prototype;
-
-  _proto.destroy = function destroy() {
-    this.olListenKeys.forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__["unByKey"]);
+  destroy() {
+    this.olListenKeys.forEach(ol_Observable_js__WEBPACK_IMPORTED_MODULE_0__.unByKey);
     this.olListenKeys.length = 0;
   }
-  /**
-  * @return {!Cesium.Primitive}
-  */
-  ;
-
-  _proto.getRootPrimitive = function getRootPrimitive() {
+  getRootPrimitive() {
     return this.rootCollection_;
-  };
-
-  return VectorLayerCounterpart;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (VectorLayerCounterpart);
+  }
+}
 
 /***/ }),
 
-/***/ "./src/olcs/math.js":
+/***/ "./src/olcs/math.ts":
 /*!**************************!*\
-  !*** ./src/olcs/math.js ***!
+  !*** ./src/olcs/math.ts ***!
   \**************************/
-/*! exports provided: toDegrees, toRadians */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toDegrees", function() { return toDegrees; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "toRadians", function() { return toRadians; });
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   toDegrees: () => (/* binding */ toDegrees),
+/* harmony export */   toRadians: () => (/* binding */ toRadians)
+/* harmony export */ });
 /**
  * Converts radians to to degrees.
  *
- * @param {number} angleInRadians Angle in radians.
- * @return {number} Angle in degrees.
+ * @param angleInRadians Angle in radians.
+ * @return Angle in degrees.
  */
 function toDegrees(angleInRadians) {
   return angleInRadians * 180 / Math.PI;
 }
+
 /**
  * Converts degrees to radians.
  *
- * @param {number} angleInDegrees Angle in degrees.
- * @return {number} Angle in radians.
+ * @param angleInDegrees Angle in degrees.
+ * @return Angle in radians.
  */
-
 function toRadians(angleInDegrees) {
   return angleInDegrees * Math.PI / 180;
 }
 
 /***/ }),
 
-/***/ "./src/olcs/util.js":
-/*!**************************!*\
-  !*** ./src/olcs/util.js ***!
-  \**************************/
-/*! exports provided: olcsListen, getUid, stableSort, removeNode, removeChildren, isGroundPolylinePrimitiveSupported, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./src/olcs/print.ts":
+/*!***************************!*\
+  !*** ./src/olcs/print.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "olcsListen", function() { return olcsListen; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUid", function() { return getUid; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "stableSort", function() { return stableSort; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeNode", function() { return removeNode; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeChildren", function() { return removeChildren; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isGroundPolylinePrimitiveSupported", function() { return isGroundPolylinePrimitiveSupported; });
-/**
- * @module olcs.util
- */
-var exports = {};
-/**
- * Cast to object.
- * @param {Object} param
- * @return {Object}
- */
-
-exports.obj = function (param) {
-  return param;
-};
-/**
- * @type {boolean|undefined}
- * @private
- */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MaskDrawer: () => (/* reexport safe */ _print_drawCesiumMask__WEBPACK_IMPORTED_MODULE_1__.MaskDrawer),
+/* harmony export */   autoDrawMask: () => (/* reexport safe */ _print_drawCesiumMask__WEBPACK_IMPORTED_MODULE_1__.autoDrawMask),
+/* harmony export */   computeRectangle: () => (/* reexport safe */ _print_computeRectangle__WEBPACK_IMPORTED_MODULE_0__.computeRectangle),
+/* harmony export */   takeScreenshot: () => (/* reexport safe */ _print_takeCesiumScreenshot__WEBPACK_IMPORTED_MODULE_2__.takeScreenshot)
+/* harmony export */ });
+/* harmony import */ var _print_computeRectangle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./print/computeRectangle */ "./src/olcs/print/computeRectangle.ts");
+/* harmony import */ var _print_drawCesiumMask__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./print/drawCesiumMask */ "./src/olcs/print/drawCesiumMask.ts");
+/* harmony import */ var _print_takeCesiumScreenshot__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./print/takeCesiumScreenshot */ "./src/olcs/print/takeCesiumScreenshot.ts");
 
 
-exports.supportsImageRenderingPixelatedResult_ = undefined;
-/**
- * @type {string|undefined}
- * @private
- */
 
-exports.imageRenderingValueResult_ = undefined;
-/**
- * @return {boolean}
- */
 
-exports.supportsImageRenderingPixelated = function () {
-  if (exports.supportsImageRenderingPixelatedResult_ === undefined) {
-    var canvas = document.createElement('canvas');
-    canvas.setAttribute('style', 'image-rendering: -moz-crisp-edges; image-rendering: pixelated;'); // canvas.style.imageRendering will be undefined, null or an
-    // empty string on unsupported browsers.
+/***/ }),
 
-    var tmp = canvas.style['imageRendering']; // non standard
+/***/ "./src/olcs/print/computeRectangle.ts":
+/*!********************************************!*\
+  !*** ./src/olcs/print/computeRectangle.ts ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-    exports.supportsImageRenderingPixelatedResult_ = !!tmp;
-
-    if (exports.supportsImageRenderingPixelatedResult_) {
-      exports.imageRenderingValueResult_ = tmp;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   computeRectangle: () => (/* binding */ computeRectangle)
+/* harmony export */ });
+function computeRectangle(canvas, tw, th) {
+  const maskAspectRatio = tw / th;
+  let maskSize;
+  if (maskAspectRatio > 1) {
+    // landscape
+    maskSize = [canvas.width, canvas.width / maskAspectRatio];
+    if (maskSize[1] > canvas.height) {
+      maskSize = [canvas.height * maskAspectRatio, canvas.height];
+    }
+  } else {
+    // portrait
+    maskSize = [canvas.height * maskAspectRatio, canvas.height];
+    if (maskSize[0] > canvas.width) {
+      maskSize = [canvas.width, canvas.width / maskAspectRatio];
     }
   }
+  return {
+    scaling: [maskSize[0] / canvas.width, maskSize[1] / canvas.height],
+    width: maskSize[0],
+    height: maskSize[1],
+    offsetX: (canvas.width - maskSize[0]) / 2,
+    offsetY: (canvas.height - maskSize[1]) / 2
+  };
+}
 
-  return exports.supportsImageRenderingPixelatedResult_;
-};
+/***/ }),
+
+/***/ "./src/olcs/print/drawCesiumMask.ts":
+/*!******************************************!*\
+  !*** ./src/olcs/print/drawCesiumMask.ts ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MaskDrawer: () => (/* binding */ MaskDrawer),
+/* harmony export */   autoDrawMask: () => (/* binding */ autoDrawMask)
+/* harmony export */ });
+let postUnlistener = null;
+// CC0 from https://github.com/mdn/dom-examples/tree/main/webgl-examples/tutorial/sample2
+
+class MaskDrawer {
+  constructor(gl) {
+    this.gl = gl;
+    const shaderProgram = this.initShaderProgram();
+    this.programInfo = {
+      program: shaderProgram,
+      attribLocations: {
+        vertexPosition: gl.getAttribLocation(shaderProgram, 'aVertexPosition')
+      },
+      uniformLocations: {
+        uScaling: gl.getUniformLocation(shaderProgram, 'uScaling')
+      }
+    };
+    this.positionBuffer = gl.createBuffer();
+    const positions = [1.0, 1.0, -1.0, 1.0, 1.0, -1.0, -1.0, -1.0];
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(positions), gl.STATIC_DRAW);
+  }
+  getVertexShaderSource() {
+    return `
+      attribute vec4 aVertexPosition;
+      uniform vec2 uScaling;
+      void main() {
+        gl_Position = vec4(aVertexPosition[0] * uScaling[0], aVertexPosition[1] * uScaling[1], -1.0, 1.0);
+      }
+    `;
+  }
+  getFragmentShaderSource() {
+    return `
+      precision highp float;
+      void main() {
+        gl_FragColor = vec4(.5, .5, .5, .6);
+      }
+  `;
+  }
+
+  /**
+   *
+   */
+  initShaderProgram() {
+    const gl = this.gl;
+    const vsSource = this.getVertexShaderSource();
+    const fsSource = this.getFragmentShaderSource();
+    const vertexShader = MaskDrawer.loadShader(gl, gl.VERTEX_SHADER, vsSource),
+      fragmentShader = MaskDrawer.loadShader(gl, gl.FRAGMENT_SHADER, fsSource),
+      shaderProgram = gl.createProgram();
+    gl.attachShader(shaderProgram, vertexShader);
+    gl.attachShader(shaderProgram, fragmentShader);
+    gl.linkProgram(shaderProgram);
+
+    // If creating the shader program failed, alert
+
+    if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+      throw new Error(`Unable to initialize the shader program: ${gl.getProgramInfoLog(shaderProgram)}`);
+    }
+    return shaderProgram;
+  }
+
+  /**
+   *
+   * @param {number[]} scaling scaling
+   */
+  drawMask(scaling) {
+    const gl = this.gl;
+    const programInfo = this.programInfo;
+    // Blend
+    gl.enable(gl.BLEND);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.positionBuffer);
+    gl.vertexAttribPointer(programInfo.attribLocations.vertexPosition, 2, gl.FLOAT, false, 0, 0);
+    gl.enableVertexAttribArray(programInfo.attribLocations.vertexPosition);
+    gl.useProgram(programInfo.program);
+
+    // Draw a first time to fill the stencil area while keeping the destination color
+    gl.enable(gl.STENCIL_TEST);
+    gl.stencilFunc(gl.ALWAYS, 1, 0xFF);
+    gl.stencilOp(gl.KEEP, gl.KEEP, gl.REPLACE);
+    gl.uniform2fv(programInfo.uniformLocations.uScaling, scaling);
+    gl.blendFunc(gl.ZERO, gl.ONE);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+
+    // Now draw again the whole viewport and darken the pixels that are not on the stencil
+    gl.stencilFunc(gl.EQUAL, 0, 0xFF);
+    gl.stencilOp(gl.KEEP, gl.KEEP, gl.KEEP);
+    gl.uniform2fv(programInfo.uniformLocations.uScaling, [1, 1]);
+    gl.blendFunc(gl.ZERO, gl.SRC_ALPHA);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }
+
+  /**
+   */
+  static loadShader(gl, type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      throw new Error(`An error occurred compiling the shaders: ${gl.getShaderInfoLog(shader)}`);
+      // gl.deleteShader(shader);
+    }
+    return shader;
+  }
+}
+
 /**
+ *
+ */
+function autoDrawMask(scene, getScalings) {
+  const canvas = scene.canvas;
+  const ctx = canvas.getContext('webgl2') || canvas.getContext('webgl');
+  if (getScalings) {
+    if (!postUnlistener) {
+      const drawer = new MaskDrawer(ctx);
+      postUnlistener = scene.postRender.addEventListener(() => {
+        drawer.drawMask(getScalings());
+      });
+    }
+  } else if (postUnlistener) {
+    postUnlistener();
+    // FIXME: destroy program
+    postUnlistener = null;
+  }
+  scene.requestRender();
+}
+
+/***/ }),
+
+/***/ "./src/olcs/print/takeCesiumScreenshot.ts":
+/*!************************************************!*\
+  !*** ./src/olcs/print/takeCesiumScreenshot.ts ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   takeScreenshot: () => (/* binding */ takeScreenshot)
+/* harmony export */ });
+/**
+ */
+function takeScreenshot(scene, options) {
+  return new Promise((resolve, reject) => {
+    // preserveDrawingBuffers is false so we render on demand and immediately read the buffer
+    const remover = scene.postRender.addEventListener(() => {
+      remover();
+      try {
+        let url;
+        if (options) {
+          const smallerCanvas = document.createElement('canvas');
+          smallerCanvas.width = options.width;
+          smallerCanvas.height = options.height;
+          smallerCanvas.getContext('2d').drawImage(scene.canvas, options.offsetX, options.offsetY, options.width, options.height, 0, 0, options.width, options.height);
+          url = smallerCanvas.toDataURL();
+        } else {
+          url = scene.canvas.toDataURL();
+        }
+        resolve(url);
+      } catch (e) {
+        reject(e);
+      }
+    });
+    scene.requestRender();
+  });
+}
+
+/***/ }),
+
+/***/ "./src/olcs/util.ts":
+/*!**************************!*\
+  !*** ./src/olcs/util.ts ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getSourceProjection: () => (/* binding */ getSourceProjection),
+/* harmony export */   getUid: () => (/* binding */ getUid),
+/* harmony export */   imageRenderingValue: () => (/* binding */ imageRenderingValue),
+/* harmony export */   supportsImageRenderingPixelated: () => (/* binding */ supportsImageRenderingPixelated),
+/* harmony export */   waitReady: () => (/* binding */ waitReady)
+/* harmony export */ });
+let _imageRenderingPixelatedSupported = undefined;
+let _imageRenderingValue = undefined;
+
+/**
+ * https://caniuse.com/mdn-css_properties_image-rendering_pixelated
+ * @return whether the browser supports
+ */
+function supportsImageRenderingPixelated() {
+  if (_imageRenderingPixelatedSupported === undefined) {
+    const canvas = document.createElement('canvas');
+    canvas.setAttribute('style', 'image-rendering: -moz-crisp-edges; image-rendering: crisp-edges; image-rendering: pixelated;');
+    // canvas.style.imageRendering will be undefined, null or an
+    // empty string on unsupported browsers.
+    const imageRenderingValue = canvas.style.imageRendering;
+    _imageRenderingPixelatedSupported = !!imageRenderingValue;
+    if (_imageRenderingPixelatedSupported) {
+      _imageRenderingValue = imageRenderingValue;
+    }
+  }
+  return _imageRenderingPixelatedSupported;
+}
+
+/**
+ * The value supported by thie browser for the CSS property "image-rendering"
  * @return {string}
  */
+function imageRenderingValue() {
+  supportsImageRenderingPixelated();
+  return _imageRenderingValue || '';
+}
 
-
-exports.imageRenderingValue = function () {
-  exports.supportsImageRenderingPixelated();
-  return exports.imageRenderingValueResult_ || '';
-};
 /**
  * Return the projection of the source that Cesium should use.
  *
- * @param {ol.source.Source} source Source.
- * @returns {ol.proj.Projection} The projection of the source.
+ * @param source Source.
+ * @return The projection of the source.
  */
-
-
-exports.getSourceProjection = function (source) {
-  return (
-    /** @type {ol.proj.Projection} */
-    source.get('olcs.projection') || source.getProjection()
-  );
-};
-/**
- * @param {ol.Observable} observable
- * @param {string} type
- * @param {Function} listener
- * @return {!ol.events.EventsKey}
- */
-
-
-function olcsListen(observable, type, listener) {
-  // See https://github.com/openlayers/openlayers/pull/8481
-  // ol.events.listen is internal so we use `on` instead.
-  // And since `on` as a convoluted API (can return an EventsKey or an array of them)
-  // we use a cast here.
-  return (
-    /** @type {!ol.events.EventsKey} */
-    observable.on(type, listener)
-  );
+function getSourceProjection(source) {
+  return source.get('olcs.projection') || source.getProjection();
 }
+
 /**
  * Counter for getUid.
  * @type {number}
  */
+let uidCounter_ = 0;
 
-var uidCounter_ = 0;
 /**
  * Gets a unique ID for an object. This mutates the object so that further calls
  * with the same object as a parameter returns the same value. Unique IDs are generated
- * as a strictly increasing sequence. Adapted from goog.getUid.
+ * as a strictly increasing sequence. Adapted from goog.getUid. Similar to OL getUid.
  *
- * @param {Object} obj The object to get the unique ID for.
- * @return {number} The unique ID for the object.
+ * @param obj The object to get the unique ID for.
+ * @return The unique ID for the object.
  */
-
 function getUid(obj) {
   return obj.olcs_uid || (obj.olcs_uid = ++uidCounter_);
 }
-/**
- * Sort the passed array such that the relative order of equal elements is preverved.
- * See https://en.wikipedia.org/wiki/Sorting_algorithm#Stability for details.
- * @param {Array<*>} arr The array to sort (modifies original).
- * @param {!function(*, *): number} compareFnc Comparison function.
- */
-
-function stableSort(arr, compareFnc) {
-  var length = arr.length;
-  var tmp = Array(arr.length);
-
-  for (var i = 0; i < length; i++) {
-    tmp[i] = {
-      index: i,
-      value: arr[i]
-    };
+function waitReady(object) {
+  const o = object;
+  const p = o.readyPromise;
+  if (p) {
+    return p;
   }
-
-  tmp.sort(function (a, b) {
-    return compareFnc(a.value, b.value) || a.index - b.index;
-  });
-
-  for (var _i = 0; _i < arr.length; _i++) {
-    arr[_i] = tmp[_i].value;
+  if (o.ready !== undefined) {
+    if (o.ready) {
+      return Promise.resolve(object);
+    }
+    return new Promise((resolve, _) => {
+      // FIXME: this is crazy
+      // alternative: intercept _ready = true
+      // altnerative: pass a timeout
+      const stopper = setInterval(() => {
+        if (o.ready) {
+          clearInterval(stopper);
+          resolve(object);
+        }
+      }, 20);
+    });
   }
+  return Promise.reject('Not a readyable object');
 }
-/**
- * @param {Node} node The node to remove.
- * @returns {Node} The node that was removed or null.
- */
-
-function removeNode(node) {
-  return node && node.parentNode ? node.parentNode.removeChild(node) : null;
-}
-/**
- * @param {Node} node The node to remove the children from.
- */
-
-function removeChildren(node) {
-  while (node.lastChild) {
-    node.removeChild(node.lastChild);
-  }
-}
-/**
- * @param {Cesium.Scene} scene The scene.
- */
-
-function isGroundPolylinePrimitiveSupported(scene) {
-  var obj = Cesium.GroundPolylinePrimitive;
-  return obj && obj.isSupported(scene);
-}
-/* harmony default export */ __webpack_exports__["default"] = (exports);
 
 /***/ }),
 
@@ -6358,8 +5101,7 @@ function isGroundPolylinePrimitiveSupported(scene) {
 /*!********************************!*\
   !*** external "ol.Observable" ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.Observable;
 
@@ -6369,8 +5111,7 @@ module.exports = ol.Observable;
 /*!*****************************!*\
   !*** external "ol.Overlay" ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.Overlay;
 
@@ -6380,8 +5121,7 @@ module.exports = ol.Overlay;
 /*!****************************!*\
   !*** external "ol.easing" ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.easing;
 
@@ -6391,21 +5131,29 @@ module.exports = ol.easing;
 /*!****************************!*\
   !*** external "ol.extent" ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.extent;
 
 /***/ }),
 
-/***/ "ol/geom/Geometry.js":
-/*!***********************************!*\
-  !*** external "ol.geom.Geometry" ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ "ol/format/MVT.js":
+/*!********************************!*\
+  !*** external "ol.format.MVT" ***!
+  \********************************/
+/***/ ((module) => {
 
-module.exports = ol.geom.Geometry;
+module.exports = ol.format.MVT;
+
+/***/ }),
+
+/***/ "ol/geom.js":
+/*!**************************!*\
+  !*** external "ol.geom" ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = ol.geom;
 
 /***/ }),
 
@@ -6413,8 +5161,7 @@ module.exports = ol.geom.Geometry;
 /*!********************************!*\
   !*** external "ol.geom.Point" ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.geom.Point;
 
@@ -6424,8 +5171,7 @@ module.exports = ol.geom.Point;
 /*!**********************************!*\
   !*** external "ol.geom.Polygon" ***!
   \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.geom.Polygon;
 
@@ -6435,10 +5181,19 @@ module.exports = ol.geom.Polygon;
 /*!*****************************************!*\
   !*** external "ol.geom.SimpleGeometry" ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.geom.SimpleGeometry;
+
+/***/ }),
+
+/***/ "ol/layer/BaseVector.js":
+/*!**************************************!*\
+  !*** external "ol.layer.BaseVector" ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = ol.layer.BaseVector;
 
 /***/ }),
 
@@ -6446,8 +5201,7 @@ module.exports = ol.geom.SimpleGeometry;
 /*!*********************************!*\
   !*** external "ol.layer.Group" ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.Group;
 
@@ -6457,8 +5211,7 @@ module.exports = ol.layer.Group;
 /*!*********************************!*\
   !*** external "ol.layer.Image" ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.Image;
 
@@ -6468,8 +5221,7 @@ module.exports = ol.layer.Image;
 /*!*********************************!*\
   !*** external "ol.layer.Layer" ***!
   \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.Layer;
 
@@ -6479,8 +5231,7 @@ module.exports = ol.layer.Layer;
 /*!********************************!*\
   !*** external "ol.layer.Tile" ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.Tile;
 
@@ -6490,8 +5241,7 @@ module.exports = ol.layer.Tile;
 /*!**********************************!*\
   !*** external "ol.layer.Vector" ***!
   \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.Vector;
 
@@ -6501,8 +5251,7 @@ module.exports = ol.layer.Vector;
 /*!**************************************!*\
   !*** external "ol.layer.VectorTile" ***!
   \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.layer.VectorTile;
 
@@ -6512,10 +5261,39 @@ module.exports = ol.layer.VectorTile;
 /*!**************************!*\
   !*** external "ol.proj" ***!
   \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.proj;
+
+/***/ }),
+
+/***/ "ol/render.js":
+/*!****************************!*\
+  !*** external "ol.render" ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = ol.render;
+
+/***/ }),
+
+/***/ "ol/render/Feature.js":
+/*!************************************!*\
+  !*** external "ol.render.Feature" ***!
+  \************************************/
+/***/ ((module) => {
+
+module.exports = ol.render.Feature;
+
+/***/ }),
+
+/***/ "ol/source.js":
+/*!****************************!*\
+  !*** external "ol.source" ***!
+  \****************************/
+/***/ ((module) => {
+
+module.exports = ol.source;
 
 /***/ }),
 
@@ -6523,8 +5301,7 @@ module.exports = ol.proj;
 /*!************************************!*\
   !*** external "ol.source.Cluster" ***!
   \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.Cluster;
 
@@ -6534,19 +5311,17 @@ module.exports = ol.source.Cluster;
 /*!**********************************!*\
   !*** external "ol.source.Image" ***!
   \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.Image;
 
 /***/ }),
 
-/***/ "ol/source/ImageStatic":
+/***/ "ol/source/ImageStatic.js":
 /*!****************************************!*\
   !*** external "ol.source.ImageStatic" ***!
   \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.ImageStatic;
 
@@ -6556,8 +5331,7 @@ module.exports = ol.source.ImageStatic;
 /*!*************************************!*\
   !*** external "ol.source.ImageWMS" ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.ImageWMS;
 
@@ -6567,8 +5341,7 @@ module.exports = ol.source.ImageWMS;
 /*!**************************************!*\
   !*** external "ol.source.TileImage" ***!
   \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.TileImage;
 
@@ -6578,8 +5351,7 @@ module.exports = ol.source.TileImage;
 /*!************************************!*\
   !*** external "ol.source.TileWMS" ***!
   \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.TileWMS;
 
@@ -6589,10 +5361,29 @@ module.exports = ol.source.TileWMS;
 /*!***********************************!*\
   !*** external "ol.source.Vector" ***!
   \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.source.Vector;
+
+/***/ }),
+
+/***/ "ol/source/VectorTile.js":
+/*!***************************************!*\
+  !*** external "ol.source.VectorTile" ***!
+  \***************************************/
+/***/ ((module) => {
+
+module.exports = ol.source.VectorTile;
+
+/***/ }),
+
+/***/ "ol/structs/LRUCache.js":
+/*!**************************************!*\
+  !*** external "ol.structs.LRUCache" ***!
+  \**************************************/
+/***/ ((module) => {
+
+module.exports = ol.structs.LRUCache;
 
 /***/ }),
 
@@ -6600,12 +5391,250 @@ module.exports = ol.source.Vector;
 /*!********************************!*\
   !*** external "ol.style.Icon" ***!
   \********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/***/ ((module) => {
 
 module.exports = ol.style.Icon;
 
+/***/ }),
+
+/***/ "ol/style/Stroke.js":
+/*!**********************************!*\
+  !*** external "ol.style.Stroke" ***!
+  \**********************************/
+/***/ ((module) => {
+
+module.exports = ol.style.Stroke;
+
+/***/ }),
+
+/***/ "ol/style/Style.js":
+/*!*********************************!*\
+  !*** external "ol.style.Style" ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = ol.style.Style;
+
+/***/ }),
+
+/***/ "ol/tilegrid.js":
+/*!******************************!*\
+  !*** external "ol.tilegrid" ***!
+  \******************************/
+/***/ ((module) => {
+
+module.exports = ol.tilegrid;
+
+/***/ }),
+
+/***/ "ol/tileurlfunction.js":
+/*!*************************************!*\
+  !*** external "ol.tileurlfunction" ***!
+  \*************************************/
+/***/ ((module) => {
+
+module.exports = ol.tileurlfunction;
+
+/***/ }),
+
+/***/ "ol/util.js":
+/*!**************************!*\
+  !*** external "ol.util" ***!
+  \**************************/
+/***/ ((module) => {
+
+module.exports = ol.util;
+
 /***/ })
 
-/******/ });
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
+/*!*********************!*\
+  !*** ./src/olcs.ts ***!
+  \*********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AbstractSynchronizer: () => (/* reexport safe */ _olcs_AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_1__["default"]),
+/* harmony export */   ContribLazyLoader: () => (/* reexport safe */ _olcs_contrib_LazyLoader__WEBPACK_IMPORTED_MODULE_11__["default"]),
+/* harmony export */   ContribManager: () => (/* reexport safe */ _olcs_contrib_Manager__WEBPACK_IMPORTED_MODULE_10__["default"]),
+/* harmony export */   FeatureConverter: () => (/* reexport safe */ _olcs_FeatureConverter__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   MaskDrawer: () => (/* reexport safe */ _olcs_print__WEBPACK_IMPORTED_MODULE_9__.MaskDrawer),
+/* harmony export */   OLCSCamera: () => (/* reexport safe */ _olcs_Camera__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   OLImageryProvider: () => (/* reexport safe */ _olcs_core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   RasterSynchronizer: () => (/* reexport safe */ _olcs_RasterSynchronizer__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   VectorLayerCounterpart: () => (/* reexport safe */ _olcs_core_VectorLayerCounterpart__WEBPACK_IMPORTED_MODULE_8__["default"]),
+/* harmony export */   VectorSynchronizer: () => (/* reexport safe */ _olcs_VectorSynchronizer__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   applyHeightOffsetToGeometry: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.applyHeightOffsetToGeometry),
+/* harmony export */   attributionsFunctionToCredits: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.attributionsFunctionToCredits),
+/* harmony export */   autoDrawMask: () => (/* reexport safe */ _olcs_print__WEBPACK_IMPORTED_MODULE_9__.autoDrawMask),
+/* harmony export */   bottomFovRay: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.bottomFovRay),
+/* harmony export */   calcDistanceForResolution: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.calcDistanceForResolution),
+/* harmony export */   calcResolutionForDistance: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.calcResolutionForDistance),
+/* harmony export */   computeAngleToZenith: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.computeAngleToZenith),
+/* harmony export */   computeBoundingBoxAtTarget: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.computeBoundingBoxAtTarget),
+/* harmony export */   computePixelSizeAtCoordinate: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.computePixelSizeAtCoordinate),
+/* harmony export */   computeRectangle: () => (/* reexport safe */ _olcs_print__WEBPACK_IMPORTED_MODULE_9__.computeRectangle),
+/* harmony export */   computeSignedTiltAngleOnGlobe: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.computeSignedTiltAngleOnGlobe),
+/* harmony export */   convertColorToCesium: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.convertColorToCesium),
+/* harmony export */   convertUrlToCesium: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.convertUrlToCesium),
+/* harmony export */   createMatrixAtCoordinates: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.createMatrixAtCoordinates),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   extentToRectangle: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.extentToRectangle),
+/* harmony export */   isCesiumProjection: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.isCesiumProjection),
+/* harmony export */   limitCameraToBoundingSphere: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.limitCameraToBoundingSphere),
+/* harmony export */   normalizeView: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.normalizeView),
+/* harmony export */   ol4326CoordinateArrayToCsCartesians: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateArrayToCsCartesians),
+/* harmony export */   ol4326CoordinateToCesiumCartesian: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.ol4326CoordinateToCesiumCartesian),
+/* harmony export */   olGeometryCloneTo4326: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.olGeometryCloneTo4326),
+/* harmony export */   pickBottomPoint: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.pickBottomPoint),
+/* harmony export */   pickCenterPoint: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.pickCenterPoint),
+/* harmony export */   pickOnTerrainOrEllipsoid: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.pickOnTerrainOrEllipsoid),
+/* harmony export */   resetToNorthZenith: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.resetToNorthZenith),
+/* harmony export */   rotateAroundAxis: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.rotateAroundAxis),
+/* harmony export */   rotateAroundBottomCenter: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.rotateAroundBottomCenter),
+/* harmony export */   setHeadingUsingBottomCenter: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.setHeadingUsingBottomCenter),
+/* harmony export */   signedAngleBetween: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.signedAngleBetween),
+/* harmony export */   sourceToImageryProvider: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.sourceToImageryProvider),
+/* harmony export */   takeScreenshot: () => (/* reexport safe */ _olcs_print__WEBPACK_IMPORTED_MODULE_9__.takeScreenshot),
+/* harmony export */   tileLayerToImageryLayer: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.tileLayerToImageryLayer),
+/* harmony export */   updateCesiumLayerProperties: () => (/* reexport safe */ _olcs_core__WEBPACK_IMPORTED_MODULE_6__.updateCesiumLayerProperties)
+/* harmony export */ });
+/* harmony import */ var _olcs_OLCesium__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./olcs/OLCesium */ "./src/olcs/OLCesium.ts");
+/* harmony import */ var _olcs_AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./olcs/AbstractSynchronizer */ "./src/olcs/AbstractSynchronizer.ts");
+/* harmony import */ var _olcs_RasterSynchronizer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./olcs/RasterSynchronizer */ "./src/olcs/RasterSynchronizer.ts");
+/* harmony import */ var _olcs_VectorSynchronizer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./olcs/VectorSynchronizer */ "./src/olcs/VectorSynchronizer.ts");
+/* harmony import */ var _olcs_FeatureConverter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./olcs/FeatureConverter */ "./src/olcs/FeatureConverter.ts");
+/* harmony import */ var _olcs_Camera__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./olcs/Camera */ "./src/olcs/Camera.ts");
+/* harmony import */ var _olcs_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./olcs/core */ "./src/olcs/core.ts");
+/* harmony import */ var _olcs_core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./olcs/core/OLImageryProvider */ "./src/olcs/core/OLImageryProvider.ts");
+/* harmony import */ var _olcs_core_VectorLayerCounterpart__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./olcs/core/VectorLayerCounterpart */ "./src/olcs/core/VectorLayerCounterpart.ts");
+/* harmony import */ var _olcs_print__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./olcs/print */ "./src/olcs/print.ts");
+/* harmony import */ var _olcs_contrib_Manager__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./olcs/contrib/Manager */ "./src/olcs/contrib/Manager.ts");
+/* harmony import */ var _olcs_contrib_LazyLoader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./olcs/contrib/LazyLoader */ "./src/olcs/contrib/LazyLoader.ts");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_olcs_OLCesium__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+
+
+
+
+
+// Core api functions
+
+
+
+
+// Print functions
+
+
+// Contrib Manager
+
+
+
+// Deprecated export of olcs on window
+// @ts-ignore
+const olcs = window['olcs'] = {};
+// @ts-ignore
+olcs.OLCesium = _olcs_OLCesium__WEBPACK_IMPORTED_MODULE_0__["default"];
+
+
+
+// @ts-ignore
+olcs.AbstractSynchronizer = _olcs_AbstractSynchronizer__WEBPACK_IMPORTED_MODULE_1__["default"];
+// @ts-ignore
+olcs.RasterSynchronizer = _olcs_RasterSynchronizer__WEBPACK_IMPORTED_MODULE_2__["default"];
+// @ts-ignore
+olcs.VectorSynchronizer = _olcs_VectorSynchronizer__WEBPACK_IMPORTED_MODULE_3__["default"];
+
+
+
+// @ts-ignore
+olcs.core = _olcs_core__WEBPACK_IMPORTED_MODULE_6__;
+// @ts-ignore
+olcs.core.OLImageryProvider = _olcs_core_OLImageryProvider__WEBPACK_IMPORTED_MODULE_7__["default"];
+// @ts-ignore
+olcs.core.VectorLayerCounterpart = _olcs_core_VectorLayerCounterpart__WEBPACK_IMPORTED_MODULE_8__["default"];
+
+// @ts-ignore
+olcs.contrib = {};
+
+
+// @ts-ignore
+olcs.contrib.LazyLoader = _olcs_contrib_LazyLoader__WEBPACK_IMPORTED_MODULE_11__["default"];
+// @ts-ignore
+olcs.contrib.Manager = _olcs_contrib_Manager__WEBPACK_IMPORTED_MODULE_10__["default"];
+})();
+
+olcs_unused_var = __webpack_exports__;
+/******/ })()
+;
 //# sourceMappingURL=olcesium-debug.js.map
