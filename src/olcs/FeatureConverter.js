@@ -1018,13 +1018,11 @@ class FeatureConverter {
     let color = outline ? stroke.getColor() : fill.getColor();
     color = convertColorToCesium(color);
 
-    if (outline && stroke.getLineDash()) {
-      return Cesium.Material.fromType('Stripe', {
-        // always update Cesium externs before adding a property
-        horizontal: false,
-        repeat: 500, // TODO how to calculate this?
-        evenColor: color,
-        oddColor: new Cesium.Color(0, 0, 0, 0) // transparent
+    const lineDash = stroke.getLineDash();
+    if (outline && lineDash) {
+      return Cesium.Material.fromType('PolylineDash', {
+        dashPattern: dashPattern(lineDash),
+        color
       });
     } else {
       return Cesium.Material.fromType('Color', {
@@ -1314,5 +1312,20 @@ class FeatureConverter {
   }
 }
 
+/**
+ * Transform a canvas line dash pattern to a Cesium dash pattern
+ * See https://cesium.com/learn/cesiumjs/ref-doc/PolylineDashMaterialProperty.html#dashPattern
+ * @param {number[]} lineDash
+ * @return {number}
+ */
+function dashPattern(lineDash) {
+  const segments = lineDash.length % 2 === 0 ? lineDash : [...lineDash, ...lineDash];
+  const total = segments.reduce((a, b) => a + b, 0);
+  const div = total / 16;
+  // create a 16 bit binary string
+  const binaryString = segments.map((segment, index) => (index % 2 === 0 ? '1' : '0').repeat(Math.round(segment / div))).join('');
+  console.assert(binaryString.length === 16);
+  return parseInt(binaryString, 2);
+}
 
 export default FeatureConverter;
